@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "mariafm"
+version = "0.1.0"
+description = "Одностраничный сайт на Django для радиостанции mariafm"
+authors = ["kotelnikov-vladislav <vladislav.kotelnikov@internet.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.1"
+libsass = "^0.23.0"
+django-compressor = "^4.5.1"
+django-sass-processor = "^1.4.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]

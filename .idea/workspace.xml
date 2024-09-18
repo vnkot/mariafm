@@ -1,28 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="755f77df-8f10-4e65-a9ad-1d88b839785c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/mariafm/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mariafm/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/static/landing/icons/arrow/arrow-left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/static/landing/icons/arrow/arrow-right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/static/landing/icons/general/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/static/landing/images/about/map.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/static/landing/images/guarantee/ad-banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/static/landing/images/projects/cover-show.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/static/landing/images/projects/evening-channel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/static/landing/images/projects/friday-warm-up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/static/landing/images/projects/very-first.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/static/landing/images/school/cover" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/static/landing/images/team/alexey-batalov.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/static/landing/images/team/mikhail-annenkov.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/landing/static/landing/images/team/vlad-smirnov.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mariafm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mariafm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landing/templates/landing/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/landing/templates/landing/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2mFpjYmfe7WWO0HOFCmuZ04GXbH" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/vnkot/development/mariafm/landing/static/landing/images/projects",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/landing/static/landing/images/projects" />
+      <recent name="$PROJECT_DIR$/landing/static/landing/images/school" />
+      <recent name="$PROJECT_DIR$/landing/static/landing/images/team" />
+      <recent name="$PROJECT_DIR$/landing/static/landing/images" />
+      <recent name="$PROJECT_DIR$/landing/static/landing/icons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/landing/static/landing/images/about" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-WS-241.14494.235" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PY-242.21829.153" />
+        <option value="bundled-python-sdk-464836ebc622-b74155a9e76b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.21829.153" />
       </set>
     </attachedChunks>
   </component>
@@ -34,7 +80,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726682314139</updated>
-      <workItem from="1726682315175" duration="120000" />
+      <workItem from="1726682315175" duration="152000" />
+      <workItem from="1726683289932" duration="109000" />
+      <workItem from="1726683402887" duration="1504000" />
     </task>
     <servers />
   </component>

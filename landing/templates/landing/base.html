@@ -1,11 +1,16 @@
-{% load static %}
+{% load django_vite %}
 
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="{% static 'landing/styles/style.scss' %}" rel="stylesheet" type="text/css" />
-    <title>{% block title %}{% endblock %}</title>
+
+    {% vite_hmr_client %}
+    {% vite_asset 'scripts/main.ts' %}
+
+    <link rel="stylesheet" href="{% vite_asset_url 'styles/main.scss' %}">
+
+    <title>Мария ФМ | Радио нашего города</title>
 </head>
 <body>
     <div class="wrapper">

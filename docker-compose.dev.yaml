@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: services/frontend/Dockerfile.dev
+    volumes:
+      - ./static:/app/static
+    ports:
+      - "5173:5173"
+    restart: always
+
+  backend:
+    build:
+      context: .
+      dockerfile: services/backend/Dockerfile.dev
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    restart: always

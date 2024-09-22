@@ -1,0 +1,35 @@
+:root {
+	// font size
+	--font-size-xxl: 130px;
+	--font-size-xl: 100px;
+	--font-size-lg: 56px;
+	--font-size-m: 30px;
+	--font-size-s: 26px;
+	--font-size-xs: 22px;
+
+	// font weight
+	--font-weight-xxl: 700;
+	--font-weight-xl: 600;
+	--font-weight-lg: 500;
+	--font-weight-m: 400;
+	--font-weight-sm: 300;
+
+	// font family
+	--font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+	// colors
+	--red: #E43927;
+	--black: #000000;
+
+	// box shadows
+	--main-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+	// containers
+	--indent-x: 20px;
+	--max-width: 1507px;
+
+	// media screen
+	--screen-lg: 1200px;
+	--screen-m: 834px;
+	--screen-s: 390px;
+}

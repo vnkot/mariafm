@@ -1,0 +1,13 @@
+h2.title {
+    text-transform: uppercase;
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-xxl);
+
+    &--red {
+        color: var(--red);
+    }
+
+    &--white {
+        color: #fff;
+    }
+}

@@ -1,3 +1,5 @@
+@import url('../fonts/style.css');
+
 @import "./general/main";
 @import "./sections/main";
 
@@ -5,4 +7,6 @@
 	margin: 0 auto;
 	padding: 0 var(--indent-x);
 	max-width: calc(var(--max-width) + var(--indent-x) * 2);
+
+	font-family: var(--font-family);
 }

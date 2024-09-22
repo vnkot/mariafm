@@ -1,2 +1,8 @@
 @import "./general/main";
 @import "./sections/main";
+
+.wrapper {
+	margin: 0 auto;
+	padding: 0 var(--indent-x);
+	max-width: calc(var(--max-width) + var(--indent-x) * 2);
+}

@@ -1,0 +1,17 @@
+@mixin mediaScreenLG() {
+	@media (max-width: 1200px) {
+		@content
+	}
+}
+
+@mixin mediaScreenM() {
+	@media (max-width: 834px) {
+		@content
+	}
+}
+
+@mixin mediaScreenS() {
+	@media (max-width: 390px) {
+		@content
+	}
+}

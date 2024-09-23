@@ -15,3 +15,10 @@
 		@content
 	}
 }
+
+
+@mixin aspect-ratio($width, $height) {
+	height: 0;
+	overflow: hidden;
+	padding-top: calc(($width / $height) * 100%);
+}

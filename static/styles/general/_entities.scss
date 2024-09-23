@@ -46,3 +46,9 @@ button.btn {
         border-radius: 40px;
     }
 }
+
+.container {
+    margin: 0 auto;
+    padding: 0 var(--indent-x);
+    max-width: calc(var(--container-max-width) + var(--indent-x) * 2);
+}

@@ -1,5 +1,42 @@
 {% load django_vite %}
 
-<section>
-    контакты и радио
+<section class="contact-radio">
+    <div class="container">
+        <div class="contact-radio__body">
+            <ul class="contact-radio__soc-networks soc-networks">
+                <li class="soc-networks__item">
+                    <a href="#">
+                        <img src="{% vite_asset_url 'icons/soc-network/viber.png' %}"/>
+                    </a>
+                </li>
+
+                <li class="soc-networks__item">
+                    <a href="#">
+                        <img src="{% vite_asset_url 'icons/soc-network/whatsapp.png' %}"/>
+                    </a>
+                </li>
+
+                <li class="soc-networks__item">
+                    <a href="#">
+                        <img src="{% vite_asset_url 'icons/soc-network/telegram.png' %}"/>
+                    </a>
+                </li>
+            </ul>
+
+            <a href="tel:+79128271029" class="contact-radio__tel">+7 912 827 10 29</a>
+
+            <div class="contact-radio__radio radio">
+                <div class="radio__ctrl">
+                    <div class="radio__play">
+                        <img src="{% vite_asset_url 'icons/player/play.png' %}"/>
+                    </div>
+                    <div class="radio__pause">
+                        <img src="{% vite_asset_url 'icons/player/pause.png' %}"/>
+                    </div>
+                </div>
+                
+                <p class="radio__text">Слушать онлайн</p>
+            </div>
+        </div>
+    </div>
 </section>

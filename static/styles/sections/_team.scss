@@ -1,0 +1,57 @@
+.team {
+	&__body {
+		padding: 44px 0;
+
+		display: flex;
+		flex-direction: column;
+		gap: 63px;
+	}
+
+	&__peoples {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 81px;
+	}
+}
+
+.people {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+
+	&__avatar {
+		--size: 378px;
+
+		width: var(--size);
+		height: var(--size);
+		border-radius: 50%;
+		overflow: hidden;
+
+		margin: 0 auto;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	&__name {
+		color: var(--black);
+		font-size: calc(var(--font-size-m) + 10px);
+		font-weight: var(--font-weight-xxl);
+
+		margin-top: 28px;
+		margin-bottom: 12px;
+	}
+
+	&__describe {
+		color: var(--black);
+		font-size: var(--font-size-m);
+		font-weight: var(--font-weight-xl);
+		line-height: 1.2;
+	}
+}

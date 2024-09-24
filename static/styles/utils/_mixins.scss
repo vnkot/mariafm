@@ -16,7 +16,10 @@
 	}
 }
 
-
+/*
+Про реализацию aspect-ratio через padding
+https://css-tricks.com/aspect-ratio-boxes/
+*/
 @mixin aspect-ratio($width, $height) {
 	height: 0;
 	overflow: hidden;

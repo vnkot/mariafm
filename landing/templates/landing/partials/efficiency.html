@@ -1,5 +1,45 @@
 {% load django_vite %}
 
-<section>
-    Эффективность
+<section class="efficiency">
+    <div class="efficiency__top">
+        <div class="container">
+            <div class="efficiency__top-body">
+                <h2 class="title title--s title--white">
+                    Радио нашего города с гарантией эффективной рекламы
+                </h2>
+
+                <p class="efficiency__subtitle">у нас есть:</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="efficiency__bottom">
+        <div class="container">
+            <div class="efficiency__bottom-body">
+                <ul class="efficiency__benefits">
+                    <li class="efficiency__benefit benefit">
+                        <p class="benefit__text">
+                            <span class="red">5 стратегий</span> эффективности
+                        </p>
+                    </li>
+                    <li class="efficiency__benefit benefit">
+                        <p class="benefit__text">
+                            <span class="red">50 способов</span> продвижения
+                        </p>
+                    </li>
+                    <li class="efficiency__benefit benefit">
+                        <p class="benefit__text">
+                            личные <span class="red">гарантии директора</span>
+                        </p>
+                    </li>
+                </ul>
+
+                <div
+                    class="efficiency__banner"
+                    style="background-image: url('{% vite_asset_url 'images/efficiency/ad-banner.png' %}');"
+                >
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

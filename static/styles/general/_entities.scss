@@ -1,7 +1,6 @@
 @import "../utils/mixins";
 
 h2.title {
-    text-transform: uppercase;
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-xxl);
 
@@ -13,12 +12,28 @@ h2.title {
         color: #fff;
     }
 
+    &--s {
+        font-size: var(--font-size-xl);
+    }
+
+    &--uppercase {
+        text-transform: uppercase;
+    }
+
     @include mediaScreenM {
         font-size: var(--font-size-lg);
+
+        &--s {
+            font-size: var(--font-size-lg);
+        }
     }
 
     @include mediaScreenS {
         font-size: var(--font-size-m);
+
+        &--s {
+            font-size: var(--font-size-s);
+        }
     }
 }
 
@@ -47,8 +62,13 @@ button.btn {
     }
 }
 
+span.red {
+    color: var(--red)
+}
+
 .container {
     margin: 0 auto;
     padding: 0 var(--indent-x);
     max-width: calc(var(--container-max-width) + var(--indent-x) * 2);
 }
+

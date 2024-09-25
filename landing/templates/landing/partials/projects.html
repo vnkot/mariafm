@@ -1,5 +1,72 @@
 {% load django_vite %}
 
-<section>
-    <h2 class="title title--red">О проектах</h2>
+<section class="projects">
+    <div class="container">
+        <div class="projects__body">
+            <h2 class="title title--red title--uppercase">О проектах</h2>
+
+            <ul class="projects__list">
+                <li class="project__project project">
+                    <div class="project__cover">
+                        <img src="{% vite_asset_url 'images/projects/very-first.png' %}" />
+                    </div>
+                    <div class="project__body">
+                        <p class="project__name">
+                            Самые первые на Мария FM
+                        </p>
+                        <p class="project__description">
+                            Ведущие - две ярких, харизматичных, успешных пары: Дима Целищев и Оля Бакина, Леша Баталов и Марианна Узун. <br />
+                            С понедельника по четверг с 7 до 9 утра в эфире все самое нужное именно этим утром и именно кировчанам: от качественной музыки до обсуждения новостей и мероприятий, объединяющих город.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="project__project project">
+                    <div class="project__cover">
+                        <img src="{% vite_asset_url 'images/projects/evening-channel.png' %}" />
+                    </div>
+                    <div class="project__body">
+                        <p class="project__name">
+                            Вечерний канал
+                        </p>
+                        <p class="project__description">
+                            Ведущая: Маша Котова <br />
+                            С понедельника по четверг с 17 до 19 <br />
+                            Легкое, беззаботное, веселое – такое, каким и должен быть вечер в конце рабочего дня. Гороскоп, лучшая музыка со всех концов света, самые свежие новости шоу-бизнеса и подарки.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="project__project project">
+                    <div class="project__cover">
+                        <img src="{% vite_asset_url 'images/projects/cover-show.png' %}" />
+                    </div>
+                    <div class="project__body">
+                        <p class="project__name">
+                            Кавер-шоу
+                        </p>
+                        <p class="project__description">
+                            Ведущий: Влад Смирнов <br />
+                            Пятница с 17 до 19 целых два часа отменных каверов.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="project__project project">
+                    <div class="project__cover">
+                        <img src="{% vite_asset_url 'images/projects/friday-warm-up.png' %}" />
+                    </div>
+                    <div class="project__body">
+                        <p class="project__name">
+                            Пятничный разогрев
+                        </p>
+                        <p class="project__description">
+                            Ведущие: Аня Бойко и Гриша Бессонов <br />
+                            Пятница с 7 до 9 утра составляем афишу предстоящих выходных, советуем кафе для встречи с друзьями и составляем рецензии на свежевышедшие фильмы.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </section>

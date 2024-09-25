@@ -1,5 +1,82 @@
 {% load django_vite %}
 
-<section>
-    футер
-</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__body">
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <img src="{% vite_asset_url 'icons/general/logo.svg' %}" />
+                </div>
+
+                <div class="footer__contacts contacts">
+                    <ul class="contacts__list">
+                        <li class="contact">
+                            <p class="contact__name">Адрес офиса:</p>
+                            <p class="contact__value">
+                                610000, г. Киров, Октябрьский проспект 120, 6 этаж
+                            </p>
+                        </li>
+
+                        <li class="contact">
+                            <p class="contact__name">
+                                Служба новостей/программный отдел:
+                            </p>
+                            <p class="contact__value">
+                                47-102-9
+                            </p>
+                        </li>
+
+                        <li class="contact">
+                            <p class="contact__name">
+                                Редакция:
+                            </p>
+                            <p class="contact__value">
+                                mariafm@mail.ru
+                            </p>
+                        </li>
+
+                        <li class="contact">
+                            <p class="contact__name">
+                                Рекламный отдел:
+                            </p>
+                            <p class="contact__value">
+                                mariafm@mariafm.ru
+                            </p>
+                        </li>
+                    </ul>
+
+                    <ul class="contacts__list">
+                        <li class="contact">
+                            <p class="contact__name">
+                                Реклама на радио:
+                            </p>
+                            <p class="contact__value">
+                                +7 (953) 947-27-27
+                            </p>
+                        </li>
+
+                        <li class="contact">
+                            <p class="contact__name">
+                                Viber WhatsApp Telegram:
+                            </p>
+                            <p class="contact__value">
+                                +7 (912) 827-102-9
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__bottom">
+                    <p>
+                        Подарки победителям выдаются в течение двух недель после даты выигрыша в рабочие дни, с понедельника
+                        по пятницу с 9:00 до 17:30 по адресу офиса (кабинет 601).
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer__map">
+                <img src="{% vite_asset_url 'images/footer/map.png' %}" />
+            </div>
+        </div>
+    </div>
+</footer>

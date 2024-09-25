@@ -1,0 +1,77 @@
+.footer {
+	&__body {
+		padding: 64px 0;
+
+		display: flex;
+		gap: 24px;
+	}
+
+	&__content {
+		flex: 1 1 0;
+
+		display: flex;
+		flex-direction: column;
+		gap: 32px
+	}
+
+	&__logo {
+		width: 400px;
+		height: 69px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	&__contacts {
+		flex: 1 1 0;
+	}
+
+	&__bottom {
+		color: var(--gray);
+		font-size: var(--font-size-xs);
+		line-height: 1.2;
+	}
+
+	&__map {
+		flex: 1 1 0;
+		max-width: 818px;
+		aspect-ratio: 1.27 / 1; // TODO: здесь должен быть миксин!
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			filter: grayscale(100%);
+		}
+	}
+}
+
+.contacts {
+	display: flex;
+	gap: 40px;
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+}
+
+.contact {
+	line-height: 1.2;
+	color: var(--black);
+	font-size: var(--font-size-xs);
+
+	max-width: 328px;
+
+	&__name {
+		font-weight: var(--font-weight-xxl);
+	}
+
+	&__value {}
+}

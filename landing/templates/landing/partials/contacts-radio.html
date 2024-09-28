@@ -4,28 +4,30 @@
     <div class="container">
         <div class="contact-radio__body">
             <ul class="contact-radio__soc-networks soc-networks">
-                <li class="soc-networks__item">
-                    <a href="#">
+                <li class="soc-networks__item" title="Написать в Viber">
+                    <a href="viber://chat?number=+79128271029">
                         <img src="{% vite_asset_url 'icons/soc-network/viber.png' %}"/>
                     </a>
                 </li>
 
-                <li class="soc-networks__item">
-                    <a href="#">
+                <li class="soc-networks__item" title="Написать в Whatsapp">
+                    <a href="https://wa.me/79128271029">
                         <img src="{% vite_asset_url 'icons/soc-network/whatsapp.png' %}"/>
                     </a>
                 </li>
 
-                <li class="soc-networks__item">
-                    <a href="#">
+                <li class="soc-networks__item" title="Написать в Telegram">
+                    <a href="https://t.me/+79128271029">
                         <img src="{% vite_asset_url 'icons/soc-network/telegram.png' %}"/>
                     </a>
                 </li>
             </ul>
 
-            <a href="tel:+79128271029" class="contact-radio__tel">+7 912 827 10 29</a>
+            <a href="tel:+79128271029" class="contact-radio__tel" title="Позвонить по номеру телефона">
+                +7 912 827 10 29
+            </a>
 
-            <div class="contact-radio__radio radio">
+            <div class="contact-radio__radio radio" id="radio">
                 <div class="radio__ctrl">
                     <div class="radio__play">
                         <img src="{% vite_asset_url 'icons/player/play.png' %}"/>

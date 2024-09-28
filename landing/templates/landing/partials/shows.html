@@ -1,7 +1,38 @@
 {% load django_vite %}
 
 <section class="shows">
-    <div class="shows__carousel carousel">
-        <img src="{% vite_asset_url 'images/shows/fake-scroll.png' %}" />
+    <div class="shows__carousel show-carousel">
+        <div class="show-carousel__body" id="show-carousel">
+            <ul class="show-carousel__container">
+                <li class="show-carousel__slide">
+                    <img src="{% vite_asset_url 'images/shows/evening-channel.png' %}">
+                </li>
+
+                <li class="show-carousel__slide">
+                    <img src="{% vite_asset_url 'images/shows/very-first.png' %}">
+                </li>
+
+                <li class="show-carousel__slide">
+                    <img src="{% vite_asset_url 'images/shows/friday-warm-up.png' %}">
+                </li>
+
+                <li class="show-carousel__slide">
+                    <img src="{% vite_asset_url 'images/shows/cover-show.png' %}">
+                </li>
+            </ul>
+        </div>
+
+        <div class="show-carousel__ctrl" id="show-carousel-ctrl">
+            <button class="show-carousel__btn-prev">
+                <img src="{% vite_asset_url 'icons/ctrl/arrow-left.png' %}" alt="">
+            </button>
+            <button class="show-carousel__btn-next">
+                <img src="{% vite_asset_url 'icons/ctrl/arrow-right.png' %}" alt="">
+            </button>
+        </div>
+
+        <ul class="show-carousel__indicators" id="show-carousel-indicators">
+            <li class="show-carousel__indicator"></li>
+        </ul>
     </div>
 </section>

@@ -1,9 +1,28 @@
 {% load django_vite %}
 
-<section>
-    <h2 class="title title--red">
-        Школа медиа
-    </h2>
+<section class="school">
+    <div class="container">
+        <div class="school__body">
+            <h2 class="title title--white title--uppercase">Школа медиа</h2>
 
-    <button class="btn">Записаться</button>
+            <div class="school__text">
+                <p>
+                    Школа МЕДИА действует в Кирове с 2015 года при поддержке радиостанции "Мария FM".
+                    Имеет лицензию дополнительного образования.
+                </p>
+
+                <p>
+                    Школа МЕДИА - это курсы для детей, подростков и взрослых по направлениям:
+                    курсы по речи и ораторскому мастерству, школа блогеров,
+                    медиакоммуникации/журналистика для школьников, курсы радиоведущих.
+                </p>
+            </div>
+            
+            <button class="btn school__enroll">Записаться</button>
+            
+            <div class="school__image">
+                <img src="{% vite_asset_url 'images/school/cover.png' %}">
+            </div>
+        </div>
+    </div>
 </section>

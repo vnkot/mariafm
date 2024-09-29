@@ -10,9 +10,9 @@ interface ITeamCarouselConfig {
 export class TeamCarousel {
     private readonly config: ITeamCarouselConfig;
 
-    private btnPrevElement!: HTMLElement;
-    private btnNextElement!: HTMLElement;
     private carouselElement!: HTMLElement;
+    private btnPrevElement!: HTMLButtonElement;
+    private btnNextElement!: HTMLButtonElement;
 
     private carousel!: EmblaCarouselType;
 
@@ -32,9 +32,9 @@ export class TeamCarousel {
             throw new Error('Не удалось получить необходимые элементы для карусели')
         }
 
-        this.btnPrevElement = btnPrevElement;
-        this.btnNextElement = btnNextElement;
         this.carouselElement = carouselElement;
+        this.btnPrevElement = btnPrevElement as HTMLButtonElement;
+        this.btnNextElement = btnNextElement as HTMLButtonElement;
     }
 
     private createCarousel() {

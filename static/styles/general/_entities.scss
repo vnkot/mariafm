@@ -87,6 +87,10 @@ button.btn-ctrl {
 		object-fit: contain;
 		object-position: center;
 	}
+
+	&[disabled] {
+		display: none;
+	}
 }
 
 button.btn-ctrl.btn-ctrl--prev {

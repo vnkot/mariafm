@@ -36,11 +36,11 @@ export class AudioPlayer {
             this.audioPlayerState = !this.audioPlayerState;
 
             if (this.audioPlayerState) {
-                this.playerElement.classList.add(this.classNameActive);
                 this.audioElement.play();
+                this.playerElement.classList.add(this.classNameActive);
             } else {
-                this.playerElement.classList.remove(this.classNameActive);
                 this.audioElement.pause();
+                this.playerElement.classList.remove(this.classNameActive);
             }
         });
     }

@@ -1,0 +1,1 @@
+export const OPTIONS = {loop: true, startIndex: 0};

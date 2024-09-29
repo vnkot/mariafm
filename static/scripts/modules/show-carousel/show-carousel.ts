@@ -11,8 +11,8 @@ interface IShowCarouselConfig {
 export class ShowCarousel {
     private readonly config: IShowCarouselConfig;
 
-    private ctrlPrevElement!: HTMLElement;
-    private ctrlNextElement!: HTMLElement;
+    private btnPrevElement!: HTMLElement;
+    private btnNextElement!: HTMLElement;
     private carouselElement!: HTMLElement;
     private indicatorsElement!: HTMLElement;
 
@@ -49,8 +49,8 @@ export class ShowCarousel {
 
         this.carouselElement = showCarouselElement;
         this.indicatorsElement = showIndicatorsElement;
-        this.ctrlPrevElement = showCtrlElement.children[0] as HTMLElement;
-        this.ctrlNextElement = showCtrlElement.children[1] as HTMLElement;
+        this.btnPrevElement = showCtrlElement.children[0] as HTMLElement;
+        this.btnNextElement = showCtrlElement.children[1] as HTMLElement;
     }
 
     private createCarousel() {
@@ -76,11 +76,11 @@ export class ShowCarousel {
     }
 
     private addEventListenerForCtrl() {
-        this.ctrlPrevElement.addEventListener('click', () => {
+        this.btnPrevElement.addEventListener('click', () => {
             this.carousel.scrollPrev();
         })
 
-        this.ctrlNextElement.addEventListener('click', () => {
+        this.btnNextElement.addEventListener('click', () => {
             this.carousel.scrollNext();
         })
     }

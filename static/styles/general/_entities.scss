@@ -1,74 +1,115 @@
 @import "../utils/mixins";
 
 h2.title {
-    font-size: var(--font-size-xxl);
-    font-weight: var(--font-weight-xxl);
+	font-size: var(--font-size-xxl);
+	font-weight: var(--font-weight-xxl);
 
-    &--red {
-        color: var(--red);
-    }
+	&--red {
+		color: var(--red);
+	}
 
-    &--white {
-        color: #fff;
-    }
+	&--white {
+		color: #fff;
+	}
 
-    &--s {
-        font-size: var(--font-size-xl);
-    }
+	&--s {
+		font-size: var(--font-size-xl);
+	}
 
-    &--uppercase {
-        text-transform: uppercase;
-    }
+	&--uppercase {
+		text-transform: uppercase;
+	}
 
-    @include mediaScreenM {
-        font-size: var(--font-size-lg);
+	@include mediaScreenM {
+		font-size: var(--font-size-lg);
 
-        &--s {
-            font-size: var(--font-size-lg);
-        }
-    }
+		&--s {
+			font-size: var(--font-size-lg);
+		}
+	}
 
-    @include mediaScreenS {
-        font-size: var(--font-size-m);
+	@include mediaScreenS {
+		font-size: var(--font-size-m);
 
-        &--s {
-            font-size: var(--font-size-s);
-        }
-    }
+		&--s {
+			font-size: var(--font-size-s);
+		}
+	}
 }
 
 button.btn {
-    color: #fff;
-    line-height: 1;
-    font-size: var(--font-size-m);
+	color: #fff;
+	line-height: 1;
+	font-size: var(--font-size-m);
 
-    border: none;
-    outline: none;
-    padding: 27px 95px;
-    border-radius: 45px;
-    background-color: var(--red);
+	border: none;
+	outline: none;
+	padding: 27px 95px;
+	border-radius: 45px;
+	background-color: var(--red);
 
-    cursor: pointer;
-    transition: .3s;
+	cursor: pointer;
+	transition: .3s;
 
-    &:hover {
-        background-color: var(--red-01);
-    }
+	&:hover {
+		background-color: var(--red-01);
+	}
 
-    &--s {
-        font-size: var(--font-size-xs);
-        padding: 16px 26px;
-        border-radius: 40px;
-    }
+	&--s {
+		font-size: var(--font-size-xs);
+		padding: 16px 26px;
+		border-radius: 40px;
+	}
+}
+
+button.btn-ctrl {
+	--size: 74px;
+
+	outline: none;
+	border: none;
+	background-color: var(--white);
+	width: var(--size);
+	height: var(--size);
+	border-radius: 50%;
+	box-shadow: var(--main-shadow);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	cursor: pointer;
+	transition: .02s;
+
+	img {
+		width: 14px;
+		height: 30px;
+
+		object-fit: contain;
+		object-position: center;
+	}
+}
+
+button.btn-ctrl.btn-ctrl--prev {
+	&:active {
+		box-shadow: var(--light-shadow);
+		transform: translate(-4px, 4px);
+	}
+}
+
+button.btn-ctrl.btn-ctrl--next {
+	&:active {
+		box-shadow: var(--light-shadow);
+		transform: translate(4px, 4px);
+	}
 }
 
 span.red {
-    color: var(--red)
+	color: var(--red)
 }
 
 .container {
-    margin: 0 auto;
-    padding: 0 var(--indent-x);
-    max-width: calc(var(--container-max-width) + var(--indent-x) * 2);
+	margin: 0 auto;
+	padding: 0 var(--indent-x);
+	max-width: calc(var(--container-max-width) + var(--indent-x) * 2);
 }
 

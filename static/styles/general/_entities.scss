@@ -37,9 +37,10 @@ h2.title {
 	}
 }
 
-button.btn {
+.btn {
 	color: #fff;
 	line-height: 1;
+	text-decoration: none;
 	font-size: var(--font-size-m);
 
 	border: none;
@@ -47,6 +48,7 @@ button.btn {
 	padding: 27px 95px;
 	border-radius: 45px;
 	background-color: var(--red);
+	display: inline-block;
 
 	cursor: pointer;
 	transition: .3s;

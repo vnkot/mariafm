@@ -76,5 +76,14 @@
 		font-weight: var(--font-weight-xxl);
 	}
 
-	&__value {}
+	&__value {
+		text-decoration: none;
+		color: inherit;
+
+		transition: .1s;
+
+		&:hover {
+			opacity: .7;
+		}
+	}
 }

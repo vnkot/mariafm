@@ -1,0 +1,42 @@
+.floating-button {
+	--size: 174px;
+
+	position: fixed;
+	right: 64px;
+	bottom: 64px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	outline: none;
+	border: none;
+	border-radius: 50%;
+	background-color: var(--red);
+	width: var(--size);
+	height: var(--size);
+
+	line-height: .9;
+	text-align: center;
+	color: var(--white);
+	text-decoration: none;
+	font-size: var(--font-size-m);
+	font-weight: var(--font-weight-xxl);
+
+	cursor: pointer;
+	transition: .1s;
+	animation: pulse-animation 2s infinite;
+
+	&:hover {
+		background-color: var(--red-01);
+	}
+}
+
+@keyframes pulse-animation {
+	0% {
+		box-shadow: 0 0 0 0px var(--red-02);
+	}
+	100% {
+		box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+	}
+}

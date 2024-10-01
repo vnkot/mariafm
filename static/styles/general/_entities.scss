@@ -68,6 +68,76 @@ h2.title {
 	}
 }
 
+.btn-accent {
+	display: block;
+
+	line-height: 1;
+	text-align: left;
+	text-transform: uppercase;
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-xxxl);
+	text-decoration: none;
+	color: var(--black);
+
+	outline: none;
+	width: min-content;
+	border-radius: 40px;
+	padding: 32px 110px 32px 44px;
+	background-color: var(--white);
+	border: 1px solid var(--gray-01);
+
+	position: relative;
+
+	cursor: pointer;
+	transition: .3s;
+
+	&:after {
+		content: '';
+
+		display: block;
+		width: 27px;
+		height: 54px;
+		background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzciIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAzNyA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgNUwzMiAzMkw1IDU5IiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+
+		position: absolute;
+		top: 50%;
+		right: 44px;
+		transform: translateY(-50%);
+
+		transition: .3s;
+	}
+
+	&:hover {
+		box-shadow: var(--main-shadow);
+
+		&:after {
+			right: 32px;
+		}
+	}
+
+	&--red {
+		color: var(--white);
+		background-color: var(--red);
+
+		&:after {
+			background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMjIiIHZpZXdCb3g9IjAgMCAxMyAyMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIuMTc1NzggMS44MDQzMUwxMS4yMzA0IDEwLjg1OUwyLjE3NTc4IDE5LjkxMzYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMy4zNTM1NyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=")
+
+		}
+	}
+
+	&--stretch {
+		width: auto;
+	}
+
+	&--m {
+		font-size: var(--font-size-m);
+		border-radius: 24px;
+	}
+}
+
 button.btn-ctrl {
 	--size: 74px;
 

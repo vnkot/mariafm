@@ -18,11 +18,17 @@
 
 	&__bottom-body {
 		padding: 75px 0;
-		position: relative;
+		display: flex;
+		align-items: flex-end;
+		gap: 24px;
+
+		@include mediaScreenXL {
+			align-items: flex-start;
+		}
 	}
 
 	&__benefits {
-		max-width: 700px;
+		flex: 1 1 0;
 
 		display: flex;
 		flex-direction: column;
@@ -30,15 +36,12 @@
 	}
 
 	&__banner {
-		aspect-ratio: 1.2 / 1; // TODO: исправить на миксин. ОБЯЗАТЕЛЬНО
-		background-size: cover;
-		background-repeat: no-repeat;
+		margin-top: -160px;
+		flex: 1.2 1 0;
 
-		width: 800px;
-
-		position: absolute;
-		right: 0;
-		bottom: 75px;
+		@include mediaScreenXL {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -64,6 +67,44 @@
 			width: 6px;
 			height: 100%;
 			background-color: var(--red);
+		}
+	}
+}
+
+.banner {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+
+	position: relative;
+
+	&__cover {
+		@include aspect-ratio(820, 678);
+
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	&__action-xl {
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: translateY(-70%);
+
+		&:hover {
+			top: -8px;
+			right: -8px;
+		}
+
+		@include mediaScreenXL {
+			display: none;
+		}
+	}
+	&__action-m {
+		display: none;
+
+		@include mediaScreenXL {
+			display: block;
 		}
 	}
 }

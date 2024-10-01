@@ -1,11 +1,11 @@
 @import '../utils/mixins';
 
 .shows {
+	padding: 16px 0;
 }
 
 .show-carousel {
 	position: relative;
-	padding: 24px 0;
 
 	&__body {
 		overflow: hidden;

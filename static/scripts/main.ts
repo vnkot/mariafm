@@ -16,4 +16,23 @@ new TeamCarousel({
     btnPrevId: 'team-btn-prev',
     carouselId: 'team-carousel'
 }).init()
-// new InteractiveMap('footer-map', [58.583945, 49.659408]).init();
+new InteractiveMap('footer-map', [58.583945, 49.659408]).init();
+
+// TODO: временная история
+const school = document.getElementById('school')!;
+const schoolContent = school.querySelector('.school__description')!;
+const schoolImage = school.querySelector('.school__image')! as HTMLElement;
+
+const onChangeImage = () => {
+    const totalWidth = school.getBoundingClientRect().width;
+    const contentCoord = schoolContent.getBoundingClientRect();
+
+    const newWidth = Math.min(totalWidth - contentCoord.right, 1040);
+    const newHeight = newWidth * (751.73 / 1276.32);
+
+    schoolImage.style.width = `${newWidth}px`;
+    schoolImage.style.height = `${newHeight}px`;
+}
+
+window.addEventListener('resize', onChangeImage);
+window.addEventListener('load', onChangeImage);

@@ -1,14 +1,19 @@
+@import "../utils/mixins";
+
 .school {
 	background-color: var(--black-01);
 	position: relative;
 
 	&__body {
-		padding: 56px 0;
+		padding-top: 54px;
+	}
+
+	&__content {
+		padding-right: 50vw;
 	}
 
 	&__text {
-		max-width: 650px;
-		margin: 64px 0 48px 0;
+		margin-bottom: 48px;
 
 		color: var(--white);
 		line-height: 1.2;
@@ -19,8 +24,14 @@
 		}
 	}
 
-	&__enroll {
+	&__content {
+		display: flex;
+	}
 
+	&__description {
+		padding: 54px 0;
+		align-self: center;
+		flex: 1 1 0;
 	}
 
 	&__image {
@@ -28,13 +39,7 @@
 		right: 0;
 		bottom: 0;
 
-		height: 600px;
-		aspect-ratio: 1.7 / 1; // TODO: да, да. Поменять
-
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
 }

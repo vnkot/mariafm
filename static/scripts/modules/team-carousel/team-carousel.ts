@@ -41,9 +41,21 @@ export class TeamCarousel {
         this.carousel = EmblaCarousel(this.carouselElement, OPTIONS);
     }
 
+    private checkScroll() {
+        const isScrollPrev = this.carousel.canScrollPrev();
+        const isScrollNext = this.carousel.canScrollNext();
+
+        this.btnPrevElement.disabled = !isScrollPrev;
+        this.btnNextElement.disabled = !isScrollNext;        
+    }
+
     private addEventListenerForCtrl() {
         this.btnPrevElement.addEventListener('click', () => this.carousel.scrollPrev());
         this.btnNextElement.addEventListener('click', () => this.carousel.scrollNext());
+
+        this.carousel.on('init', () => this.checkScroll());
+        this.carousel.on('scroll', () => this.checkScroll());
+        this.carousel.on('resize', () => this.checkScroll());
     }
 
     init() {

@@ -1,3 +1,5 @@
+@import "../../utils/mixins";
+
 .contact-radio {
 	background-color: var(--red);
 
@@ -6,7 +8,7 @@
 
 		display: flex;
 		align-items: center;
-		gap: 22px
+		gap: 22px;
 	}
 
 	&__soc-networks {
@@ -69,6 +71,10 @@
 
 		&:hover {
 			transform: scale(1.05);
+		}
+
+		@include mediaScreenXXL {
+			--size: 32px;
 		}
 	}
 }

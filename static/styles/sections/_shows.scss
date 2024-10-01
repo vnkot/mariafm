@@ -1,8 +1,11 @@
+@import '../utils/mixins';
+
 .shows {
 }
 
 .show-carousel {
 	position: relative;
+	padding: 24px 0;
 
 	&__body {
 		overflow: hidden;
@@ -13,8 +16,8 @@
 	}
 
 	&__slide {
+		flex: 0 0 1196px;
 		height: 713px;
-		aspect-ratio: 1.67 / 1;
 
 		padding: 0 20px;
 
@@ -25,6 +28,11 @@
 
 			border-radius: 54px;
 			overflow: hidden;
+		}
+
+		@include mediaScreenXL {
+			flex: 0 0 900px;
+			height: 538px;
 		}
 	}
 
@@ -41,6 +49,10 @@
 
 		display: flex;
 		justify-content: space-between;
+
+		@include mediaScreenXL {
+			max-width: 1080px;
+		}
 	}
 
 	&__indicators {
@@ -49,6 +61,10 @@
 
 		width: min-content;
 		margin: 40px auto 0 auto;
+
+		@include mediaScreenXL {
+			margin-top: 24px;
+		}
 	}
 
 	&__indicator {
@@ -64,6 +80,10 @@
 
 		&--active {
 			background-color: var(--gray-02);
+		}
+
+		@include mediaScreenXL {
+			--size: 16px;
 		}
 	}
 }

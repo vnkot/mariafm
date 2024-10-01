@@ -3,43 +3,41 @@
 <section class="about" id="about">
     <div class="container">
         <div class="about__body">
+            <h2 class="title title--red title--uppercase about__title">О радио</h2>
+
             <div class="about__content">
-                <h2 class="title title--red title--uppercase">О радио</h2>
-
-                <div class="about__text-wrapper">
-                    <div class="about__text">
-                        <p>Мария FM – радиостанция с собственным вещанием в Кирове и области.</p>
-                        <p>Только полезный и интересный контент города и области:</p>
-                    </div>
-
-                    <div class="about__text about__text--rows">
-                        <p>достоверные новости каждые 15 минут</p>
-                        <p>ежедневные розыгрыши призов и подарков</p>
-                        <p>музыка, которую выбирают сами слушатели</p>
-                    </div>
+                <div class="about__text">
+                    <p>Мария FM – радиостанция с собственным вещанием в Кирове и области.</p>
+                    <p>Только полезный и интересный контент города и области:</p>
                 </div>
 
-                <ul class="about__info-list">
-                   <li class="about__info-item info">
-                       <p class="info__value">50+</p>
-                       <p class="info__name">рекламных форматов</p>
-                   </li>
-
-                    <li class="about__info-item info">
-                       <p class="info__value">>2 000 000</p>
-                       <p class="info__name">потенциальных слушателей в зоне вещания</p>
-                   </li>
-
-                    <li class="about__info-item info">
-                       <p class="info__value">>30</p>
-                       <p class="info__name">лет разгоняем обороты продаж</p>
-                   </li>
-                </ul>
+                <div class="about__text about__text--rows">
+                    <p>достоверные новости каждые 15 минут</p>
+                    <p>ежедневные розыгрыши призов и подарков</p>
+                    <p>музыка, которую выбирают сами слушатели</p>
+                </div>
             </div>
 
+            <ul class="about__badges">
+                <li class="about__badge badge">
+                    <p class="badge__value">50+</p>
+                    <p class="badge__name">рекламных форматов</p>
+                </li>
+
+                <li class="about__badge badge">
+                    <p class="badge__value">>2 000 000</p>
+                    <p class="badge__name">потенциальных слушателей в зоне вещания</p>
+                </li>
+
+                <li class="about__badge badge">
+                    <p class="badge__value">>30</p>
+                    <p class="badge__name">лет разгоняем обороты продаж</p>
+                </li>
+            </ul>
+
             <div
-                class="about__map"
-                style="background-image: url('{% vite_asset_url 'images/about/map.png' %}');"
+                    class="about__map"
+                    style="background-image: url('{% vite_asset_url 'images/about/map.png' %}');"
             >
             </div>
         </div>

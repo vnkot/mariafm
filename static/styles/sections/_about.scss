@@ -1,26 +1,50 @@
 @import "../utils/mixins";
 
 .about {
+	padding: 24px 0;
+
 	&__body {
-		display: flex;
-		padding: 53px 0 28px 0;
+		display: grid;
+		row-gap: 32px;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas:
+			"title map"
+			"content map"
+			"badges map"
+			". map";
+
+		@include mediaScreenXXL {
+			grid-template-areas:
+				"title title"
+				"content map"
+				"badges map"
+				". map";
+		}
+
+		@include mediaScreenLG {
+			grid-template-columns: 1fr 1.3fr;
+		}
+
+		@include mediaScreenM {
+			grid-template-columns: 1fr 2fr;
+			grid-template-areas:
+				"title map"
+				"content map"
+				"badges map"
+				". map";
+		}
+	}
+
+	&__title {
+		grid-area: title;
 	}
 
 	&__content {
+		grid-area: content;
+
 		display: flex;
 		flex-direction: column;
 		gap: 50px;
-
-		max-width: 700px;
-
-		position: relative;
-		z-index: 2;
-	}
-
-	&__text-wrapper {
-		display: flex;
-		flex-direction: column;
-		gap: 90px;
 	}
 
 	&__text {
@@ -39,27 +63,37 @@
 		}
 	}
 
-	&__info-list {
+	&__badges {
+		grid-area: badges;
+
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
 	}
 
 	&__map {
-		flex: 1 1 0;
-		@include aspect-ratio(915, 1200);
+		grid-area: map;
 
-		background-size: contain;
+		@include aspect-ratio(915, 1200);
+		background-size: cover;
 		background-repeat: no-repeat;
 	}
 }
 
-.info {
+.badge {
 	color: var(--black);
 
 	&__value {
 		font-size: var(--font-size-xl);
 		font-weight: var(--font-weight-xxl);
+
+		@include mediaScreenLG {
+			font-size: var(--font-size-lg);
+		}
+
+		@include mediaScreenM {
+			font-size: var(--font-size-m);
+		}
 	}
 
 	&__name {

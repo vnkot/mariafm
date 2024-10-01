@@ -1,16 +1,34 @@
+@mixin mediaScreenXXL() {
+	@media (max-width: 1512px) {
+		@content
+	}
+}
+
+@mixin mediaScreenXL() {
+	@media (max-width: 1440px) {
+		@content
+	}
+}
+
 @mixin mediaScreenLG() {
-	@media (max-width: 1200px) {
+	@media (max-width: 1296px) {
 		@content
 	}
 }
 
 @mixin mediaScreenM() {
-	@media (max-width: 834px) {
+	@media (max-width: 1200px) {
 		@content
 	}
 }
 
 @mixin mediaScreenS() {
+	@media (max-width: 834px) {
+		@content
+	}
+}
+
+@mixin mediaScreenXS() {
 	@media (max-width: 390px) {
 		@content
 	}
@@ -23,5 +41,5 @@ https://css-tricks.com/aspect-ratio-boxes/
 @mixin aspect-ratio($width, $height) {
 	height: 0;
 	overflow: hidden;
-	padding-top: calc(($width / $height) * 100%);
+	padding-top: calc(($height / $width) * 100%);
 }

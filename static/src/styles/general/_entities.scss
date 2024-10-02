@@ -136,6 +136,8 @@ h2.title {
 
 button.btn-ctrl {
 	--size: 74px;
+	--width-icon: 14px;
+	--height-icon: 30px;
 
 	outline: none;
 	border: none;
@@ -153,8 +155,8 @@ button.btn-ctrl {
 	transition: .02s;
 
 	img {
-		width: 14px;
-		height: 30px;
+		width: var(--width-icon);
+		height: var(--height-icon);
 
 		object-fit: contain;
 		object-position: center;
@@ -162,6 +164,12 @@ button.btn-ctrl {
 
 	&[disabled] {
 		display: none;
+	}
+
+	@include mediaScreenXS {
+		--size: 32px;
+		--width-icon: 6px;
+		--height-icon: 12px;
 	}
 }
 

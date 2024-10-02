@@ -23,13 +23,13 @@
 }
 
 @mixin mediaScreenS() {
-	@media (max-width: 834px) {
+	@media (max-width: 900px) {
 		@content
 	}
 }
 
 @mixin mediaScreenXS() {
-	@media (max-width: 428px) {
+	@media (max-width: 526px) {
 		@content
 	}
 }

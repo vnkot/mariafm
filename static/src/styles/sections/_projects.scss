@@ -5,7 +5,11 @@
 		display: flex;
 		flex-direction: column;
 		gap: 60px;
-		padding: 60px 0;
+		padding: 62px 0;
+
+		@include mediaScreenM {
+			padding: 32px 0;
+		}
 
 		@include mediaScreenS {
 			gap: 48px;
@@ -13,7 +17,6 @@
 
 		@include mediaScreenXS {
 			gap: 26px;
-			padding: 32px 0;
 		}
 	}
 
@@ -41,6 +44,7 @@
 		min-width: 369px;
 
 		@include mediaScreenS {
+			min-width: 0;
 			max-width: 100%;
 			margin-bottom: 24px;
 		}

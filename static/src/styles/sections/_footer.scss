@@ -1,20 +1,42 @@
+@import "../utils/mixins";
+
 .footer {
 	&__body {
-		padding: 64px 0;
+		padding: 62px 0;
 
-		display: flex;
-		gap: 24px;
-	}
+		display: grid;
+		grid-template-areas:
+			"logo map"
+			"contacts map"
+			"basement map";
+		grid-template-columns: 1fr 1.1fr;
+		gap: 32px;
 
-	&__content {
-		flex: 1 1 0;
+		@include mediaScreenM {
+			grid-template-areas:
+				"logo ."
+				"contacts map"
+				"basement basement";
+			grid-template-columns: 1fr 1.3fr;
+		}
 
-		display: flex;
-		flex-direction: column;
-		gap: 32px
+		@include mediaScreenS {
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"logo"
+				"map"
+				"contacts"
+				"basement";
+		}
+
+		@include mediaScreenM {
+			padding: 32px 0;
+		}
 	}
 
 	&__logo {
+		grid-area: logo;
+
 		width: 400px;
 		height: 69px;
 
@@ -24,24 +46,33 @@
 			object-fit: cover;
 			object-position: center;
 		}
+
+		@include mediaScreenS {
+			width: 280px;
+			height: 48px;
+		}
 	}
 
 	&__contacts {
-		flex: 1 1 0;
+		grid-area: contacts;
 	}
 
-	&__bottom {
+	&__basement {
+		grid-area: basement;
+
+		line-height: 1.2;
 		color: var(--gray);
 		font-size: var(--font-size-01);
-		line-height: 1.2;
+
+		@include mediaScreenXS {
+			font-size: var(--font-size);
+		}
 	}
 
 	&__map {
-		flex: 1 1 0;
-		max-width: 818px;
+		grid-area: map;
+
 		border-radius: 8px;
-		overflow: hidden;
-		aspect-ratio: 1.27 / 1; // TODO: здесь должен быть миксин!
 
 		filter: grayscale(100%);
 
@@ -50,6 +81,14 @@
 
 		&:hover {
 			filter: grayscale(0);
+		}
+
+		@include mediaScreenS {
+			@include aspect-ratio(16, 9);
+		}
+
+		@include mediaScreenXS {
+			@include aspect-ratio(12, 9);
 		}
 	}
 }
@@ -62,6 +101,14 @@
 		display: flex;
 		flex-direction: column;
 		gap: 40px;
+
+		@include mediaScreenXS {
+			gap: 24px
+		}
+	}
+
+	@include mediaScreenXS {
+		gap: 32px
 	}
 }
 
@@ -85,5 +132,9 @@
 		&:hover {
 			opacity: .7;
 		}
+	}
+
+	@include mediaScreenXS {
+		font-size: var(--font-size);
 	}
 }

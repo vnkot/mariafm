@@ -29,7 +29,7 @@
 }
 
 @mixin mediaScreenXS() {
-	@media (max-width: 390px) {
+	@media (max-width: 428px) {
 		@content
 	}
 }

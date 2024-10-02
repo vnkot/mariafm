@@ -1,9 +1,20 @@
+@import "../utils/mixins";
+
 .projects {
 	&__body {
 		display: flex;
 		flex-direction: column;
 		gap: 60px;
 		padding: 60px 0;
+
+		@include mediaScreenS {
+			gap: 48px;
+		}
+
+		@include mediaScreenXS {
+			gap: 26px;
+			padding: 32px 0;
+		}
 	}
 
 	&__list {
@@ -17,40 +28,77 @@
 
 .project {
 	display: flex;
-	align-items: stretch;
-	gap: 44px;
+	align-items: flex-start;
+	column-gap: 40px;
+
+ 	@include mediaScreenS {
+		display: block;
+		align-items: unset;
+	}
 
 	&__cover {
 		flex: 1 1 0;
-		max-width: 593px;
-		border-radius: 26px;
-		overflow: hidden;
+		min-width: 369px;
 
-		img {
-			width: 100%;
-			aspect-ratio: 1.7 / 1; // TODO: ИЗМЕНИТЬ НА МИКСИН ASPECT-RATIO
-			object-fit: cover;
-			object-position: center;
+		@include mediaScreenS {
+			max-width: 100%;
+			margin-bottom: 24px;
+		}
+	}
+
+	&__img {
+		border-radius: 26px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		@include aspect-ratio(593, 353);
+
+		@include mediaScreenXS {
+			border-radius: 16px;
 		}
 	}
 
 	&__body {
-		flex: 1 1 0;
+		flex: 1.5 1 0;
 
 		display: flex;
 		flex-direction: column;
-		gap: 55px;
+		gap: 16px;
+
+		@include mediaScreenS {
+			padding: 0 16px;
+		}
+
+		@include mediaScreenXS {
+			gap: 14px;
+			padding: 0 8px;
+		}
 	}
 
 	&__name {
 		color: var(--black);
-		font-size: var(--font-size-lg);
+		font-size: var(--font-size-05);
 		font-weight: var(--font-weight-xxxl);
+
+		@include mediaScreenM {
+			font-size: var(--font-size-04);
+		}
+
+		@include mediaScreenXS {
+			font-size: var(--font-size-02);
+		}
 	}
 
 	&__description {
 		color: var(--black);
 		line-height: 1.1;
-		font-size: var(--font-size-m);
+		font-size: var(--font-size-03);
+
+		@include mediaScreenM {
+			font-size: var(--font-size-02);
+		}
+
+		@include mediaScreenXS {
+			font-size: var(--font-size-01);
+		}
 	}
 }

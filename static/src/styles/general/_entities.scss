@@ -1,7 +1,7 @@
 @import "../utils/mixins";
 
 h2.title {
-	font-size: var(--font-size-xxl);
+	font-size: var(--font-size-07);
 	font-weight: var(--font-weight-xxl);
 
 	&--red {
@@ -13,7 +13,7 @@ h2.title {
 	}
 
 	&--s {
-		font-size: var(--font-size-xl);
+		font-size: var(--font-size-06);
 	}
 
 	&--uppercase {
@@ -25,19 +25,15 @@ h2.title {
 	}
 
 	@include mediaScreenM {
-		font-size: var(--font-size-lg);
-
-		&--s {
-			font-size: var(--font-size-lg);
-		}
+		font-size: var(--font-size-06);
 	}
 
 	@include mediaScreenS {
-		font-size: var(--font-size-m);
+		font-size: var(--font-size-05);
+	}
 
-		&--s {
-			font-size: var(--font-size-s);
-		}
+	@include mediaScreenXS {
+		font-size: var(--font-size-04);
 	}
 }
 
@@ -45,7 +41,7 @@ h2.title {
 	color: #fff;
 	line-height: 1;
 	text-decoration: none;
-	font-size: var(--font-size-m);
+	font-size: var(--font-size-03);
 
 	border: none;
 	outline: none;
@@ -62,7 +58,7 @@ h2.title {
 	}
 
 	&--s {
-		font-size: var(--font-size-xs);
+		font-size: var(--font-size-01);
 		padding: 16px 26px;
 		border-radius: 40px;
 	}
@@ -74,7 +70,7 @@ h2.title {
 	line-height: 1;
 	text-align: left;
 	text-transform: uppercase;
-	font-size: var(--font-size-lg);
+	font-size: var(--font-size-05);
 	font-weight: var(--font-weight-xxxl);
 	text-decoration: none;
 	color: var(--black);
@@ -133,7 +129,7 @@ h2.title {
 	}
 
 	&--m {
-		font-size: var(--font-size-m);
+		font-size: var(--font-size-03);
 		border-radius: 24px;
 	}
 }

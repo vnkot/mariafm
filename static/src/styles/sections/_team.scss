@@ -69,7 +69,7 @@
 	&__name {
 		color: var(--black);
 		font-weight: var(--font-weight-xxl);
-		font-size: calc(var(--font-size-m) + 10px);
+		font-size: calc(var(--font-size-03) + 10px);
 		white-space: nowrap;
 
 		margin-top: 28px;
@@ -78,7 +78,7 @@
 
 	&__describe {
 		color: var(--black);
-		font-size: var(--font-size-m);
+		font-size: var(--font-size-03);
 		font-weight: var(--font-weight-xl);
 		line-height: 1.2;
 	}

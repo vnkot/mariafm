@@ -27,7 +27,7 @@
 
 	&__radio-wave {
 		color: var(--red);
-		font-size: var(--font-size-xs);
+		font-size: var(--font-size-01);
 		font-weight: var(--font-weight-xl);
 
 		@include mediaScreenXXL {
@@ -86,7 +86,7 @@
 		a {
 			color: var(--black);
 			text-decoration: none;
-			font-size: var(--font-size-xs);
+			font-size: var(--font-size-01);
 			font-weight: var(--font-weight-lg);
 
 			position: relative;

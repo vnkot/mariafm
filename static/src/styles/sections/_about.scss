@@ -54,7 +54,7 @@
 
 		p {
 			color: var(--black);
-			font-size: var(--font-size-s);
+			font-size: var(--font-size-02);
 			line-height: 26px;
 		}
 
@@ -84,19 +84,19 @@
 	color: var(--black);
 
 	&__value {
-		font-size: var(--font-size-xl);
+		font-size: var(--font-size-06);
 		font-weight: var(--font-weight-xxl);
 
 		@include mediaScreenLG {
-			font-size: var(--font-size-lg);
+			font-size: var(--font-size-05);
 		}
 
 		@include mediaScreenM {
-			font-size: var(--font-size-m);
+			font-size: var(--font-size-03);
 		}
 	}
 
 	&__name {
-		font-size: var(--font-size-m);
+		font-size: var(--font-size-03);
 	}
 }

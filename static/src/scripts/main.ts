@@ -36,3 +36,28 @@ const onChangeImage = () => {
 
 window.addEventListener('resize', onChangeImage);
 window.addEventListener('load', onChangeImage);
+
+// радота с хедером
+const headerConstrol = () => {
+    const mainHeader = document.querySelector('.header-nav')!;
+    const header = document.getElementById('header')!;
+    const headerChildren = [...header.children];
+
+    const maxWidth = header.getBoundingClientRect().width;
+    const occupiedWidth = headerChildren.reduce((acc, element) => {
+        return acc + element.getBoundingClientRect().width;
+    }, 0)
+
+    if (window.screen.width < 1296) {
+        if (maxWidth - occupiedWidth < 100) {
+            mainHeader.classList.add('header-nav--mobile')
+        } else {
+            mainHeader.classList.remove('header-nav--mobile')
+        }
+    } else {
+        mainHeader.classList.remove('header-nav--mobile')
+    }
+}
+
+window.addEventListener('load', headerConstrol)
+window.addEventListener('resize', headerConstrol)

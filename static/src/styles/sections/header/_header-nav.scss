@@ -51,6 +51,22 @@
 			display: none;
 		}
 	}
+
+	&__burger {
+		display: none;
+	}
+}
+
+.header-nav.header-nav--mobile .header-nav__body {
+	justify-content: space-between;
+}
+
+.header-nav.header-nav--mobile .header-nav__middle {
+	display: none;
+}
+
+.header-nav.header-nav--mobile .header-nav__burger {
+	display: block;
 }
 
 .logo {
@@ -110,6 +126,23 @@
 			&:after {
 				width: 100%;
 			}
+		}
+	}
+}
+
+.burger {
+	cursor: pointer;
+	padding: 10px;
+
+	&__bar {
+		display: block;
+		width: 33px;
+		height: 4.5px;
+		border-radius: 5px;
+		background-color: var(--gray-01);
+
+		& + & {
+			margin-top: 8px;
 		}
 	}
 }

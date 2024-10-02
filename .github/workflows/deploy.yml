@@ -24,8 +24,8 @@ jobs:
             git pull
 
             # server
-            echo "SECRET= ${{ secrets.SECRET }}" > .env.local
-            echo "HOST= ${{ secrets.HOST }}" >> .env.local
+            echo "SECRET= ${{ secrets.SECRET }}" > .env
+            echo "HOST= ${{ secrets.HOST }}" >> .env
 
             make build-prod
             make up-prod

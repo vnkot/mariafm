@@ -13,7 +13,11 @@
 
 		display: flex;
 		flex-direction: column;
-		gap: 63px;
+		gap: 130px;
+
+		@include mediaScreenLG {
+			gap: 60px;
+		}
 	}
 
 	&__bottom-body {
@@ -37,9 +41,13 @@
 
 	&__banner {
 		margin-top: -160px;
-		flex: 1.2 1 0;
+		width: 800px;
 
 		@include mediaScreenXL {
+			width: 600px;
+		}
+
+		@include mediaScreenLG {
 			margin-top: 0;
 		}
 	}
@@ -85,7 +93,7 @@
 		background-repeat: no-repeat;
 	}
 
-	&__action-xl {
+	&__action {
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -96,15 +104,10 @@
 			right: -8px;
 		}
 
-		@include mediaScreenXL {
-			display: none;
-		}
-	}
-	&__action-m {
-		display: none;
-
-		@include mediaScreenXL {
-			display: block;
+		@include mediaScreenLG {
+			position: static;
+			transform: translateY(0);
+			width: auto;
 		}
 	}
 }

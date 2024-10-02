@@ -4,7 +4,7 @@ services:
   static:
     build:
       context: .
-      dockerfile: services/static/Dockerfile.dev
+      dockerfile: services/static/Dockerfile.prod
     volumes:
       - ./static:/app/static
     ports:
@@ -14,9 +14,29 @@ services:
   web:
     build:
       context: .
-      dockerfile: services/web/Dockerfile.dev
+      dockerfile: services/web/Dockerfile.prod
     volumes:
       - .:/app
     ports:
       - "8000:8000"
+    depends_on:
+      - static
     restart: always
+
+  proxy:
+    image: caddy
+    volumes:
+      - ./services/proxy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    depends_on:
+      - web
+    restart: always
+
+volumes:
+  caddy_data:
+  caddy_config:

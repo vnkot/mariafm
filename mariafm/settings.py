@@ -28,7 +28,7 @@ PROJECT_PATH = os.path.join(BASE_DIR, 'mariafm')
 SECRET_KEY = config('SECRET', default='django-insecure-&%8vqyzb2w9&0d+80rx80)736v@1@4+o(jsiovb51mrk%wsri0', cast=str)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 

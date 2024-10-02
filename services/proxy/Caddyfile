@@ -2,6 +2,6 @@ vnkot.ru {
     reverse_proxy 62.113.111.188:8000
 }
 
-vnkot.ru:5173 {
+static.vnkot.ru {
     reverse_proxy 62.113.111.188:5173
 }

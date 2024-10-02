@@ -1,4 +1,4 @@
-# Работа с докером
+# Работа с докером (дев)
 build-dev:
 	docker-compose -f docker-compose.dev.yaml build
 up-dev:
@@ -10,3 +10,11 @@ down-dev:
 install:
 	poetry install
 	npm install
+
+# Работа с докером (прод)
+build-prod:
+	docker-compose -f docker-compose.prod.yaml build
+up-prod:
+	docker-compose -f docker-compose.prod.yaml up -d
+down-prod:
+	docker-compose -f docker-compose.prod.yaml down

@@ -1,6 +1,6 @@
 @import url('../fonts/style.css');
 
-@import "./general/main";
+@import "general/main";
 
 html {
 	scroll-behavior: smooth;
@@ -11,4 +11,4 @@ html {
 	position: relative;
 }
 
-@import "./sections/main";
+@import "sections/main";

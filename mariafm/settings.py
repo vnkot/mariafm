@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 import os
+from email.policy import default
 from pathlib import Path
+from decouple import config, Csv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,10 +25,10 @@ PROJECT_PATH = os.path.join(BASE_DIR, 'mariafm')
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&%8vqyzb2w9&0d+80rx80)736v@1@4+o(jsiovb51mrk%wsri0'
+SECRET_KEY = config('SECRET', default='django-insecure-&%8vqyzb2w9&0d+80rx80)736v@1@4+o(jsiovb51mrk%wsri0', cast=str)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 

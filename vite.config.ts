@@ -2,7 +2,7 @@ import {resolve} from 'path';
 
 module.exports = {
   plugins: [],
-  root: resolve('./static'),
+  root: resolve('./static/src'),
   base: '/static/',
   server: {
     host: 'localhost',
@@ -19,12 +19,12 @@ module.exports = {
   build: {
     outDir: resolve('./static/dist'),
     assetsDir: '',
-    manifest: true,
+    manifest: 'manifest.json',
     emptyOutDir: true,
     target: 'es2015',
     rollupOptions: {
       input: {
-        main: resolve('./static/scripts/main.ts'),
+        main: resolve('./static/src/scripts/main.ts'),
       },
       output: {
         chunkFileNames: undefined,

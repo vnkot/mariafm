@@ -1,7 +1,7 @@
 import 'vite/modulepreload-polyfill';
 import {AudioPlayer} from './modules/audio-player.ts';
-import {ShowCarousel} from './modules/show-carousel/index.ts';
-import {TeamCarousel} from './modules/team-carousel/index.ts';
+import {ShowCarousel} from './modules/show-carousel/show-carousel.ts';
+import {TeamCarousel} from './modules/team-carousel/team-carousel.ts';
 import {InteractiveMap} from './modules/interactive-map.ts';
 
 new AudioPlayer('radio', 'radio--active').init();

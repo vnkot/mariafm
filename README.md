@@ -29,5 +29,16 @@ python manage.py runserver
 npm run dev
 ```
 
+### Продакшен
+Запуск:
+```shell
+sudo make build-prod
+sudo make up-prod
+```
+Остановка:
+```shell
+sudo make down-prod
+```
+
 ## Полезные ссылки
 1. [Подключение ViteJs](https://github.com/MrBin99/django-vite?tab=readme-ov-file)

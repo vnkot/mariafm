@@ -25,6 +25,7 @@ jobs:
 
             # server
             echo "SECRET= ${{ secrets.SECRET }}" > .env.local
+            echo "SECRET= ${{ secrets.HOST }}" >> .env.local
 
             make build-prod
             make up-prod

@@ -61,3 +61,10 @@ const headerConstrol = () => {
 
 window.addEventListener('load', headerConstrol)
 window.addEventListener('resize', headerConstrol)
+
+// плавное появление сайта
+const wrapper = document.querySelector('.wrapper')!;
+
+window.addEventListener('load', () => {
+    wrapper.classList.add('wrapper--visible')
+})

@@ -1,11 +1,12 @@
 {% load django_vite %}
+{% load static %}
 
 <section class="header-nav">
     <div class="container-header">
         <div class="header-nav__body" id="header">
             <div class="header-nav__left">
                 <div class="logo">
-                    <img src="{% vite_asset_url 'icons/general/logo.svg' %}"/>
+                    <img src="{% static 'icons/general/logo.svg' %}"/>
                 </div>
 
                 <p class="header-nav__radio-wave">102.9 FM</p>

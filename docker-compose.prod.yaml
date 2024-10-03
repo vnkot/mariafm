@@ -5,16 +5,14 @@ services:
     build:
       context: .
       dockerfile: services/static/Dockerfile.prod
-    volumes:
-      - ./static:/app/static
-    ports:
-      - "5173:5173"
     restart: always
 
   web:
     build:
       context: .
       dockerfile: services/web/Dockerfile.prod
+    environment:
+      - DEBUG=false
     volumes:
       - .:/app
     ports:

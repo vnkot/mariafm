@@ -1,4 +1,5 @@
 {% load django_vite %}
+{% load static %}
 
 <section class="contact-radio">
     <div class="container-header">
@@ -6,13 +7,13 @@
             <ul class="contact-radio__soc-networks soc-networks">
                 <li class="soc-networks__item" title="Написать в Whatsapp">
                     <a href="https://wa.me/79128271029">
-                        <img src="{% vite_asset_url 'icons/soc-network/whatsapp.png' %}"/>
+                        <img src="{% static 'icons/soc-network/whatsapp.png' %}"/>
                     </a>
                 </li>
 
                 <li class="soc-networks__item" title="Написать в Telegram">
                     <a href="https://t.me/+79128271029">
-                        <img src="{% vite_asset_url 'icons/soc-network/telegram.png' %}"/>
+                        <img src="{% static 'icons/soc-network/telegram.png' %}"/>
                     </a>
                 </li>
             </ul>
@@ -26,10 +27,10 @@
                 
                 <div class="radio__ctrl">
                     <div class="radio__play">
-                        <img src="{% vite_asset_url 'icons/player/play.png' %}"/>
+                        <img src="{% static 'icons/player/play.png' %}"/>
                     </div>
                     <div class="radio__pause">
-                        <img src="{% vite_asset_url 'icons/player/pause.png' %}"/>
+                        <img src="{% static 'icons/player/pause.png' %}"/>
                     </div>
                 </div>
                 

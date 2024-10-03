@@ -1,4 +1,5 @@
 {% load django_vite %}
+{% load static %}
 
 <section class="efficiency" id="efficiency">
     <div class="efficiency__top">
@@ -51,7 +52,7 @@
 
                     <div
                             class="banner__cover"
-                            style="background-image: url('{% vite_asset_url 'images/efficiency/ad-banner.png' %}');"
+                            style="background-image: url('{% static 'images/efficiency/ad-banner.png' %}');"
                     >
                     </div>
                 </div>

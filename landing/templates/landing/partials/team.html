@@ -1,4 +1,5 @@
 {% load django_vite %}
+{% load static %}
 
 <section class="team" id="team">
     <div class="container">
@@ -12,7 +13,7 @@
                     <ul class="team-carousel__container">
                         <li class="team-carousel__slide people">
                             <div class="people__avatar">
-                                <img src="{% vite_asset_url 'images/team/mikhail-annenkov.png' %}" />
+                                <img src="{% static 'images/team/mikhail-annenkov.png' %}" />
                             </div>
                             <p class="people__name">Михаил Анненков</p>
                             <p class="people__describe">
@@ -22,7 +23,7 @@
         
                         <li class="team-carousel__slide people">
                             <div class="people__avatar">
-                                <img src="{% vite_asset_url 'images/team/vlad-smirnov.png' %}" />
+                                <img src="{% static 'images/team/vlad-smirnov.png' %}" />
                             </div>
                             <p class="people__name">Влад Смирнов</p>
                             <p class="people__describe">
@@ -32,7 +33,7 @@
         
                         <li class="team-carousel__slide people">
                             <div class="people__avatar">
-                                <img src="{% vite_asset_url 'images/team/alexey-batalov.png' %}" />
+                                <img src="{% static 'images/team/alexey-batalov.png' %}" />
                             </div>
                             <p class="people__name">Алексей Баталов</p>
                             <p class="people__describe">
@@ -43,10 +44,10 @@
                 </div>
 
                 <button class="team-carousel__btn-prev btn-ctrl btn-ctrl--prev" id="team-btn-prev">
-                    <img src="{% vite_asset_url 'icons/ctrl/arrow-left.png' %}">
+                    <img src="{% static 'icons/ctrl/arrow-left.png' %}">
                 </button>
                 <button class="team-carousel__btn-next btn-ctrl btn-ctrl--next" id="team-btn-next">
-                    <img src="{% vite_asset_url 'icons/ctrl/arrow-right.png' %}">
+                    <img src="{% static 'icons/ctrl/arrow-right.png' %}">
                 </button>
             </div>
         </div>

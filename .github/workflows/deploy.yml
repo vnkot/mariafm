@@ -25,9 +25,6 @@ jobs:
 
             # server
             echo "SECRET= ${{ secrets.SECRET }}" > .env
-            echo "HOST= ${{ secrets.HOST }}" >> .env
-            echo "PORT= ${{ secrets.PORT }}" >> .env
-            echo "PROTOCOL= ${{ secrets.PROTOCOL }}" >> .env
 
             make build-prod
             make up-prod

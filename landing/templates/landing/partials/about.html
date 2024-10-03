@@ -1,4 +1,5 @@
 {% load django_vite %}
+{% load static %}
 
 <section class="about" id="about">
     <div class="container">
@@ -45,7 +46,7 @@
 
             <div
                     class="about__map"
-                    style="background-image: url('{% vite_asset_url 'images/about/map.png' %}');"
+                    style="background-image: url('{% static 'images/about/map.png' %}');"
             >
             </div>
         </div>

@@ -28,7 +28,7 @@ PROJECT_PATH = os.path.join(BASE_DIR, 'mariafm')
 SECRET_KEY = config('SECRET', default='django-insecure-&%8vqyzb2w9&0d+80rx80)736v@1@4+o(jsiovb51mrk%wsri0', cast=str)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -123,21 +124,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Where ViteJS assets are built.
-DJANGO_VITE_ASSETS_PATH = BASE_DIR / "static" / "dist"
-
-# If use HMR or not.
 DJANGO_VITE_DEV_MODE = DEBUG
-DJANGO_VITE_DEV_SERVER_PORT = config('PORT', default=5173, cast=int)
-DJANGO_VITE_DEV_SERVER_HOST = config('HOST', default='localhost', cast=str)
-DJANGO_VITE_DEV_SERVER_PROTOCOL = config('PROTOCOL', default='http', cast=str)
 
 # Name of static files folder (after called python manage.py collectstatic)
 STATIC_ROOT = BASE_DIR / "collectedstatic"
 
 # Include DJANGO_VITE_ASSETS_PATH into STATICFILES_DIRS to be copied inside
 # when run command python manage.py collectstatic
-STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH]
+STATICFILES_DIRS = [BASE_DIR / "static" / "dist", BASE_DIR / "resources"]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
 # Default primary key field type

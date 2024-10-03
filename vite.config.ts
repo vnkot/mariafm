@@ -25,6 +25,7 @@ module.exports = {
     rollupOptions: {
       input: {
         main: resolve('./static/src/scripts/main.ts'),
+        styles: resolve('./static/src/styles/style.scss'),
       },
       output: {
         chunkFileNames: undefined,

@@ -8,9 +8,6 @@
 В корне проекта должен быть `.env` файл:
 ```shell
 SECRET=<your random key>
-HOST=localhost
-PORT=5173
-PROTOCOL=http
 ```
 
 ### Для разработки (через докер)

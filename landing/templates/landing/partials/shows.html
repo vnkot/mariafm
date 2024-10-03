@@ -1,33 +1,34 @@
 {% load django_vite %}
+{% load static %}
 
 <section class="shows" id="shows">
     <div class="shows__carousel show-carousel">
         <div class="show-carousel__body" id="show-carousel">
             <ul class="show-carousel__container">
                 <li class="show-carousel__slide">
-                    <img src="{% vite_asset_url 'images/shows/evening-channel.png' %}">
+                    <img src="{% static 'images/shows/evening-channel.png' %}">
                 </li>
 
                 <li class="show-carousel__slide">
-                    <img src="{% vite_asset_url 'images/shows/very-first.png' %}">
+                    <img src="{% static 'images/shows/very-first.png' %}">
                 </li>
 
                 <li class="show-carousel__slide">
-                    <img src="{% vite_asset_url 'images/shows/friday-warm-up.png' %}">
+                    <img src="{% static 'images/shows/friday-warm-up.png' %}">
                 </li>
 
                 <li class="show-carousel__slide">
-                    <img src="{% vite_asset_url 'images/shows/cover-show.png' %}">
+                    <img src="{% static 'images/shows/cover-show.png' %}">
                 </li>
             </ul>
         </div>
 
         <div class="show-carousel__ctrl" id="show-carousel-ctrl">
             <button class="btn-ctrl btn-ctrl--prev">
-                <img src="{% vite_asset_url 'icons/ctrl/arrow-left.png' %}" alt="">
+                <img src="{% static 'icons/ctrl/arrow-left.png' %}" alt="">
             </button>
             <button class="btn-ctrl btn-ctrl--next">
-                <img src="{% vite_asset_url 'icons/ctrl/arrow-right.png' %}" alt="">
+                <img src="{% static 'icons/ctrl/arrow-right.png' %}" alt="">
             </button>
         </div>
 

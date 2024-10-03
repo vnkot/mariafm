@@ -12,7 +12,7 @@
 			padding: 32px 0;
 		}
 
-		@include mediaScreenXS {
+		@include mediaScreenS {
 			gap: 26px;
 		}
 	}
@@ -30,11 +30,19 @@
 	&__container {
 		display: flex;
 		align-items: flex-start;
-		margin: 0 -70px;
+		margin: 0 -40px;
+
+		@include mediaScreenXXS {
+			margin: 0 -32px;
+		}
 	}
 
 	&__slide {
-		padding: 0 70px;
+		padding: 0 40px;
+
+		@include mediaScreenXXS {
+			padding: 0 32px;
+		}
 	}
 
 	&__btn-prev,
@@ -42,7 +50,7 @@
 		position: absolute;
 		top: 165px;
 
-		@include mediaScreenXS {
+		@include mediaScreenXXS {
 			top: 97px;
 		}
 	}
@@ -63,7 +71,7 @@
 	text-align: center;
 
 	&__avatar {
-		--size: 378px;
+		--size: 324px;
 
 		width: var(--size);
 		height: var(--size);
@@ -79,7 +87,7 @@
 			object-position: center;
 		}
 
-		@include mediaScreenXS {
+		@include mediaScreenXXS {
 			--size: 222px;
 		}
 	}
@@ -88,13 +96,13 @@
 		color: var(--black);
 		white-space: nowrap;
 		font-weight: var(--font-weight-xxl);
-		font-size: var(--font-size-04);
+		font-size: var(--font-size-03);
 
-		margin-top: 28px;
-		margin-bottom: 12px;
+		margin-top: 24px;
+		margin-bottom: 8px;
 
-		@include mediaScreenXS {
-			font-size: var(--font-size-01);
+		@include mediaScreenXXS {
+			font-size: var(--font-size);
 
 			margin-top: 16px;
 			margin-bottom: 8px;
@@ -104,10 +112,10 @@
 	&__describe {
 		line-height: 1.2;
 		color: var(--black);
-		font-size: var(--font-size-03);
+		font-size: var(--font-size-02);
 		font-weight: var(--font-weight-xl);
 
-		@include mediaScreenXS {
+		@include mediaScreenXXS {
 			font-size: var(--font-size);
 		}
 	}

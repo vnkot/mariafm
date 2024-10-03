@@ -8,59 +8,107 @@
 
 	&__top-body {
 		color: var(--red);
-		font-size: var(--font-size-05);
+		font-size: var(--font-size-03);
 		font-weight: var(--font-weight-xxl);
 
 		display: flex;
 		flex-direction: column;
-		gap: 130px;
+		gap: 102px;
 
-		@include mediaScreenLG {
-			gap: 60px;
+		@include mediaScreenM {
+			gap: 48px;
+		}
+
+		@include mediaScreenS {
+			font-size: var(--font-size-02);
+		}
+
+		@include mediaScreenXS {
+			gap: 24px;
 		}
 	}
 
 	&__bottom-body {
-		padding: 75px 0;
+		padding: 62px 0;
 		display: flex;
 		align-items: flex-end;
 		gap: 24px;
 
-		@include mediaScreenXL {
-			align-items: flex-start;
+		@include mediaScreenXS {
+			flex-direction: column-reverse;
+			align-items: stretch;
+			padding: 24px 0;
 		}
 	}
 
 	&__benefits {
 		flex: 1 1 0;
+	}
+
+	&__banner {
+		margin-top: -120px;
+		width: 600px;
+
+		@include mediaScreenM {
+			margin-top: 54px;
+			width: 500px;
+		}
+
+		@include mediaScreenS {
+			width: 400px;
+			margin-top: 32px;
+		}
+
+		@include mediaScreenXS {
+			width: 100%;
+			margin-top: 0;
+		}
+	}
+}
+
+.benefits {
+	display: flex;
+	gap: 24px;
+	align-items: flex-end;
+	flex-wrap: wrap;
+
+	&__list {
+		flex: 1 1 0;
 
 		display: flex;
 		flex-direction: column;
 		gap: 47px;
+
+		@include mediaScreenXS {
+			gap: 24px;
+		}
 	}
 
-	&__banner {
-		margin-top: -160px;
-		width: 800px;
+	&__action {
+		flex: 1 1 0;
 
-		@include mediaScreenXL {
-			width: 600px;
+		display: none;
+		max-width: min-content;
+
+		@include mediaScreenXS {
+			display: block;
 		}
 
-		@include mediaScreenLG {
-			margin-top: 0;
+		@include mediaScreenXXS {
+			max-width: 100%;
 		}
 	}
 }
 
 .benefit {
 	&__text {
+		max-width: 460px;
 		color: var(--black);
 		text-transform: uppercase;
-		font-size: var(--font-size-05);
+		font-size: var(--font-size-03);
 		font-weight: var(--font-weight-xxxl);
 
-		padding-left: 60px;
+		padding-left: 34px;
 		position: relative;
 
 		&:after {
@@ -72,9 +120,20 @@
 			transform: translateY(-50%);
 
 			display: block;
-			width: 6px;
+			width: 5px;
 			height: 100%;
 			background-color: var(--red);
+		}
+
+		@include mediaScreenS {
+			font-size: var(--font-size-02);
+			padding-left: 16px;
+			max-width: 400px;
+		}
+
+		@include mediaScreenXXS {
+			font-size: var(--font-size);
+			padding-left: 16px;
 		}
 	}
 }
@@ -104,10 +163,8 @@
 			right: -8px;
 		}
 
-		@include mediaScreenLG {
-			position: static;
-			transform: translateY(0);
-			width: auto;
+		@include mediaScreenXS {
+			display: none;
 		}
 	}
 }

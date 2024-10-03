@@ -13,14 +13,18 @@
 		gap: 32px;
 
 		@include mediaScreenM {
+			padding: 32px 0;
+		}
+
+		@include mediaScreenLG {
 			grid-template-areas:
 				"logo ."
 				"contacts map"
 				"basement basement";
-			grid-template-columns: 1fr 1.3fr;
 		}
 
 		@include mediaScreenS {
+			gap: 26px;
 			grid-template-columns: 1fr;
 			grid-template-areas:
 				"logo"
@@ -28,17 +32,13 @@
 				"contacts"
 				"basement";
 		}
-
-		@include mediaScreenM {
-			padding: 32px 0;
-		}
 	}
 
 	&__logo {
 		grid-area: logo;
 
-		width: 400px;
-		height: 69px;
+		width: 345px;
+		height: 60px;
 
 		img {
 			width: 100%;
@@ -47,9 +47,9 @@
 			object-position: center;
 		}
 
-		@include mediaScreenS {
-			width: 280px;
-			height: 48px;
+		@include mediaScreenXXS {
+			width: 192px;
+			height: 33px;
 		}
 	}
 
@@ -64,7 +64,7 @@
 		color: var(--gray);
 		font-size: var(--font-size-01);
 
-		@include mediaScreenXS {
+		@include mediaScreenXXS {
 			font-size: var(--font-size);
 		}
 	}
@@ -87,8 +87,8 @@
 			@include aspect-ratio(16, 9);
 		}
 
-		@include mediaScreenXS {
-			@include aspect-ratio(12, 9);
+		@include mediaScreenXXS {
+			@include aspect-ratio(11, 9);
 		}
 	}
 }
@@ -102,13 +102,25 @@
 		flex-direction: column;
 		gap: 40px;
 
-		@include mediaScreenXS {
-			gap: 24px
+		& + & {
+			margin-left: auto;
+
+			@include mediaScreenXXXS {
+				margin-left: 0;
+			}
+		}
+
+		@include mediaScreenXXS {
+			gap: 16px;
 		}
 	}
 
-	@include mediaScreenXS {
-		gap: 32px
+	@include mediaScreenXXS {
+		gap: 24px;
+	}
+
+	@include mediaScreenXXXS {
+		flex-direction: column;
 	}
 }
 
@@ -134,7 +146,7 @@
 		}
 	}
 
-	@include mediaScreenXS {
+	@include mediaScreenXXS {
 		font-size: var(--font-size);
 	}
 }

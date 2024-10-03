@@ -17,7 +17,7 @@
 
 	&__tel {
 		color: #fff;
-		font-size: var(--font-size-01);
+		font-size: var(--font-size);
 		text-decoration: none;
 		line-height: 1;
 
@@ -128,14 +128,14 @@
 
 	&__text {
 		color: #fff;
-		font-size: var(--font-size-01);
+		font-size: var(--font-size);
 		font-weight: var(--font-weight-xl);
 
 		@include mediaScreenS {
 			font-size: var(--font-size);
 		}
 
-		@include mediaScreenXS {
+		@include mediaScreenXXS {
 			display: none;
 		}
 	}

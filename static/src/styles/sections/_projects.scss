@@ -12,10 +12,6 @@
 		}
 
 		@include mediaScreenS {
-			gap: 48px;
-		}
-
-		@include mediaScreenXS {
 			gap: 26px;
 		}
 	}
@@ -24,30 +20,22 @@
 		display: flex;
 		flex-direction: column;
 		gap: 40px;
-	}
 
-	&__project {}
+		@include mediaScreenS {
+			gap: 32px;
+		}
+	}
 }
 
 .project {
 	display: flex;
 	align-items: flex-start;
-	column-gap: 40px;
-
- 	@include mediaScreenS {
-		display: block;
-		align-items: unset;
-	}
+	flex-wrap: wrap;
+	gap: 16px;
 
 	&__cover {
 		flex: 1 1 0;
-		min-width: 369px;
-
-		@include mediaScreenS {
-			min-width: 0;
-			max-width: 100%;
-			margin-bottom: 24px;
-		}
+		min-width: 280px;
 	}
 
 	&__img {
@@ -56,53 +44,46 @@
 		background-repeat: no-repeat;
 		@include aspect-ratio(593, 353);
 
-		@include mediaScreenXS {
+		@include mediaScreenS {
 			border-radius: 16px;
 		}
 	}
 
 	&__body {
 		flex: 1.5 1 0;
+		min-width: 280px;
 
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
+		padding: 0 8px;
 
 		@include mediaScreenS {
-			padding: 0 16px;
-		}
-
-		@include mediaScreenXS {
-			gap: 14px;
-			padding: 0 8px;
+			gap: 8px;
 		}
 	}
 
 	&__name {
 		color: var(--black);
-		font-size: var(--font-size-05);
+		font-size: var(--font-size-03);
 		font-weight: var(--font-weight-xxxl);
 
-		@include mediaScreenM {
-			font-size: var(--font-size-04);
-		}
-
-		@include mediaScreenXS {
+		@include mediaScreenS {
 			font-size: var(--font-size-02);
 		}
 	}
 
 	&__description {
-		color: var(--black);
 		line-height: 1.1;
-		font-size: var(--font-size-03);
+		color: var(--black);
+		font-size: var(--font-size-02);
 
-		@include mediaScreenM {
-			font-size: var(--font-size-02);
+		@include mediaScreenS {
+			font-size: var(--font-size);
 		}
+	}
 
-		@include mediaScreenXS {
-			font-size: var(--font-size-01);
-		}
+	@include mediaScreenS {
+		column-gap: 8px;
 	}
 }

@@ -1,12 +1,11 @@
 :root {
 	// font size
-	--font-size-07: 130px;
-	--font-size-06: 100px;
-	--font-size-05: 56px;
-	--font-size-04: 40px;
-	--font-size-03: 30px;
+	--font-size-06: 110px;
+	--font-size-05: 86px;
+	--font-size-04: 60px;
+	--font-size-03: 40px;
 	--font-size-02: 26px;
-	--font-size-01: 22px;
+	--font-size-01: 20px;
 	--font-size: 16px;
 
 	// font weight
@@ -40,7 +39,8 @@
 
 	// containers
 	--indent-x: 20px;
-	--container-max-width: 1507px;
+	--header-max-width: 1500px;
+	--content-max-width: 1300px;
 
 	// media screen
 	--screen-lg: 1200px;

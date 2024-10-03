@@ -18,7 +18,7 @@ new TeamCarousel({
 }).init()
 new InteractiveMap('footer-map', [58.583945, 49.659408]).init();
 
-// TODO: Все ниже - временная история
+// // TODO: Все ниже - временная история
 const school = document.getElementById('school')!;
 const schoolContent = school.querySelector('.school__description')!;
 const schoolImage = school.querySelector('.school__image')! as HTMLElement;

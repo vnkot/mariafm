@@ -1,3 +1,5 @@
+@import "../utils/mixins";
+
 .floating-button {
 	--size: 174px;
 
@@ -20,7 +22,7 @@
 	text-align: center;
 	color: var(--white);
 	text-decoration: none;
-	font-size: var(--font-size-03);
+	font-size: var(--font-size-02);
 	font-weight: var(--font-weight-xxl);
 
 	cursor: pointer;
@@ -29,6 +31,16 @@
 
 	&:hover {
 		background-color: var(--red-01);
+	}
+
+	@include mediaScreenM {
+		--size: 130px;
+		font-size: var(--font-size-01);
+	}
+
+	@include mediaScreenXS {
+		--size: 100px;
+		font-size: var(--font-size);
 	}
 }
 

@@ -24,6 +24,7 @@ dist-ssr
 *.sw?
 .env
 ./static/dist
+__pycache__
 
 # django
 collectedstatic

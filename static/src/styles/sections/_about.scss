@@ -1,37 +1,51 @@
 @import "../utils/mixins";
 
 .about {
-	padding: 24px 0;
 
 	&__body {
 		display: grid;
 		row-gap: 32px;
+		column-gap: 24px;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-areas:
 			"title map"
-			"content map"
+			"description map"
+			"info map"
 			"badges map"
 			". map";
+		padding: 62px 0;
 
-		@include mediaScreenXXL {
-			grid-template-areas:
-				"title title"
-				"content map"
-				"badges map"
-				". map";
+		@include mediaScreenM {
+			padding: 32px 0;
 		}
 
 		@include mediaScreenLG {
-			grid-template-columns: 1fr 1.3fr;
-		}
-
-		@include mediaScreenM {
-			grid-template-columns: 1fr 2fr;
 			grid-template-areas:
-				"title map"
-				"content map"
+				"title title"
+				"description map"
+				"info map"
 				"badges map"
 				". map";
+		}
+
+		@include mediaScreenS {
+			row-gap: 26px;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-areas:
+				"title title"
+				"description description"
+				"badges info"
+				"map map";
+		}
+
+		@include mediaScreenXXS {
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				"title"
+				"description"
+				"info"
+				"badges"
+				"map";
 		}
 	}
 
@@ -39,28 +53,12 @@
 		grid-area: title;
 	}
 
-	&__content {
-		grid-area: content;
-
-		display: flex;
-		flex-direction: column;
-		gap: 50px;
+	&__description {
+		grid-area: description;
 	}
 
-	&__text {
-		display: flex;
-		flex-direction: column;
-		gap: 24px;
-
-		p {
-			color: var(--black);
-			font-size: var(--font-size-02);
-			line-height: 26px;
-		}
-
-		&--rows {
-			flex-direction: row;
-		}
+	&__info {
+		grid-area: info;
 	}
 
 	&__badges {
@@ -80,23 +78,73 @@
 	}
 }
 
+.text {
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+	column-gap: 24px;
+
+	&__row {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+
+		p {
+			color: var(--black);
+			font-size: var(--font-size-01);
+			line-height: 26px;
+
+			@include mediaScreenM {
+				font-size: var(--font-size-01);
+			}
+		}
+
+		@include mediaScreenS {
+			justify-content: flex-end;
+		}
+
+		@include mediaScreenXXS {
+			justify-content: flex-start;
+		}
+	}
+
+	&--rows {
+		flex-direction: row;
+
+		@include mediaScreenS {
+			flex-wrap: wrap;
+		}
+
+		@include mediaScreenXXS {
+			> * {
+				flex: 1 1 0;
+			}
+		}
+	}
+}
+
 .badge {
 	color: var(--black);
 
 	&__value {
-		font-size: var(--font-size-06);
+		white-space: nowrap;
+		font-size: var(--font-size-05);
 		font-weight: var(--font-weight-xxl);
 
-		@include mediaScreenLG {
-			font-size: var(--font-size-05);
+		@include mediaScreenM {
+			font-size: var(--font-size-04);
 		}
 
-		@include mediaScreenM {
+		@include mediaScreenXS {
 			font-size: var(--font-size-03);
 		}
 	}
 
 	&__name {
-		font-size: var(--font-size-03);
+		font-size: var(--font-size-02);
+
+		@include mediaScreenM {
+			font-size: var(--font-size-01);
+		}
 	}
 }

@@ -29,7 +29,19 @@
 }
 
 @mixin mediaScreenXS() {
+	@media (max-width: 664px) {
+		@content
+	}
+}
+
+@mixin mediaScreenXXS() {
 	@media (max-width: 526px) {
+		@content
+	}
+}
+
+@mixin mediaScreenXXXS() {
+	@media (max-width: 386px) {
 		@content
 	}
 }

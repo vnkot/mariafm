@@ -10,12 +10,12 @@ html {
 	font-family: var(--font-family);
 	position: relative;
 	
-	//opacity: 0;
-	//transition: .05s opacity ease-in-out;
-	//
-	//&--visible {
-	//	opacity: 1;
-	//}
+	opacity: 0;
+	transition: .05s opacity ease-in-out;
+
+	&--visible {
+		opacity: 1;
+	}
 }
 
 @import "sections/main";

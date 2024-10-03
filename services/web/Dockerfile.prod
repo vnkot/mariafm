@@ -1,15 +1,25 @@
 FROM python:3.12
 
+
+RUN apt-get update && apt-get install -y curl && \
+    curl -sSL https://install.python-poetry.org | python3 - && \
+    ln -s /root/.local/bin/poetry /usr/local/bin/poetry
+
 WORKDIR /app
 
-COPY requirements.txt ./
+COPY pyproject.toml poetry.lock ./
 
-RUN pip install -r requirements.txt
+RUN poetry install --no-interaction --no-root
 
 COPY . .
 
-RUN python manage.py collectstatic --noinput
+RUN curl -sL https://deb.nodesource.com/setup_22.x | bash - && \
+    apt-get install -y nodejs && \
+    rm -rf /var/lib/apt/lists/*
 
-EXPOSE 8000
+RUN npm install && npm run build
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+RUN poetry run python manage.py collectstatic --noinput
+
+
+CMD ["poetry", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]

@@ -125,6 +125,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 DJANGO_VITE_DEV_MODE = DEBUG
+DJANGO_VITE_DEV_SERVER_PORT = config('PORT', default=5173, cast=int)
+DJANGO_VITE_DEV_SERVER_HOST = config('HOST', default='localhost', cast=str)
+DJANGO_VITE_DEV_SERVER_PROTOCOL = config('PROTOCOL', default='http', cast=str)
 
 # Name of static files folder (after called python manage.py collectstatic)
 STATIC_ROOT = BASE_DIR / "collectedstatic"

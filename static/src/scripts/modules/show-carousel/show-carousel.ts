@@ -34,7 +34,6 @@ export class ShowCarousel {
 
 		this.getElements();
 		this.createCarousel();
-		this.generateIndicators();
 	}
 
 	private getElements() {
@@ -68,7 +67,8 @@ export class ShowCarousel {
 		this.carousel = EmblaCarousel(this.carouselElement, OPTIONS, PLUGINS);
 	}
 
-	private generateIndicators() {
+	private generateIndicators(carouselType: EmblaCarouselType) {
+		const countSlideInView = carouselType.slidesInView().length;
 		const indicator = this.indicatorsElement.children[0];
 
 		if (!indicator) {
@@ -77,9 +77,15 @@ export class ShowCarousel {
 			);
 		}
 
+		if (this.isScroll) return;
+
 		this.indicatorsElement.innerHTML = '';
 
-		this.carousel.slideNodes().forEach((_, i) => {
+		for (
+			let i = 0;
+			i < Math.max(carouselType.slideNodes().length / countSlideInView);
+			i += 1
+		) {
 			const cloneIndicator = indicator.cloneNode() as HTMLElement;
 
 			if (i === 0)
@@ -88,7 +94,9 @@ export class ShowCarousel {
 				);
 
 			this.indicatorsElement.appendChild(cloneIndicator);
-		});
+		}
+
+		this.addEventListenerForIndicator();
 	}
 
 	private positioningCtrl(carouselType: EmblaCarouselType) {
@@ -141,16 +149,18 @@ export class ShowCarousel {
 				);
 			});
 
-			indicators[event.selectedScrollSnap()].classList.add(
-				this.config.indicatorActiveClassName
-			);
+			indicators[event.selectedScrollSnap()] &&
+				indicators[event.selectedScrollSnap()].classList.add(
+					this.config.indicatorActiveClassName
+				);
 		});
 	}
 
 	private addEventListenerForCarousel() {
-		this.carousel.on('slidesInView', (event) =>
-			this.positioningCtrl(event)
-		);
+		this.carousel.on('slidesInView', (event) => {
+			this.positioningCtrl(event);
+			this.generateIndicators(event);
+		});
 		this.carousel.on('scroll', () => {
 			this.isScroll = true;
 		});

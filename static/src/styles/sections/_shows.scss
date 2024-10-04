@@ -1,15 +1,49 @@
 @import '../utils/mixins';
 
 .shows {
-	padding-top: 8px;
-	padding-bottom: 16px;
+	padding: 8px 0;
+
+	margin: 0 auto;
+	max-width: 1900px;
 }
 
 .show-carousel {
+	--slide-width: 724px;
+	--slide-height: 431px;
+	--indicator-size: 16px;
+	--content-gap: 40px;
+
 	position: relative;
 
 	&__body {
 		overflow: hidden;
+		position: relative;
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 20px;
+			z-index: var(--z-up);
+
+			display: none;
+
+			@include mediaScreenXXXL {
+				display: block;
+			}
+		}
+
+		&:before {
+			left: 0;
+			background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+		}
+
+		&:after {
+			right: 0;
+			background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+		}
 	}
 
 	&__container {
@@ -17,82 +51,28 @@
 	}
 
 	&__slide {
-		flex: 0 0 1196px;
-		height: 713px;
-
-		padding: 0 20px;
+		flex: 0 0 var(--slide-width);
+		height: var(--slide-height);
+		padding: 0 12px;
 
 		img {
 			width: 100%;
 			height: 100%;
-			object-fit: contain;
+			object-fit: cover;
+			object-position: center center;
 
-			border-radius: 54px;
+			border-radius: 24px;
 			overflow: hidden;
-
-			@include mediaScreenM {
-				border-radius: 40px;
-			}
-
-			@include mediaScreenS {
-				border-radius: 32px;
-			}
-
-			@include mediaScreenXXS {
-				border-radius: 24px;
-			}
-		}
-
-		@include mediaScreenXL {
-			flex: 0 0 900px;
-			height: 538px;
-		}
-
-		@include mediaScreenM {
-			flex: 0 0 600px;
-			height: 360px;
-		}
-
-		@include mediaScreenS {
-			flex: 0 0 400px;
-			height: 240px;
-			padding: 0 8px;
-		}
-
-		@include mediaScreenXXS {
-			flex: 0 0 280px;
-			height: 168px;
 		}
 	}
 
-	&__ctrl {
-		position: absolute;
-		top: 45%;
-		left: 50%;
-
-		transform: translate(-50%, -50%);
-
-		margin: 0 auto;
-		max-width: 1376px;
-		width: 100%;
-
-		display: flex;
-		justify-content: space-between;
-
-		@include mediaScreenXL {
-			max-width: 1080px;
+	&__img {
+		&--desktop {
+			display: block;
 		}
 
-		@include mediaScreenM {
-			max-width: 800px;
-		}
-
-		@include mediaScreenS {
-			max-width: 470px;
-		}
-
-		@include mediaScreenXXS {
-			max-width: 300px;
+		&--mobile {
+			display: none;
 		}
 	}
 
@@ -101,22 +81,12 @@
 		gap: 24px;
 
 		width: min-content;
-		margin: 40px auto 0 auto;
-
-		@include mediaScreenXL {
-			margin-top: 24px;
-		}
-
-		@include mediaScreenS {
-			margin-top: 16px;
-		}
+		margin: var(--content-gap) auto 0 auto;
 	}
 
 	&__indicator {
-		--size: 21px;
-
-		width: var(--size);
-		height: var(--size);
+		width: var(--indicator-size);
+		height: var(--indicator-size);
 		border-radius: 50%;
 		background-color: var(--gray-01);
 
@@ -126,13 +96,33 @@
 		&--active {
 			background-color: var(--gray-02);
 		}
+	}
 
-		@include mediaScreenXL {
-			--size: 16px;
-		}
+	@include mediaScreenM {
+		--slide-width: 500px;
+		--slide-height: 297px;
 
-		@include mediaScreenS {
-			--size: 12px;
+		--content-gap: 24px;
+		--indicator-size: 14px;
+	}
+
+	@include mediaScreenXXS {
+		--slide-width: 350px;
+		--slide-height: 511px;
+
+		&__img {
+			&--desktop {
+				display: none;
+			}
+
+			&--mobile {
+				display: block;
+			}
 		}
+	}
+
+	@include mediaScreenXXXS {
+		--slide-width: 300px;
+		--slide-height: 438px;
 	}
 }

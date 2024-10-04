@@ -16,9 +16,10 @@ new MobileMenu({
 }).init();
 new AudioPlayer('radio', 'radio--active').init();
 new ShowCarousel({
+	btnNextId: 'show-btn-next',
+	btnPrevId: 'show-btn-prev',
 	carouselId: 'show-carousel',
 	indicatorsId: 'show-carousel-indicators',
-	carouselCtrlId: 'show-carousel-ctrl',
 	indicatorActiveClassName: 'show-carousel__indicator--active',
 }).init();
 new TeamCarousel({

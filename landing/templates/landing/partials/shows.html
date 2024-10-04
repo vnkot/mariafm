@@ -2,38 +2,64 @@
 {% load static %}
 
 <section class="shows" id="shows">
-    <div class="shows__carousel show-carousel">
-        <div class="show-carousel__body" id="show-carousel">
-            <ul class="show-carousel__container">
-                <li class="show-carousel__slide">
-                    <img src="{% static 'images/shows/evening-channel.png' %}">
-                </li>
+	<div class="shows__carousel show-carousel">
+		<div class="show-carousel__body" id="show-carousel">
+			<ul class="show-carousel__container">
+				<li class="show-carousel__slide">
+					<img
+						src="{% static 'images/shows/evening-channel.png' %}"
+						class="show-carousel__img show-carousel__img--desktop"
+					>
+					<img
+						src="{% static 'images/shows/evening-channel--mobile.png' %}"
+						class="show-carousel__img show-carousel__img--mobile"
+					>
+				</li>
 
-                <li class="show-carousel__slide">
-                    <img src="{% static 'images/shows/very-first.png' %}">
-                </li>
+				<li class="show-carousel__slide">
+					<img
+						src="{% static 'images/shows/very-first.png' %}"
+						class="show-carousel__img show-carousel__img--desktop"
+					>
+					<img
+						src="{% static 'images/shows/mobile-placeholder.png' %}"
+						class="show-carousel__img show-carousel__img--mobile"
+					>
+				</li>
 
-                <li class="show-carousel__slide">
-                    <img src="{% static 'images/shows/friday-warm-up.png' %}">
-                </li>
+				<li class="show-carousel__slide">
+					<img
+						src="{% static 'images/shows/friday-warm-up.png' %}"
+						class="show-carousel__img show-carousel__img--desktop"
+					>
+					<img
+						src="{% static 'images/shows/mobile-placeholder.png' %}"
+						class="show-carousel__img show-carousel__img--mobile"
+					>
+				</li>
 
-                <li class="show-carousel__slide">
-                    <img src="{% static 'images/shows/cover-show.png' %}">
-                </li>
-            </ul>
-        </div>
+				<li class="show-carousel__slide">
+					<img
+						src="{% static 'images/shows/cover-show.png' %}"
+						class="show-carousel__img show-carousel__img--desktop"
+					>
+					<img
+						src="{% static 'images/shows/mobile-placeholder.png' %}"
+						class="show-carousel__img show-carousel__img--mobile"
+					>
+				</li>
+			</ul>
+		</div>
 
-        <div class="show-carousel__ctrl" id="show-carousel-ctrl">
-            <button class="btn-ctrl btn-ctrl--prev">
-                <img src="{% static 'icons/ctrl/arrow-left.png' %}" alt="">
-            </button>
-            <button class="btn-ctrl btn-ctrl--next">
-                <img src="{% static 'icons/ctrl/arrow-right.png' %}" alt="">
-            </button>
-        </div>
+		<button class="btn-ctrl btn-ctrl--prev" id="show-btn-prev">
+			<img src="{% static 'icons/ctrl/arrow-left.png' %}" alt="">
+		</button>
+		<button class="btn-ctrl btn-ctrl--next" id="show-btn-next">
+			<img src="{% static 'icons/ctrl/arrow-right.png' %}" alt="">
+		</button>
 
-        <ul class="show-carousel__indicators" id="show-carousel-indicators">
-            <li class="show-carousel__indicator"></li>
-        </ul>
-    </div>
+		<ul class="show-carousel__indicators" id="show-carousel-indicators">
+			<li class="show-carousel__indicator"></li>
+		</ul>
+	</div>
 </section>

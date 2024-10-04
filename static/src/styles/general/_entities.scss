@@ -152,7 +152,7 @@ h2.title {
 }
 
 button.btn-ctrl {
-	--size: 74px;
+	--size: 56px;
 	--width-icon: 14px;
 	--height-icon: 30px;
 
@@ -181,6 +181,12 @@ button.btn-ctrl {
 
 	&[disabled] {
 		display: none;
+	}
+
+	@include mediaScreenM {
+		--size: 40px;
+		--width-icon: 8px;
+		--height-icon: 16px;
 	}
 
 	@include mediaScreenS {

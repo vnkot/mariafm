@@ -1,3 +1,9 @@
+@mixin mediaScreenXXXL() {
+	@media (min-width: 1864px) {
+		@content
+	}
+}
+
 @mixin mediaScreenXXL() {
 	@media (max-width: 1512px) {
 		@content

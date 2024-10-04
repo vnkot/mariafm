@@ -7,7 +7,9 @@ html {
 }
 
 .wrapper {
-	font-family: var(--font-family);
+	font-family: var(--main-font-family);
+
+	min-height: 100vh;
 	position: relative;
 
 	opacity: 0;
@@ -16,6 +18,7 @@ html {
 	&--visible {
 		opacity: 1;
 	}
+
 }
 
 @import "sections/main";

@@ -1,0 +1,51 @@
+{% load static %}
+
+<div class="menu-overlay" id="menu-overlay"></div>
+
+<div class="menu" id="mobile-menu">
+	<div class="menu__header">
+		<div class="menu__logo close">
+			<div class="menu__logo-img">
+				<img src="{% static 'icons/general/logo.svg' %}" />
+			</div>
+
+			<p class="menu__logo-wave close">102.9 FM</p>
+		</div>
+
+		<div class="menu__close close">
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+
+	<nav>
+		<ul class="menu__link-list">
+			<li class="menu__link">
+				<a class="close" href="#shows">Новости</a>
+			</li>
+			<li class="menu__link">
+				<a class="close" href="#about">О радио</a>
+			</li>
+			<li class="menu__link">
+				<a class="close" href="#team">Команда</a>
+			</li>
+			<li class="menu__link">
+				<a class="close" href="#school">Школа медиа</a>
+			</li>
+			<li class="menu__link">
+				<a class="close" href="#projects">Проекты</a>
+			</li>
+			<li class="menu__link">
+				<a class="close" href="#footer">Контакты</a>
+			</li>
+		</ul>
+	</nav>
+
+	<a
+		target="_blank"
+		href="https://t.me/+79128271029"
+		class="menu__action btn btn--s close"
+	>
+		Закажи рекламу
+	</a>
+</div>

@@ -17,7 +17,7 @@
 	--font-weight-sm: 300;
 
 	// font family
-	--font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	--main-font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
 	// colors
 	--red: #E43927;
@@ -36,14 +36,15 @@
 	// box shadows
 	--main-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 	--light-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+	--mobile-menu-shadow: 4px 0px 8px 0px rgba(34, 60, 80, 0.2);
 
 	// containers
 	--indent-x: 20px;
 	--header-max-width: 1500px;
 	--content-max-width: 1300px;
 
-	// media screen
-	--screen-lg: 1200px;
-	--screen-m: 834px;
-	--screen-s: 390px;
+	// z-index
+	--z-mobile-menu: 100;
+	--z-mobile-menu-verlay: 90;
+	--z-min: -1;
 }

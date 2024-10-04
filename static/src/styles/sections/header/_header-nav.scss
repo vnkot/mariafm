@@ -1,152 +1,169 @@
 @import "../../utils/mixins";
 
 .header-nav {
+	--top-indent: 30px;
+	--bottom-indent: 30px;
+
 	&__body {
-		padding: 30px 0;
+		padding-top: var(--top-indent);
+		padding-bottom: var(--bottom-indent);
 
 		display: flex;
 		align-items: center;
 		gap: 32px;
-
-		white-space: nowrap;
-
-		@include mediaScreenXXL {
-			padding: 24px 0 54px 0;
-		}
-
-		@include mediaScreenS {
-			padding: 16px 0 40px 0;
-		}
 	}
 
-	&__left {
-		display: flex;
-		align-items: center;
-		gap: 16px;
-
-		@include mediaScreenXXL {
-			position: relative;
-		}
-	}
-
-	&__radio-wave {
-		color: var(--red);
-		font-size: var(--font-size);
-		font-weight: var(--font-weight-xl);
-
-		@include mediaScreenXXL {
-			position: absolute;
-			bottom: -100%;
-			left: 0;
-		}
-	}
-
-	&__middle {
+	&__nav {
 		flex: 1 1 0;
 
 		@include mediaScreenLG {
 			flex: 0 1 auto;
 			margin-left: auto;
 		}
+
+		@include mediaScreenS {
+			display: none;
+		}
 	}
 
-	&__right {
+	&__action {
 		@include mediaScreenLG {
 			display: none;
 		}
 	}
 
 	&__burger {
-		display: none;
-	}
-}
+		display: none !important;
+		margin-left: auto;
 
-.header-nav.header-nav--mobile .header-nav__body {
-	justify-content: space-between;
-}
-
-.header-nav.header-nav--mobile .header-nav__middle {
-	display: none;
-}
-
-.header-nav.header-nav--mobile .header-nav__burger {
-	display: block;
-}
-
-.logo {
-	width: 230px;
-	height: 40px;
-
-	img {
-		width: 100%;
-		height: 100%;
-
-		object-fit: contain;
+		@include mediaScreenS {
+			display: flex !important;
+		}
 	}
 
 	@include mediaScreenXXL {
-		width: 200px;
-		height: 35px;
+		--top-indent: 24px;
+		--bottom-indent: 40px;
+	}
+
+	@include mediaScreenM {
+		--top-indent: 16px;
+	}
+
+	@include mediaScreenXXS {
+		--bottom-indent: 32px;
+	}
+}
+
+.logo {
+	--logo-width: 230px;
+	--wave-font-size: var(--font-size-01);
+
+	display: flex;
+	align-items: center;
+	gap: 16px;
+
+	position: relative;
+
+	&__img {
+		width: var(--logo-width);
+		height: calc(var(--logo-width) * 0.17);
+
+		img {
+			width: 100%;
+			height: 100%;
+
+			object-fit: contain;
+		}
+	}
+
+	&__wave {
+		color: var(--red);
+		font-size: var(--wave-font-size);
+		font-weight: var(--font-weight-xl);
+
+		@include mediaScreenXXL {
+			position: absolute;
+			top: calc(100% + 8px);
+			left: 0;
+		}
+	}
+
+	@include mediaScreenM {
+		--logo-width: 200px;
+	}
+
+	@include mediaScreenXXS {
+		--logo-width: 150px;
+		--wave-font-size: var(--font-size);
 	}
 }
 
 .nav {
-	&__links {
+	--content-gap: 32px;
+	--link--font-size: var(--font-size-01);
+
+	&__link-list {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		gap: 32px;
-
-		@include mediaScreenXXL {
-			gap: 16px;
-		}
+		justify-content: center;
+		gap: var(--content-gap);
 	}
 
-	&__item {
-		a {
-			color: var(--black);
-			text-decoration: none;
-			font-size: var(--font-size);
-			font-weight: var(--font-weight-lg);
 
-			position: relative;
+	&__item a {
+		color: var(--black);
+		white-space: nowrap;
+		text-decoration: none;
+		font-size: var(--link--font-size);
+		font-weight: var(--font-weight-lg);
 
-			&:after {
-				content: '';
+		position: relative;
 
-				position: absolute;
-				bottom: -4px;
-				left: 0;
+		&:after {
+			content: '';
 
-				width: 0;
-				height: 2px;
-				background-color: var(--red);
+			position: absolute;
+			bottom: -4px;
+			left: 0;
 
-				transition: .2s;
-			}
+			width: 0;
+			height: 2px;
+			background-color: var(--red);
+
+			transition: .2s;
 		}
 
-		a:hover {
+		&:hover {
 			&:after {
 				width: 100%;
 			}
 		}
 	}
+
+	@include mediaScreenM {
+		--link--font-size: var(--font-size);
+	}
+
+	@include mediaScreenXXL {
+		--content-gap: 16px;
+	}
 }
 
 .burger {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+
+	width: 33px;
+
 	cursor: pointer;
-	padding: 10px;
 
 	&__bar {
-		display: block;
-		width: 33px;
-		height: 4.5px;
+		width: 100%;
+		flex: 0 0 4px;
+
 		border-radius: 5px;
 		background-color: var(--gray-01);
-
-		& + & {
-			margin-top: 8px;
-		}
 	}
 }

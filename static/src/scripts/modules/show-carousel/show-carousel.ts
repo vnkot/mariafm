@@ -54,6 +54,8 @@ export class ShowCarousel {
 		const countAllSlides = carousel.slideNodes().length;
 		const countSlidesInView = carousel.slidesInView().length;
 
+		if (!countAllSlides || !countSlidesInView) return;
+
 		const indicatorCount = Math.max(countAllSlides / countSlidesInView);
 
 		[...this.indicatorsElement.children].forEach((indicator) => {
@@ -67,7 +69,6 @@ export class ShowCarousel {
 			if (i === 0) {
 				indicator.classList.add(this.config.indicatorActiveClassName);
 			}
-
 			this.indicatorsElement.appendChild(indicator);
 		}
 
@@ -146,8 +147,6 @@ export class ShowCarousel {
 	private addCarouselEventListeners() {
 		this.carousel.on('slidesInView', (event) => {
 			this.setControlPositions(event);
-		});
-		this.carousel.on('init', (event) => {
 			this.generateIndicators(event);
 		});
 		this.carousel.on('scroll', () => (this.isScroll = true));

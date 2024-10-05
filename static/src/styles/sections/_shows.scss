@@ -19,32 +19,6 @@
 		display: block;
 		overflow: hidden;
 		position: relative;
-
-		&:before,
-		&:after {
-			content: '';
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			width: 20px;
-			z-index: var(--z-up);
-
-			display: none;
-
-			@include mediaScreenUltraWide {
-				display: block;
-			}
-		}
-
-		&:before {
-			left: 0;
-			background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-		}
-
-		&:after {
-			right: 0;
-			background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-		}
 	}
 
 	&__container {

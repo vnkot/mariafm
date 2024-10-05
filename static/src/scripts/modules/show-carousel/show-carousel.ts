@@ -6,172 +6,154 @@ interface IShowCarouselConfig {
 	btnNextId: string;
 	carouselId: string;
 	indicatorsId: string;
+	indicatorTag: string;
+	indicatorClassName: string;
 	indicatorActiveClassName: string;
 }
 
 export class ShowCarousel {
 	private readonly config: IShowCarouselConfig;
-
 	private btnPrevElement!: HTMLElement;
 	private btnNextElement!: HTMLElement;
 	private carouselElement!: HTMLElement;
 	private indicatorsElement!: HTMLElement;
 
 	private carousel!: EmblaCarouselType;
-
 	private isScroll: boolean = false;
 
-	/**
-	 * @param {IShowCarouselConfig} config - Конфигурация карусели, содержащая необходимые параметры для инициализации.
-	 * @param {string} config.carouselId - ID элемента карусели.
-	 * @param {string} config.indicatorsId - ID элемента индикаторов карусели.
-	 * @param {string} config.btnPrevId - ID элемента управления каруселью.
-	 * @param {string} config.btnNextId - ID элемента управления каруселью.
-	 * @param {string} config.indicatorActiveClassName - Имя класса, который будет добавлен к активному индикатору.
-	 */
 	constructor(config: IShowCarouselConfig) {
 		this.config = config;
-
-		this.getElements();
+		this.initializeElements();
 		this.createCarousel();
 	}
 
-	private getElements() {
-		const showCarouselElement = document.getElementById(
-			this.config.carouselId
-		);
-		const btnPrevElement = document.getElementById(this.config.btnPrevId);
-		const btnNextElement = document.getElementById(this.config.btnNextId);
-		const showIndicatorsElement = document.getElementById(
-			this.config.indicatorsId
-		);
+	private initializeElements() {
+		const { carouselId, btnPrevId, btnNextId, indicatorsId } = this.config;
 
-		if (
-			!btnPrevElement ||
-			!btnNextElement ||
-			!showCarouselElement ||
-			!showIndicatorsElement
-		) {
-			throw new Error(
-				'Не удалось получить необходимые элементы для карусели'
-			);
+		this.carouselElement = this.getElement(carouselId);
+		this.btnPrevElement = this.getElement(btnPrevId);
+		this.btnNextElement = this.getElement(btnNextId);
+		this.indicatorsElement = this.getElement(indicatorsId);
+	}
+
+	private getElement(id: string): HTMLElement {
+		const element = document.getElementById(id);
+		if (!element) {
+			throw new Error(`Не удалось получить элемент с ID: ${id}`);
 		}
-
-		this.carouselElement = showCarouselElement;
-		this.indicatorsElement = showIndicatorsElement;
-		this.btnPrevElement = btnPrevElement;
-		this.btnNextElement = btnNextElement;
+		return element;
 	}
 
 	private createCarousel() {
 		this.carousel = EmblaCarousel(this.carouselElement, OPTIONS, PLUGINS);
 	}
 
-	private generateIndicators(carouselType: EmblaCarouselType) {
-		const countSlideInView = carouselType.slidesInView().length;
-		const indicator = this.indicatorsElement.children[0];
-
-		if (!indicator) {
-			throw new Error(
-				`Не обнаружен индикатор слайда в элементе ${this.indicatorsElement}`
-			);
-		}
-
+	private generateIndicators(carousel: EmblaCarouselType) {
 		if (this.isScroll) return;
 
-		this.indicatorsElement.innerHTML = '';
+		const countAllSlides = carousel.slideNodes().length;
+		const countSlidesInView = carousel.slidesInView().length;
 
-		for (
-			let i = 0;
-			i < Math.max(carouselType.slideNodes().length / countSlideInView);
-			i += 1
-		) {
-			const cloneIndicator = indicator.cloneNode() as HTMLElement;
+		const indicatorCount = Math.max(countAllSlides / countSlidesInView);
 
-			if (i === 0)
-				cloneIndicator.classList.add(
-					this.config.indicatorActiveClassName
-				);
+		[...this.indicatorsElement.children].forEach((indicator) => {
+			indicator.remove();
+		});
 
-			this.indicatorsElement.appendChild(cloneIndicator);
+		for (let i = 0; i < indicatorCount; i += 1) {
+			const indicator = document.createElement(this.config.indicatorTag);
+			indicator.classList.add(this.config.indicatorClassName);
+
+			if (i === 0) {
+				indicator.classList.add(this.config.indicatorActiveClassName);
+			}
+
+			this.indicatorsElement.appendChild(indicator);
 		}
 
-		this.addEventListenerForIndicator();
+		this.addIndicatorEventListeners();
 	}
 
-	private positioningCtrl(carouselType: EmblaCarouselType) {
-		const { height: slideHeight, width: slideWidth } = carouselType
+	private setControlPositions(carousel: EmblaCarouselType) {
+		const { height: slideHeight, width: slideWidth } = carousel
 			.slideNodes()[0]
 			.getBoundingClientRect();
-
-		const countSlideInView = carouselType.slidesInView().length;
+		const countSlideInView = carousel.slidesInView().length;
 
 		if (this.isScroll) return;
 
-		this.btnPrevElement.style.position = 'absolute';
-		this.btnNextElement.style.position = 'absolute';
-
-		this.btnPrevElement.style.top = `${slideHeight / 2}px`;
-		this.btnNextElement.style.top = `${slideHeight / 2}px`;
-
-		this.btnPrevElement.style.transform = 'translate(-50%, -50%)';
-		this.btnNextElement.style.transform = 'translate(-50%, -50%)';
-
-		const horShift = countSlideInView === 2 ? slideWidth : slideWidth / 2;
-
-		this.btnPrevElement.style.left = `calc(50% - ${horShift}px + 16px)`;
-		this.btnNextElement.style.left = `calc(50% + ${horShift}px - 16px)`;
+		this.btnPrevElement.style.cssText = `
+		 	position: absolute;
+		 	top: ${slideHeight / 2}px;
+		 	left: calc(50% - ${countSlideInView === 2 ? slideWidth : slideWidth / 2}px + 16px);
+		 	transform: translate(-50%, -50%);
+		`;
+		this.btnNextElement.style.cssText = `
+		 	position: absolute;
+		 	top: ${slideHeight / 2}px;
+		 	left: calc(50% + ${countSlideInView === 2 ? slideWidth : slideWidth / 2}px - 16px);
+		 	transform: translate(-50%, -50%);
+		`;
 	}
 
-	private addEventListenerForCtrl() {
+	private resetTimerAutoplay() {
+		this.carousel.plugins()?.autoplay.reset();
+	}
+
+	private addControlEventListeners() {
 		this.btnPrevElement.addEventListener('click', () => {
 			this.carousel.scrollPrev();
+			this.resetTimerAutoplay();
 		});
-
 		this.btnNextElement.addEventListener('click', () => {
 			this.carousel.scrollNext();
+			this.resetTimerAutoplay();
 		});
 	}
 
-	private addEventListenerForIndicator() {
-		const indicators = [...this.indicatorsElement.children];
+	private addIndicatorEventListeners() {
+		const indicators = Array.from(this.indicatorsElement.children);
 
-		indicators.forEach((indicator, i) => {
+		indicators.forEach((indicator, index) => {
 			indicator.addEventListener('click', () => {
-				this.carousel.scrollTo(i);
+				this.carousel.scrollTo(index);
+				this.resetTimerAutoplay();
 			});
 		});
 
 		this.carousel.on('scroll', (event) => {
+			const indicators = Array.from(this.indicatorsElement.children);
+
 			indicators.forEach((indicator) => {
 				indicator.classList.remove(
 					this.config.indicatorActiveClassName
 				);
 			});
 
-			indicators[event.selectedScrollSnap()] &&
-				indicators[event.selectedScrollSnap()].classList.add(
+			const activeIndicator = indicators[event.selectedScrollSnap()];
+
+			if (activeIndicator) {
+				activeIndicator.classList.add(
 					this.config.indicatorActiveClassName
 				);
+			}
 		});
 	}
 
-	private addEventListenerForCarousel() {
+	private addCarouselEventListeners() {
 		this.carousel.on('slidesInView', (event) => {
-			this.positioningCtrl(event);
+			this.setControlPositions(event);
+		});
+		this.carousel.on('init', (event) => {
 			this.generateIndicators(event);
 		});
-		this.carousel.on('scroll', () => {
-			this.isScroll = true;
-		});
-		this.carousel.on('settle', () => {
-			this.isScroll = false;
-		});
+		this.carousel.on('scroll', () => (this.isScroll = true));
+		this.carousel.on('settle', () => (this.isScroll = false));
 	}
 
 	init() {
-		this.addEventListenerForCtrl();
-		this.addEventListenerForCarousel();
-		this.addEventListenerForIndicator();
+		this.addControlEventListeners();
+		this.addCarouselEventListeners();
+		this.addIndicatorEventListeners();
 	}
 }

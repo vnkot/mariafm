@@ -20,6 +20,8 @@ new ShowCarousel({
 	btnPrevId: 'show-btn-prev',
 	carouselId: 'show-carousel',
 	indicatorsId: 'show-carousel-indicators',
+	indicatorTag: 'li',
+	indicatorClassName: 'show-carousel__indicator',
 	indicatorActiveClassName: 'show-carousel__indicator--active',
 }).init();
 new TeamCarousel({

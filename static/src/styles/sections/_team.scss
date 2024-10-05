@@ -45,10 +45,12 @@
 
 	&__btn-prev {
 		left: 0;
+		transform: translateX(-50%);
 	}
 
 	&__btn-next {
 		right: 0;
+		transform: translateX(50%);
 	}
 
 	@include mediaScreenWideLaptop {

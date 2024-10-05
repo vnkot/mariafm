@@ -2,18 +2,43 @@
 
 .school {
 	background-color: var(--black-01);
-	position: relative;
 
 	&__body {
-		padding-top: 54px;
+		padding-top: 62px;
+		padding-bottom: 62px;
+
+		display: grid;
+		grid-template-columns: 1fr 1.5fr;
+		row-gap: 32px;
+		column-gap: 24px;
+		grid-template-areas:
+			"title title"
+			"description cover"
+			"action action";
+		align-items: center;
+
+		position: relative;
+
+		@include mediaScreenLaptop {
+			grid-template-columns: 1fr 1.2fr;
+			padding-top: 32px;
+			padding-bottom: 32px;
+		}
+
+		@include mediaScreenWideTablet {
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+		}
 	}
 
-	&__content {
-		padding-right: 35vw;
+	&__title {
+		grid-area: title;
 	}
 
-	&__text {
-		margin-bottom: 48px;
+	&__description {
+		align-self: center;
+		grid-area: description;
 
 		color: var(--white);
 		line-height: 1.2;
@@ -22,24 +47,48 @@
 		p + p {
 			margin-top: 32px;
 		}
+
+		@include mediaScreenLaptop {
+			font-size: var(--font-size-01);
+		}
+
+		@include mediaScreenWidePhone {
+			font-size: var(--font-size);
+		}
 	}
 
-	&__content {
-		display: flex;
+	&__action {
+		grid-area: action;
+		justify-self: start;
+
+		@include mediaScreenWideTablet {
+			align-self: flex-start;
+			position: absolute;
+			left: 20px;
+			bottom: 48px;
+			z-index: var(--z-up);
+		}
 	}
 
-	&__description {
-		padding: 54px 0;
-		align-self: center;
-		flex: 1 1 0;
+	&__cover {
+		grid-area: cover;
 	}
 
-	&__image {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-
+	&__img {
+		@include aspect-ratio(1276, 751);
 		background-size: cover;
 		background-repeat: no-repeat;
+
+		position: relative;
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 38%;
+			background: linear-gradient(to top, var(--black-01), transparent);
+		}
 	}
 }

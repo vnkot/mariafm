@@ -16,18 +16,18 @@
 	&__nav {
 		flex: 1 1 0;
 
-		@include mediaScreenLG {
+		@include mediaScreenWideLaptop {
 			flex: 0 1 auto;
 			margin-left: auto;
 		}
 
-		@include mediaScreenS {
+		@include mediaScreenWideTablet {
 			display: none;
 		}
 	}
 
 	&__action {
-		@include mediaScreenLG {
+		@include mediaScreenWideLaptop {
 			display: none;
 		}
 	}
@@ -36,21 +36,21 @@
 		display: none !important;
 		margin-left: auto;
 
-		@include mediaScreenS {
+		@include mediaScreenWideTablet {
 			display: flex !important;
 		}
 	}
 
-	@include mediaScreenXXL {
+	@include mediaScreenWideDesktop {
 		--top-indent: 24px;
 		--bottom-indent: 40px;
 	}
 
-	@include mediaScreenM {
+	@include mediaScreenLaptop {
 		--top-indent: 16px;
 	}
 
-	@include mediaScreenXXS {
+	@include mediaScreenWidePhone {
 		--bottom-indent: 32px;
 	}
 }
@@ -82,18 +82,18 @@
 		font-size: var(--wave-font-size);
 		font-weight: var(--font-weight-xl);
 
-		@include mediaScreenXXL {
+		@include mediaScreenWideDesktop {
 			position: absolute;
 			top: calc(100% + 8px);
 			left: 0;
 		}
 	}
 
-	@include mediaScreenM {
+	@include mediaScreenLaptop {
 		--logo-width: 200px;
 	}
 
-	@include mediaScreenXXS {
+	@include mediaScreenWidePhone {
 		--logo-width: 150px;
 		--wave-font-size: var(--font-size);
 	}
@@ -141,11 +141,11 @@
 		}
 	}
 
-	@include mediaScreenM {
+	@include mediaScreenLaptop {
 		--link--font-size: var(--font-size);
 	}
 
-	@include mediaScreenXXL {
+	@include mediaScreenWideDesktop {
 		--content-gap: 16px;
 	}
 }

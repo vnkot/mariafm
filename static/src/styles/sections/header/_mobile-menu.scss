@@ -167,7 +167,7 @@
 		align-self: center;
 	}
 
-	@include mediaScreenXXS {
+	@include mediaScreenWidePhone {
 		--logo-width: 210px;
 		--main-font-size: var(--font-size-01);
 

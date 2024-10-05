@@ -1,37 +1,37 @@
 @import "../utils/mixins";
 
 .footer {
-	&__body {
-		padding: 62px 0;
+	padding-top: 62px;
+	padding-bottom: 62px;
 
-		display: grid;
-		grid-template-areas:
+	display: grid;
+	grid-template-areas:
 			"logo map"
 			"contacts map"
 			"basement map";
-		grid-template-columns: 1fr 1.1fr;
-		gap: 32px;
+	grid-template-columns: 1fr 1.1fr;
+	gap: 32px;
 
-		@include mediaScreenM {
-			padding: 32px 0;
-		}
+	@include mediaScreenLaptop {
+		padding-top: 32px;
+		padding-bottom: 32px;
+	}
 
-		@include mediaScreenLG {
-			grid-template-areas:
+	@include mediaScreenWideLaptop {
+		grid-template-areas:
 				"logo ."
 				"contacts map"
 				"basement basement";
-		}
+	}
 
-		@include mediaScreenS {
-			gap: 26px;
-			grid-template-columns: 1fr;
-			grid-template-areas:
+	@include mediaScreenWideTablet {
+		gap: 26px;
+		grid-template-columns: 1fr;
+		grid-template-areas:
 				"logo"
 				"map"
 				"contacts"
 				"basement";
-		}
 	}
 
 	&__logo {
@@ -47,7 +47,7 @@
 			object-position: center;
 		}
 
-		@include mediaScreenXXS {
+		@include mediaScreenWidePhone {
 			width: 192px;
 			height: 33px;
 		}
@@ -64,7 +64,7 @@
 		color: var(--gray);
 		font-size: var(--font-size-01);
 
-		@include mediaScreenXXS {
+		@include mediaScreenWidePhone {
 			font-size: var(--font-size);
 		}
 	}
@@ -83,11 +83,11 @@
 			filter: grayscale(0);
 		}
 
-		@include mediaScreenS {
+		@include mediaScreenWideTablet {
 			@include aspect-ratio(16, 9);
 		}
 
-		@include mediaScreenXXS {
+		@include mediaScreenWidePhone {
 			@include aspect-ratio(11, 9);
 		}
 	}
@@ -105,21 +105,21 @@
 		& + & {
 			margin-left: auto;
 
-			@include mediaScreenXXXS {
+			@include mediaScreenPhone {
 				margin-left: 0;
 			}
 		}
 
-		@include mediaScreenXXS {
+		@include mediaScreenWidePhone {
 			gap: 16px;
 		}
 	}
 
-	@include mediaScreenXXS {
+	@include mediaScreenWidePhone {
 		gap: 24px;
 	}
 
-	@include mediaScreenXXXS {
+	@include mediaScreenPhone {
 		flex-direction: column;
 	}
 }
@@ -146,7 +146,7 @@
 		}
 	}
 
-	@include mediaScreenXXS {
+	@include mediaScreenWidePhone {
 		font-size: var(--font-size);
 	}
 }

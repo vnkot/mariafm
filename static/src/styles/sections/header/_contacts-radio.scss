@@ -48,7 +48,7 @@
 		margin-left: auto;
 	}
 
-	@include mediaScreenM {
+	@include mediaScreenLaptop {
 		--content-gap: 16px;
 		--tel-font-size: var(--font-size);
 	}
@@ -82,7 +82,7 @@
 		}
 	}
 
-	@include mediaScreenM {
+	@include mediaScreenLaptop {
 		--content-gap: 16px;
 		--icon-size: 32px;
 	}
@@ -136,12 +136,12 @@
 		font-weight: var(--font-weight-xl);
 	}
 
-	@include mediaScreenM {
+	@include mediaScreenLaptop {
 		--icon-size: 24px;
 		--text-font-size: var(--font-size);
 	}
 
-	@include mediaScreenXXS {
+	@include mediaScreenWidePhone {
 		--text-display: none;
 	}
 }

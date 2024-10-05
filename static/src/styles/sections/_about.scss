@@ -1,52 +1,51 @@
 @import "../utils/mixins";
 
 .about {
-
-	&__body {
-		display: grid;
-		row-gap: 32px;
-		column-gap: 24px;
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-areas:
+	display: grid;
+	row-gap: 32px;
+	column-gap: 24px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-areas:
 			"title map"
 			"description map"
 			"info map"
 			"badges map"
 			". map";
-		padding: 62px 0;
+	padding-top: 62px;
+	padding-bottom: 62px;
 
-		@include mediaScreenM {
-			padding: 32px 0;
-		}
+	@include mediaScreenLaptop {
+		padding-top: 32px;
+		padding-bottom: 32px;
+	}
 
-		@include mediaScreenLG {
-			grid-template-areas:
+	@include mediaScreenWideLaptop {
+		grid-template-areas:
 				"title title"
 				"description map"
 				"info map"
 				"badges map"
 				". map";
-		}
+	}
 
-		@include mediaScreenS {
-			row-gap: 26px;
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-areas:
+	@include mediaScreenWideTablet {
+		row-gap: 26px;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas:
 				"title title"
 				"description description"
 				"badges info"
 				"map map";
-		}
+	}
 
-		@include mediaScreenXXS {
-			grid-template-columns: 1fr;
-			grid-template-areas:
+	@include mediaScreenWidePhone {
+		grid-template-columns: 1fr;
+		grid-template-areas:
 				"title"
 				"description"
 				"info"
 				"badges"
 				"map";
-		}
 	}
 
 	&__title {
@@ -94,16 +93,16 @@
 			font-size: var(--font-size-01);
 			line-height: 26px;
 
-			@include mediaScreenM {
+			@include mediaScreenLaptop {
 				font-size: var(--font-size-01);
 			}
 		}
 
-		@include mediaScreenS {
+		@include mediaScreenWideTablet {
 			justify-content: flex-end;
 		}
 
-		@include mediaScreenXXS {
+		@include mediaScreenWidePhone {
 			justify-content: flex-start;
 		}
 	}
@@ -111,11 +110,11 @@
 	&--rows {
 		flex-direction: row;
 
-		@include mediaScreenS {
+		@include mediaScreenWideTablet {
 			flex-wrap: wrap;
 		}
 
-		@include mediaScreenXXS {
+		@include mediaScreenWidePhone {
 			> * {
 				flex: 1 1 0;
 			}
@@ -124,27 +123,27 @@
 }
 
 .badge {
+	--name-font-size: var(--font-size-02);
+	--value-font-size: var(--font-size-05);
+
 	color: var(--black);
+
+	&__name {
+		font-size: var(--name-font-size);
+	}
 
 	&__value {
 		white-space: nowrap;
-		font-size: var(--font-size-05);
+		font-size: var(--value-font-size);
 		font-weight: var(--font-weight-xxl);
-
-		@include mediaScreenM {
-			font-size: var(--font-size-04);
-		}
-
-		@include mediaScreenXS {
-			font-size: var(--font-size-03);
-		}
 	}
 
-	&__name {
-		font-size: var(--font-size-02);
+	@include mediaScreenLaptop {
+		--name-font-size: var(--font-size-01);
+		--value-font-size: var(--font-size-04);
+	}
 
-		@include mediaScreenM {
-			font-size: var(--font-size-01);
-		}
+	@include mediaScreenTablet {
+		--value-font-size: var(--font-size-03);
 	}
 }

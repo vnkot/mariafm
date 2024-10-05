@@ -16,6 +16,7 @@
 	position: relative;
 
 	&__body {
+		display: block;
 		overflow: hidden;
 		position: relative;
 
@@ -30,7 +31,7 @@
 
 			display: none;
 
-			@include mediaScreenXXXL {
+			@include mediaScreenUltraWide {
 				display: block;
 			}
 		}
@@ -98,7 +99,7 @@
 		}
 	}
 
-	@include mediaScreenM {
+	@include mediaScreenLaptop {
 		--slide-width: 500px;
 		--slide-height: 297px;
 
@@ -106,7 +107,7 @@
 		--indicator-size: 14px;
 	}
 
-	@include mediaScreenXXS {
+	@include mediaScreenWidePhone {
 		--slide-width: 350px;
 		--slide-height: 511px;
 
@@ -121,7 +122,7 @@
 		}
 	}
 
-	@include mediaScreenXXXS {
+	@include mediaScreenPhone {
 		--slide-width: 300px;
 		--slide-height: 438px;
 	}

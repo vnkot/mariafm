@@ -15,29 +15,39 @@
 		flex-direction: column;
 		gap: 102px;
 
-		@include mediaScreenM {
+		@include mediaScreenLaptop {
 			gap: 48px;
 		}
 
-		@include mediaScreenS {
+		@include mediaScreenWideTablet {
 			font-size: var(--font-size-02);
 		}
 
-		@include mediaScreenXS {
+		@include mediaScreenTablet {
 			gap: 24px;
 		}
 	}
 
-	&__bottom-body {
-		padding: 62px 0;
+	&__bottom {
+		padding-top: 62px;
+		padding-bottom: 62px;
 		display: flex;
 		align-items: flex-end;
 		gap: 24px;
 
-		@include mediaScreenXS {
+		@include mediaScreenWideTablet {
+			align-items: center;
+
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+
+		@include mediaScreenTablet {
 			flex-direction: column-reverse;
 			align-items: stretch;
-			padding: 24px 0;
+
+			padding-top: 24px;
+			padding-bottom: 24px;
 		}
 	}
 
@@ -49,19 +59,18 @@
 		margin-top: -120px;
 		width: 600px;
 
-		@include mediaScreenM {
+		@include mediaScreenLaptop {
 			margin-top: 54px;
 			width: 500px;
 		}
 
-		@include mediaScreenS {
+		@include mediaScreenWideTablet {
 			width: 400px;
-			margin-top: 32px;
+			margin-top: 0;
 		}
 
-		@include mediaScreenXS {
+		@include mediaScreenTablet {
 			width: 100%;
-			margin-top: 0;
 		}
 	}
 }
@@ -79,7 +88,7 @@
 		flex-direction: column;
 		gap: 47px;
 
-		@include mediaScreenXS {
+		@include mediaScreenTablet {
 			gap: 24px;
 		}
 	}
@@ -90,11 +99,11 @@
 		display: none;
 		max-width: min-content;
 
-		@include mediaScreenXS {
+		@include mediaScreenTablet {
 			display: block;
 		}
 
-		@include mediaScreenXXS {
+		@include mediaScreenWidePhone {
 			max-width: 100%;
 		}
 	}
@@ -125,13 +134,13 @@
 			background-color: var(--red);
 		}
 
-		@include mediaScreenS {
+		@include mediaScreenWideTablet {
 			font-size: var(--font-size-02);
 			padding-left: 16px;
 			max-width: 400px;
 		}
 
-		@include mediaScreenXXS {
+		@include mediaScreenWidePhone {
 			font-size: var(--font-size);
 			padding-left: 16px;
 		}
@@ -163,7 +172,7 @@
 			right: -8px;
 		}
 
-		@include mediaScreenXS {
+		@include mediaScreenTablet {
 			display: none;
 		}
 	}

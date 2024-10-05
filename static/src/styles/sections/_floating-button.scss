@@ -33,12 +33,12 @@
 		background-color: var(--red-01);
 	}
 
-	@include mediaScreenM {
+	@include mediaScreenLaptop {
 		--size: 130px;
 		font-size: var(--font-size-01);
 	}
 
-	@include mediaScreenXS {
+	@include mediaScreenTablet {
 		--size: 100px;
 		font-size: var(--font-size);
 	}

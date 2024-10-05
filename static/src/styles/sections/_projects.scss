@@ -1,19 +1,19 @@
 @import "../utils/mixins";
 
 .projects {
-	&__body {
-		display: flex;
-		flex-direction: column;
-		gap: 60px;
-		padding: 62px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+	padding-top: 62px;
+	padding-bottom: 62px;
 
-		@include mediaScreenM {
-			padding: 32px 0;
-		}
+	@include mediaScreenLaptop {
+		padding-top: 32px;
+		padding-bottom: 32px;
+	}
 
-		@include mediaScreenS {
-			gap: 26px;
-		}
+	@include mediaScreenWideTablet {
+		gap: 26px;
 	}
 
 	&__list {
@@ -21,7 +21,7 @@
 		flex-direction: column;
 		gap: 40px;
 
-		@include mediaScreenS {
+		@include mediaScreenWideTablet {
 			gap: 32px;
 		}
 	}
@@ -44,7 +44,7 @@
 		background-repeat: no-repeat;
 		@include aspect-ratio(593, 353);
 
-		@include mediaScreenS {
+		@include mediaScreenWideTablet {
 			border-radius: 16px;
 		}
 	}
@@ -58,7 +58,7 @@
 		gap: 16px;
 		padding: 0 8px;
 
-		@include mediaScreenS {
+		@include mediaScreenWideTablet {
 			gap: 8px;
 		}
 	}
@@ -68,7 +68,7 @@
 		font-size: var(--font-size-03);
 		font-weight: var(--font-weight-xxxl);
 
-		@include mediaScreenS {
+		@include mediaScreenWideTablet {
 			font-size: var(--font-size-02);
 		}
 	}
@@ -78,12 +78,12 @@
 		color: var(--black);
 		font-size: var(--font-size-02);
 
-		@include mediaScreenS {
+		@include mediaScreenWideTablet {
 			font-size: var(--font-size);
 		}
 	}
 
-	@include mediaScreenS {
+	@include mediaScreenWideTablet {
 		column-gap: 8px;
 	}
 }

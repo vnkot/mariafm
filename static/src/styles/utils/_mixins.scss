@@ -1,52 +1,52 @@
-@mixin mediaScreenXXXL() {
+@mixin mediaScreenUltraWide() {
 	@media (min-width: 1864px) {
 		@content
 	}
 }
 
-@mixin mediaScreenXXL() {
+@mixin mediaScreenWideDesktop() {
 	@media (max-width: 1512px) {
 		@content
 	}
 }
 
-@mixin mediaScreenXL() {
+@mixin mediaScreenDesktop() {
 	@media (max-width: 1440px) {
 		@content
 	}
 }
 
-@mixin mediaScreenLG() {
+@mixin mediaScreenWideLaptop() {
 	@media (max-width: 1296px) {
 		@content
 	}
 }
 
-@mixin mediaScreenM() {
+@mixin mediaScreenLaptop() {
 	@media (max-width: 1200px) {
 		@content
 	}
 }
 
-@mixin mediaScreenS() {
+@mixin mediaScreenWideTablet() {
 	@media (max-width: 900px) {
 		@content
 	}
 }
 
-@mixin mediaScreenXS() {
+@mixin mediaScreenTablet() {
 	@media (max-width: 664px) {
 		@content
 	}
 }
 
-@mixin mediaScreenXXS() {
+@mixin mediaScreenWidePhone() {
 	@media (max-width: 526px) {
 		@content
 	}
 }
 
-@mixin mediaScreenXXXS() {
+@mixin mediaScreenPhone() {
 	@media (max-width: 386px) {
 		@content
 	}

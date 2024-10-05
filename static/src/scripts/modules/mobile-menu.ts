@@ -58,11 +58,11 @@ export class MobileMenu {
 	}
 
 	private lockBody() {
-		document.body.style.overflowY = 'hidden';
+		document.body.style.overflow = 'hidden';
 	}
 
 	private unlockBody() {
-		document.body.style.overflowY = 'auto';
+		document.body.style.overflow = 'auto';
 	}
 
 	private checkScreenSize() {

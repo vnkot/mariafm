@@ -77,6 +77,11 @@
 		}
 	}
 
+	&__ctrl {
+		opacity: 0;
+		transition: opacity .3s;
+	}
+
 	&__indicators {
 		display: flex;
 		gap: 24px;

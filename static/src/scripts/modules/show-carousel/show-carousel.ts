@@ -83,12 +83,15 @@ export class ShowCarousel {
 		if (this.isScroll) return;
 
 		this.btnPrevElement.style.cssText = `
+			opacity: 1;
 		 	position: absolute;
 		 	top: ${slideHeight / 2}px;
 		 	left: calc(50% - ${countSlideInView === 2 ? slideWidth : slideWidth / 2}px + 16px);
 		 	transform: translate(-50%, -50%);
 		`;
 		this.btnNextElement.style.cssText = `
+			opacity: 1;
+			display: block;
 		 	position: absolute;
 		 	top: ${slideHeight / 2}px;
 		 	left: calc(50% + ${countSlideInView === 2 ? slideWidth : slideWidth / 2}px - 16px);

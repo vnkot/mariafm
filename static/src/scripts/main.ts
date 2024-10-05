@@ -30,10 +30,3 @@ new TeamCarousel({
 	carouselId: 'team-carousel',
 }).init();
 new InteractiveMap('footer-map', [58.583945, 49.659408]).init();
-
-// плавное появление сайта
-const wrapper = document.querySelector('.wrapper')! as HTMLDivElement;
-
-document.addEventListener('DOMContentLoaded', () => {
-	wrapper.classList.add('wrapper--visible');
-});

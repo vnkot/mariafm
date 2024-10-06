@@ -1,5 +1,5 @@
-:80 {
-    reverse_proxy 192.168.0.8:8000
+vnkot.ru {
+    reverse_proxy 62.113.111.188:8000
 
     handle_path /media/* {
         file_server {

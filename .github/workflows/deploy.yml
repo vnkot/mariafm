@@ -33,6 +33,8 @@ jobs:
             echo "SUPERUSER_EMAIL= ${{ secrets.SUPERUSER_EMAIL }}" >> .env
             echo "SUPERUSER_USERNAME= ${{ secrets.SUPERUSER_USERNAME }}" >> .env
             echo "SUPERUSER_PASSWORD= ${{ secrets.SUPERUSER_PASSWORD }}" >> .env
+            
+            echo "HOST= ${{ secrets.HOST }}" >> .env
 
             make build-prod
             make up-prod

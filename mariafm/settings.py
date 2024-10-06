@@ -12,6 +12,7 @@ SECRET_KEY = config('SECRET', default='django-insecure-&%8vqyzb2w9&0d+80rx80)736
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [config('HOST', 'localhost', cast=str)]
 
 INSTALLED_APPS = [
     'django.contrib.admin',

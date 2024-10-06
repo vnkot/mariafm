@@ -1,8 +1,3 @@
 vnkot.ru {
-     route /media {
-            root * /media
-            file_server
-    }
-
     reverse_proxy 62.113.111.188:8000
 }

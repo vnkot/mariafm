@@ -12,8 +12,5 @@ class Command(BaseCommand):
         email = config('SUPERUSER_EMAIL')
         password = config('SUPERUSER_PASSWORD')
 
-        if User.objects.filter(username=username).exists():
-            self.stdout.write(self.style.WARNING(f'Суперпользователь {username} уже создан'))
-        else:
+        if not User.objects.filter(username=username).exists():
             User.objects.create_superuser(username=username, email=email, password=password)
-            self.stdout.write(self.style.SUCCESS(f'Суперпользователь {username} создан'))

@@ -30,6 +30,8 @@ services:
       poetry run python manage.py makesuperuser &&
       poetry run python manage.py runserver 0.0.0.0:8000"
     restart: always
+    volumes:
+      - media:/app/media
     depends_on:
       - db
     networks:
@@ -41,6 +43,7 @@ services:
       - ./services/proxy/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
+      - media:/app/media
     ports:
       - "80:80"
       - "443:443"
@@ -49,10 +52,12 @@ services:
       - web
     restart: always
 
+
 volumes:
   caddy_data:
   caddy_config:
   pgdata:
+  media:
 
 networks:
   db-network:

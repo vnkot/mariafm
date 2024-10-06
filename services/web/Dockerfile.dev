@@ -6,8 +6,9 @@ COPY requirements.txt ./
 
 RUN pip install -r requirements.txt
 
+COPY wait-for-it.sh /usr/local/bin/wait-for-it
+RUN chmod +x /usr/local/bin/wait-for-it
+
 COPY . .
 
 EXPOSE 8000
-
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

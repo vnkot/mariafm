@@ -5,49 +5,18 @@
 	<div class="shows__carousel show-carousel">
 		<a href="#projects" class="show-carousel__body" id="show-carousel">
 			<ul class="show-carousel__container">
-				<li class="show-carousel__slide">
-					<img
-						src="{% static 'images/shows/evening-channel.png' %}"
-						class="show-carousel__img show-carousel__img--desktop"
-					>
-					<img
-						src="{% static 'images/shows/evening-channel--mobile.png' %}"
-						class="show-carousel__img show-carousel__img--mobile"
-					>
-				</li>
-
-				<li class="show-carousel__slide">
-					<img
-						src="{% static 'images/shows/very-first.png' %}"
-						class="show-carousel__img show-carousel__img--desktop"
-					>
-					<img
-						src="{% static 'images/shows/mobile-placeholder.png' %}"
-						class="show-carousel__img show-carousel__img--mobile"
-					>
-				</li>
-
-				<li class="show-carousel__slide">
-					<img
-						src="{% static 'images/shows/friday-warm-up.png' %}"
-						class="show-carousel__img show-carousel__img--desktop"
-					>
-					<img
-						src="{% static 'images/shows/mobile-placeholder.png' %}"
-						class="show-carousel__img show-carousel__img--mobile"
-					>
-				</li>
-
-				<li class="show-carousel__slide">
-					<img
-						src="{% static 'images/shows/cover-show.png' %}"
-						class="show-carousel__img show-carousel__img--desktop"
-					>
-					<img
-						src="{% static 'images/shows/mobile-placeholder.png' %}"
-						class="show-carousel__img show-carousel__img--mobile"
-					>
-				</li>
+				{% for project in projects %}
+					<li class="show-carousel__slide">
+						<img
+							src="{{ project.coverDesktop.url }}"
+							class="show-carousel__img show-carousel__img--desktop"
+						>
+						<img
+							src="{{ project.coverMobile.url }}"
+							class="show-carousel__img show-carousel__img--mobile"
+						>
+					</li>
+				{% endfor %}
 			</ul>
 		</a>
 

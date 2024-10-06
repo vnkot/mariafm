@@ -29,3 +29,6 @@ __pycache__
 # django
 collectedstatic
 db.sqlite3
+
+# db
+media

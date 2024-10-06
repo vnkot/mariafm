@@ -11,6 +11,8 @@ django = "^5.1.1"
 django-vite = "^3.0.5"
 whitenoise = "^6.7.0"
 python-decouple = "^3.8"
+psycopg2-binary = "^2.9.9"
+pillow = "^10.4.0"
 
 
 [build-system]

@@ -9,37 +9,17 @@
 	<div class="team__carousel team-carousel">
 		<div class="team-carousel__body" id="team-carousel">
 			<ul class="team-carousel__container">
-				<li class="team-carousel__slide people">
-					<div class="people__avatar">
-						<img src="{% static 'images/team/mikhail-annenkov.png' %}" />
-					</div>
-					<p class="people__name">Михаил Анненков</p>
-					<p class="people__describe">
-						Генеральный директор радиостанции Мария FM 20 лет вдохновляет радио на развитие
-					</p>
-				</li>
-
-				<li class="team-carousel__slide people">
-					<div class="people__avatar">
-						<img src="{% static 'images/team/vlad-smirnov.png' %}" />
-					</div>
-					<p class="people__name">Влад Смирнов</p>
-					<p class="people__describe">
-						Радиоведущий с 10-летним стажем, один из лучших голосов страны по итогам всероссийских
-						конкурсов
-					</p>
-				</li>
-
-				<li class="team-carousel__slide people">
-					<div class="people__avatar">
-						<img src="{% static 'images/team/alexey-batalov.png' %}" />
-					</div>
-					<p class="people__name">Алексей Баталов</p>
-					<p class="people__describe">
-						Бессменный ведущий утреннего шоу, больше 10 лет делает утро кировчан и жителей области
-						душевнее
-					</p>
-				</li>
+				{% for people in peoples %}
+					<li class="team-carousel__slide people">
+						<div class="people__avatar">
+							<img src="{{ people.avatar.url }}" />
+						</div>
+						<p class="people__name">{{ people.fullname }}</p>
+						<p class="people__describe">
+							{{ people.description }}
+						</p>
+					</li>
+				{% endfor %}
 			</ul>
 		</div>
 

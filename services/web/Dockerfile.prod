@@ -1,6 +1,5 @@
 FROM python:3.12
 
-
 RUN apt-get update && apt-get install -y curl && \
     curl -sSL https://install.python-poetry.org | python3 - && \
     ln -s /root/.local/bin/poetry /usr/local/bin/poetry
@@ -21,5 +20,5 @@ RUN npm install && npm run build
 
 RUN poetry run python manage.py collectstatic --noinput
 
-
-CMD ["poetry", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
+COPY wait-for-it.sh /usr/local/bin/wait-for-it
+RUN chmod +x /usr/local/bin/wait-for-it

@@ -5,20 +5,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {% vite_hmr_client %}
-    {% vite_asset 'scripts/main.ts' %}
+	{% vite_hmr_client %}
+	{% vite_asset 'scripts/main.ts' %}
 
-    <link rel="stylesheet" href="{% vite_asset_url 'styles/style.scss' %}">
-    <link rel="shortcut icon" href="{% static 'icons/general/favicon.png' %}" type="image/png" />
+	<link rel="stylesheet" href="{% vite_asset_url 'styles/style.scss' %}">
+	<link rel="shortcut icon" href="{% static 'icons/general/favicon.png' %}" type="image/png" />
 
-    <title>Мария ФМ | Радио нашего города</title>
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Мария ФМ | Киров">
+	<meta property="og:url" content="https://mariafm.ru/">
+	<meta property="og:image" content="{% static 'images/general/og-cover.png' %}">
+	<meta property="og:description" content="Радио нашего города!
+		Только полезный и интересный кировский контент:
+		- достоверные новости каждые 15 минут;
+		- ежедневные розыгрыши призов и подарков;
+		- музыка, которую выбирают кировчане."
+	>
+
+	<title>Мария ФМ | Радио нашего города</title>
 </head>
 <body>
-    <div class="wrapper">
-        {% block content %}{% endblock %}
-    </div>
+<div class="wrapper">
+	{% block content %}{% endblock %}
+</div>
 </body>
 </html>

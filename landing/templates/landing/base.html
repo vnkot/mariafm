@@ -14,11 +14,11 @@
 	<link rel="stylesheet" href="{% vite_asset_url 'styles/style.scss' %}">
 	<link rel="shortcut icon" href="{% static 'icons/general/favicon.png' %}" type="image/png" />
 
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Мария ФМ | Радио нашего города">
-	<meta property="og:url" content="https://mariafm.ru">
-	<meta property="og:image" content="{% static 'images/general/og-cover.png' %}">
-	<meta property="og:description" content="Радио нашего города! Только полезный и интересный Кировский контент"
+	<meta property="og:type" content="{{ seo.ogType }}">
+	<meta property="og:title" content="{{ seo.ogTitle }}">
+	<meta property="og:url" content="{{ seo.ogUrl }}">
+	<meta property="og:image" content="{{ seo.ogImage.url }}">
+	<meta property="og:description" content="{{ seo.ogDescription }}"
 	>
 
 	<title>Мария ФМ | Радио нашего города</title>

@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.html import format_html
 
@@ -37,3 +38,18 @@ class People(models.Model):
 
     def __str__(self):
         return self.fullname
+
+
+class Seo(models.Model):
+    ogType = models.CharField(max_length=30, verbose_name='og:type')
+    ogTitle = models.CharField(max_length=70, verbose_name='og:title')
+    ogUrl = models.URLField(verbose_name='og:url')
+    ogImage = models.ImageField(verbose_name='og:image')
+    ogDescription = models.TextField(max_length=100, verbose_name='og:description')
+
+    class Meta:
+        verbose_name = "SEO"
+        verbose_name_plural = "SEO"
+
+    def __str__(self):
+        return 'SEO'

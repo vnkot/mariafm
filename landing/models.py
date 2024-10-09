@@ -48,8 +48,23 @@ class Seo(models.Model):
     ogDescription = models.TextField(max_length=100, verbose_name='og:description')
 
     class Meta:
-        verbose_name = "SEO"
-        verbose_name_plural = "SEO"
+        verbose_name = 'SEO'
+        verbose_name_plural = 'SEO'
 
     def __str__(self):
         return 'SEO'
+
+
+class ContactRadio(models.Model):
+    whatsappUrl = models.URLField(verbose_name='Ссылка на whatsapp аккаунт/бот')
+    telegramUrl = models.URLField(verbose_name='Ссылка на telegram аккаунт/бот')
+    displayedPhoneNumber = models.CharField(max_length=20, verbose_name='Отображаемый номер телефона')
+    phoneNumber = models.CharField(max_length=11, verbose_name='Номер телефона')
+    radioSrc = models.URLField(verbose_name='Ссылка на источник радио')
+
+    class Meta:
+        verbose_name = 'Секция "Контакты и радио"'
+        verbose_name_plural = 'Секция "Контакты и радио"'
+
+    def __str__(self):
+        return 'Секция "Контакты и радио"'

@@ -5,24 +5,24 @@
 	<div class="contact-radio__body container-header">
 		<ul class="soc-networks">
 			<li class="soc-networks__item" title="Написать в Whatsapp">
-				<a href="https://wa.me/79128271029">
+				<a href="{{ contactRadio.whatsappUrl }}">
 					<img src="{% static 'icons/soc-network/whatsapp.png' %}" />
 				</a>
 			</li>
 
 			<li class="soc-networks__item" title="Написать в Telegram">
-				<a href="https://t.me/+79128271029">
+				<a href="{{ contactRadio.telegramUrl }}">
 					<img src="{% static 'icons/soc-network/telegram.png' %}" />
 				</a>
 			</li>
 		</ul>
 
-		<a href="tel:+79128271029" class="contact-radio__tel" title="Позвонить по номеру телефона">
-			+7 912 827 10 29
+		<a href="tel:+{{ contactRadio.phoneNumber }}" class="contact-radio__tel" title="Позвонить по номеру телефона">
+			{{ contactRadio.displayedPhoneNumber }}
 		</a>
 
 		<div class="contact-radio__radio radio" id="radio">
-			<audio src="https://online.mariafm.ru:8443/MariaFM"></audio>
+			<audio src="{{ contactRadio.radioSrc }}"></audio>
 
 			<div class="radio__ctrl">
 				<div class="radio__play">

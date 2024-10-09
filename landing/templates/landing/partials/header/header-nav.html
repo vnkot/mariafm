@@ -13,24 +13,11 @@
 
 		<nav class="header-nav__nav nav">
 			<ul class="nav__link-list">
-				<li class="nav__item">
-					<a href="#shows">Новости</a>
-				</li>
-				<li class="nav__item">
-					<a href="#about">О радио</a>
-				</li>
-				<li class="nav__item">
-					<a href="#team">Команда</a>
-				</li>
-				<li class="nav__item">
-					<a href="#school">Школа медиа</a>
-				</li>
-				<li class="nav__item">
-					<a href="#projects">Проекты</a>
-				</li>
-				<li class="nav__item">
-					<a href="#footer">Контакты</a>
-				</li>
+				{% for navLink in navLinks %}
+					<li class="nav__item">
+						<a href="{{ navLink.url }}">{{ navLink.caption }}</a>
+					</li>
+				{% endfor %}
 			</ul>
 		</nav>
 

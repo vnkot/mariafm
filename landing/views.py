@@ -1,13 +1,15 @@
 from django.shortcuts import render
 
-from landing.models import Project, People, Seo, ContactRadio
+from landing.models import Project, People, Seo, ContactRadio, NavLink
 
 
 def index(request):
     seo = Seo.objects.first()
+    contact_radio = ContactRadio.objects.first()
+
     peoples = People.objects.all()
     projects = Project.objects.all()
-    contactRadio = ContactRadio.objects.first()
+    nav_links = NavLink.objects.all()
 
     return render(
         request,
@@ -16,6 +18,7 @@ def index(request):
             'seo': seo,
             'peoples': peoples,
             'projects': projects,
-            'contactRadio': contactRadio,
+            'contactRadio': contact_radio,
+            'navLinks': nav_links,
         }
     )

@@ -68,3 +68,15 @@ class ContactRadio(models.Model):
 
     def __str__(self):
         return 'Секция "Контакты и радио"'
+
+
+class NavLink(models.Model):
+    caption = models.CharField(max_length=30, verbose_name='Текст ссылки')
+    url = models.CharField(verbose_name='URL-ссылки')
+
+    class Meta:
+        verbose_name = 'Ссылка навигации'
+        verbose_name_plural = 'Ссылки навигации'
+
+    def __str__(self):
+        return self.caption

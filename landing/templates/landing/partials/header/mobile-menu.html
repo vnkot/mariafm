@@ -20,24 +20,11 @@
 
 	<nav>
 		<ul class="menu__link-list">
-			<li class="menu__link">
-				<a class="close" href="#shows">Новости</a>
-			</li>
-			<li class="menu__link">
-				<a class="close" href="#about">О радио</a>
-			</li>
-			<li class="menu__link">
-				<a class="close" href="#team">Команда</a>
-			</li>
-			<li class="menu__link">
-				<a class="close" href="#school">Школа медиа</a>
-			</li>
-			<li class="menu__link">
-				<a class="close" href="#projects">Проекты</a>
-			</li>
-			<li class="menu__link">
-				<a class="close" href="#footer">Контакты</a>
-			</li>
+			{% for navLink in navLinks %}
+				<li class="menu__link">
+					<a class="close" href="{{ navLink.url }}">{{ navLink.caption }}</a>
+				</li>
+			{% endfor %}
 		</ul>
 	</nav>
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from landing.models import Project, People, Seo, ContactRadio, NavLink
+from landing.models import Project, People, Seo, ContactRadio, NavLink, LinksForAdvertising, LinksForContact
 
 
 def index(request):
@@ -10,6 +10,8 @@ def index(request):
     peoples = People.objects.all()
     projects = Project.objects.all()
     nav_links = NavLink.objects.all()
+    links_for_contact = LinksForContact.objects.all()
+    links_for_advertising = LinksForAdvertising.objects.all()
 
     return render(
         request,
@@ -18,7 +20,9 @@ def index(request):
             'seo': seo,
             'peoples': peoples,
             'projects': projects,
-            'contactRadio': contact_radio,
             'navLinks': nav_links,
+            'contactRadio': contact_radio,
+            'linksForContact': links_for_contact,
+            'linksForAdvertising': links_for_advertising
         }
     )

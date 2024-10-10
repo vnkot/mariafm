@@ -1,4 +1,3 @@
-from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.html import format_html
 
@@ -77,6 +76,32 @@ class NavLink(models.Model):
     class Meta:
         verbose_name = 'Ссылка навигации'
         verbose_name_plural = 'Ссылки навигации'
+
+    def __str__(self):
+        return self.caption
+
+
+class LinksForAdvertising(models.Model):
+    caption = models.CharField(max_length=40, verbose_name='Название ссылки')
+    value = models.CharField(verbose_name='Текст ссылки')
+    url = models.CharField(verbose_name='URL-ссылки')
+
+    class Meta:
+        verbose_name = 'Ссылка для рекламы'
+        verbose_name_plural = 'Ссылки для рекламы'
+
+    def __str__(self):
+        return self.caption
+
+
+class LinksForContact(models.Model):
+    caption = models.CharField(max_length=40, verbose_name='Название ссылки')
+    value = models.CharField(verbose_name='Текст ссылки')
+    url = models.CharField(verbose_name='URL-ссылки')
+
+    class Meta:
+        verbose_name = 'Ссылка для контактов'
+        verbose_name_plural = 'Ссылки для контактов'
 
     def __str__(self):
         return self.caption

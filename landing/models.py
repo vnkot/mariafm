@@ -1,44 +1,6 @@
 from django.db import models
 from django.utils.html import format_html
 
-
-class Project(models.Model):
-    title = models.CharField(max_length=30, verbose_name='Заголовок')
-    description = models.TextField(max_length=300, verbose_name='Описание')
-    coverMobile = models.ImageField(verbose_name='Обложка для мобильный устройств')
-    coverDesktop = models.ImageField(verbose_name='Обложка для компьютерных устройств')
-    order = models.PositiveIntegerField(default=0, verbose_name='Порядковый номер отображения')
-
-    class Meta:
-        verbose_name = 'Проект'
-        verbose_name_plural = 'Проекты'
-        ordering = ['order']
-
-    def formatted_description(self):
-        return format_html(self.description.replace('\n', '<br>'))
-
-    def __str__(self):
-        return self.title
-
-
-class People(models.Model):
-    fullname = models.CharField(max_length=30, verbose_name='Полное имя')
-    description = models.TextField(max_length=300, verbose_name='Описание')
-    avatar = models.ImageField(verbose_name='Аватарка')
-    order = models.PositiveIntegerField(default=0, verbose_name='Порядковый номер отображения')
-
-    class Meta:
-        verbose_name = 'Член команды'
-        verbose_name_plural = 'Члены команды'
-        ordering = ['order']
-
-    def formatted_description(self):
-        return format_html(self.description.replace('\n', '<br>'))
-
-    def __str__(self):
-        return self.fullname
-
-
 class Seo(models.Model):
     ogType = models.CharField(max_length=30, verbose_name='og:type')
     ogTitle = models.CharField(max_length=70, verbose_name='og:title')
@@ -47,12 +9,35 @@ class Seo(models.Model):
     ogDescription = models.TextField(max_length=100, verbose_name='og:description')
 
     class Meta:
-        verbose_name = 'SEO'
-        verbose_name_plural = 'SEO'
+        verbose_name = 'Общие настройки: SEO'
+        verbose_name_plural = 'Общие настройки: SEO'
 
     def __str__(self):
-        return 'SEO'
+        return 'Общие настройки: SEO'
 
+
+class OrderAdvertising(models.Model):
+    caption = models.CharField(max_length=30, verbose_name='Текст ссылки')
+    url = models.CharField(verbose_name='URL-ссылки')
+
+    class Meta:
+        verbose_name = 'Общие настройки: кнопка заказа рекламы'
+        verbose_name_plural = 'Общие настройки: кнопка заказа рекламы'
+
+    def __str__(self):
+        return 'Общие настройки: кнопка заказа рекламы'
+
+
+class NavLink(models.Model):
+    caption = models.CharField(max_length=30, verbose_name='Текст ссылки')
+    url = models.CharField(verbose_name='URL-ссылки')
+
+    class Meta:
+        verbose_name = 'Секция "Шапка сайта": ссылка навигации'
+        verbose_name_plural = 'Секция "Шапка сайта": ссылки навигации'
+
+    def __str__(self):
+        return self.caption
 
 class ContactRadio(models.Model):
     whatsappUrl = models.URLField(verbose_name='Ссылка на whatsapp аккаунт/бот')
@@ -68,17 +53,40 @@ class ContactRadio(models.Model):
     def __str__(self):
         return 'Секция "Контакты и радио"'
 
-
-class NavLink(models.Model):
-    caption = models.CharField(max_length=30, verbose_name='Текст ссылки')
-    url = models.CharField(verbose_name='URL-ссылки')
+class Project(models.Model):
+    title = models.CharField(max_length=30, verbose_name='Заголовок')
+    description = models.TextField(max_length=300, verbose_name='Описание')
+    coverMobile = models.ImageField(verbose_name='Обложка для мобильный устройств')
+    coverDesktop = models.ImageField(verbose_name='Обложка для компьютерных устройств')
+    order = models.PositiveIntegerField(default=0, verbose_name='Порядковый номер отображения')
 
     class Meta:
-        verbose_name = 'Ссылка навигации'
-        verbose_name_plural = 'Ссылки навигации'
+        verbose_name = 'Общие настройки: проект'
+        verbose_name_plural = 'Общие настройки: проекты'
+        ordering = ['order']
+
+    def formatted_description(self):
+        return format_html(self.description.replace('\n', '<br>'))
 
     def __str__(self):
-        return self.caption
+        return self.title
+
+class People(models.Model):
+    fullname = models.CharField(max_length=30, verbose_name='Полное имя')
+    description = models.TextField(max_length=300, verbose_name='Описание')
+    avatar = models.ImageField(verbose_name='Аватарка')
+    order = models.PositiveIntegerField(default=0, verbose_name='Порядковый номер отображения')
+
+    class Meta:
+        verbose_name = 'Секция "Команда": член команды'
+        verbose_name_plural = 'Секция "Команда": члены команды'
+        ordering = ['order']
+
+    def formatted_description(self):
+        return format_html(self.description.replace('\n', '<br>'))
+
+    def __str__(self):
+        return self.fullname
 
 
 class LinksForAdvertising(models.Model):
@@ -87,8 +95,8 @@ class LinksForAdvertising(models.Model):
     url = models.CharField(verbose_name='URL-ссылки')
 
     class Meta:
-        verbose_name = 'Ссылка для рекламы'
-        verbose_name_plural = 'Ссылки для рекламы'
+        verbose_name = 'Секция "Подвал сайта": ссылка для рекламы'
+        verbose_name_plural = 'Секция "Подвал сайта": ссылки для рекламы'
 
     def __str__(self):
         return self.caption
@@ -100,8 +108,8 @@ class LinksForContact(models.Model):
     url = models.CharField(verbose_name='URL-ссылки')
 
     class Meta:
-        verbose_name = 'Ссылка для контактов'
-        verbose_name_plural = 'Ссылки для контактов'
+        verbose_name = 'Секция "Подвал сайта": ссылка для контактов'
+        verbose_name_plural = 'Секция "Подвал сайта": ссылка для контактов'
 
     def __str__(self):
         return self.caption

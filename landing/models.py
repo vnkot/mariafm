@@ -31,10 +31,12 @@ class OrderAdvertising(models.Model):
 class NavLink(models.Model):
     caption = models.CharField(max_length=30, verbose_name='Текст ссылки')
     url = models.CharField(verbose_name='URL-ссылки')
+    order = models.PositiveIntegerField(default=0, verbose_name='Порядковый номер отображения')
 
     class Meta:
         verbose_name = 'Секция "Шапка сайта": ссылка навигации'
         verbose_name_plural = 'Секция "Шапка сайта": ссылки навигации'
+        ordering = ['order']
 
     def __str__(self):
         return self.caption

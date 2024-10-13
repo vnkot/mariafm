@@ -4,9 +4,7 @@ import { ShowCarousel } from './modules/show-carousel/show-carousel.ts';
 import { TeamCarousel } from './modules/team-carousel/team-carousel.ts';
 import { InteractiveMap } from './modules/interactive-map.ts';
 import { MobileMenu } from './modules/mobile-menu.ts';
-import { SmoothAppearance } from './modules/smooth-appearance.ts';
 
-new SmoothAppearance('body--show').init();
 new MobileMenu({
 	menuId: 'mobile-menu',
 	overlayId: 'menu-overlay',

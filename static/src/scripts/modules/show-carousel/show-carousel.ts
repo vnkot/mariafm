@@ -49,8 +49,6 @@ export class ShowCarousel {
 	}
 
 	private generateIndicators(carousel: EmblaCarouselType) {
-		if (this.isScroll) return;
-
 		const countAllSlides = carousel.slideNodes().length;
 		const countSlidesInView = carousel.slidesInView().length;
 
@@ -80,8 +78,6 @@ export class ShowCarousel {
 			.slideNodes()[0]
 			.getBoundingClientRect();
 		const countSlideInView = carousel.slidesInView().length;
-
-		if (this.isScroll) return;
 
 		this.btnPrevElement.style.cssText = `
 			opacity: 1;
@@ -146,11 +142,10 @@ export class ShowCarousel {
 
 	private addCarouselEventListeners() {
 		this.carousel.on('slidesInView', (event) => {
-			this.setControlPositions(event);
-			this.generateIndicators(event);
+			!this.isScroll && this.generateIndicators(event);
+			!this.isScroll && this.setControlPositions(event);
 		});
 		this.carousel.on('scroll', () => (this.isScroll = true));
-		this.carousel.on('settle', () => (this.isScroll = false));
 	}
 
 	init() {

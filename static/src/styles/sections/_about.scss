@@ -136,6 +136,7 @@
 		white-space: nowrap;
 		font-size: var(--value-font-size);
 		font-weight: var(--font-weight-xxl);
+		text-transform: uppercase;
 	}
 
 	@include mediaScreenLaptop {

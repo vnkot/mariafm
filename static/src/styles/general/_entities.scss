@@ -1,7 +1,7 @@
 @import "../utils/mixins";
 
 h2.title {
-	font-size: var(--font-size-06);
+	font-size: var(--font-size-05);
 	font-weight: var(--font-weight-xxl);
 
 	&--red {
@@ -10,10 +10,6 @@ h2.title {
 
 	&--white {
 		color: #fff;
-	}
-
-	&--s {
-		font-size: var(--font-size-05);
 	}
 
 	&--uppercase {

@@ -52,6 +52,21 @@ Django = ">=3.2"
 dev = ["black"]
 
 [[package]]
+name = "django-webpfield"
+version = "0.1.0"
+description = "A simple library that convert any user uploaded images to webP format"
+optional = false
+python-versions = ">=3.11"
+files = [
+    {file = "django_webpfield-0.1.0-py3-none-any.whl", hash = "sha256:f2b77113e0d844251ffa3f71a3f560b6bf3a87f8bbecfe39c5ab9c1bc3cfc124"},
+    {file = "django_webpfield-0.1.0.tar.gz", hash = "sha256:99006b95b502057f821c64a29b31f229b648d2207f4fcc82991428dbbb61ddae"},
+]
+
+[package.dependencies]
+django = ">=4.2"
+pillow = ">=9.5.0"
+
+[[package]]
 name = "pillow"
 version = "10.4.0"
 description = "Python Imaging Library (Fork)"
@@ -283,4 +298,4 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "73fbf268bf4aa969fd646d8ad8c0752ba0a1b4ae54c01ffd39ca7c3fb65f22d0"
+content-hash = "0732d8d261e7f7b9542146ae2cebb638c5b917c7fd6956d8d5b94b0fc6b37571"

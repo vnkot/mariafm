@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
-from landing.models import Project, People, Seo, ContactRadio, NavLink, LinksForAdvertising, LinksForContact, \
-    OrderAdvertising
+from general.models import Seo
+from landing.models import People, ContactRadio, NavLink, LinksForAdvertising, LinksForContact, OrderAdvertising
+from projects.models import Project
 
 
 def index(request):

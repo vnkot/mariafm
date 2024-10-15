@@ -23,7 +23,9 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'django_vite',
-    'landing'
+    'general',
+    'projects',
+    'landing',
 ]
 
 MIDDLEWARE = [

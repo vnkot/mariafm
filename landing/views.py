@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
 from general.models import Seo
-from landing.models import People, ContactRadio, NavLink, LinksForAdvertising, LinksForContact, OrderAdvertising
+from header.models import ContactRadio, NavLink, OrderAdvertising
+from landing.models import People, LinksForAdvertising, LinksForContact
 from projects.models import Project
 
 

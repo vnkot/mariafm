@@ -1,12 +1,6 @@
 from django.contrib import admin
 
-from landing.models import People, ContactRadio, NavLink, LinksForAdvertising, LinksForContact, \
-    OrderAdvertising
-
-admin.site.register(OrderAdvertising)
-
-admin.site.register(NavLink)
-admin.site.register(ContactRadio)
+from landing.models import People, LinksForAdvertising, LinksForContact
 
 admin.site.register(People)
 admin.site.register(LinksForContact)

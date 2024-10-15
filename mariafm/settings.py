@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django_vite',
     'general',
     'projects',
+    'header',
     'landing',
 ]
 

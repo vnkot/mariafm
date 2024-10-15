@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'general',
     'projects',
     'header',
+    'team',
     'landing',
 ]
 

@@ -2,8 +2,9 @@ from django.shortcuts import render
 
 from general.models import Seo
 from header.models import ContactRadio, NavLink, OrderAdvertising
-from landing.models import People, LinksForAdvertising, LinksForContact
+from landing.models import LinksForAdvertising, LinksForContact
 from projects.models import Project
+from team.models import People
 
 
 def index(request):
@@ -15,6 +16,7 @@ def index(request):
     projects = Project.objects.all()
 
     peoples = People.objects.all()
+
     links_for_contact = LinksForContact.objects.all()
     links_for_advertising = LinksForAdvertising.objects.all()
 

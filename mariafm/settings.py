@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'header',
     'team',
     'footer',
+    'media_school',
+    'about_projects',
     'landing',
 ]
 

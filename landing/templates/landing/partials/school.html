@@ -3,35 +3,24 @@
 
 <section class="school" id="school">
 	<div class="school__body container">
-		<h2 class="school__title title title--white title--uppercase">Школа медиа</h2>
+		<h2 class="school__title title title--white title--uppercase">{{ mediaSchool.title }}</h2>
 
 		<div class="school__description">
 			<p>
-				Школа МЕДИА действует в Кирове с 2015 года при поддержке радиостанции "Мария FM".
-				Имеет лицензию дополнительного образования.
-			</p>
-
-			<p>
-				Школа МЕДИА - это курсы для детей, подростков и взрослых по направлениям:
-				курсы по речи и ораторскому мастерству, школа блогеров,
-				медиакоммуникации/журналистика для школьников, курсы радиоведущих.
+				{{ mediaSchool.description }}
 			</p>
 		</div>
 
 		<a
 			target="_blank"
 			class="school__action btn"
-			href="https://vk.com/im?media=&sel=-86542693"
+			href="{{ mediaSchool.buttonLink }}"
 		>
-			Записаться
+			{{ mediaSchool.buttonCaption }}
 		</a>
 
-		<div
-			class="school__cover"
-		>
-			<div class="school__img" style="background-image: url('{% static 'images/school/cover.png' %}');">
-
-			</div>
+		<div class="school__cover">
+			<div class="school__img" style="background-image: url('{{ mediaSchool.coverDesktop.url }}');"></div>
 		</div>
 	</div>
 </section>

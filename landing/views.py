@@ -1,8 +1,10 @@
 from django.shortcuts import render
 
+from about_projects.models import AboutProjects
 from footer.models import LinksForContact, LinksForAdvertising, FooterCaption
 from general.models import Seo
 from header.models import ContactRadio, NavLink, OrderAdvertising
+from media_school.models import MediaSchool
 from projects.models import Project
 from team.models import People
 
@@ -13,6 +15,10 @@ def index(request):
 
     nav_links = NavLink.objects.all()
     contact_radio = ContactRadio.objects.first()
+
+    media_school = MediaSchool.objects.first()
+
+    about_projects = AboutProjects.objects.first()
     projects = Project.objects.all()
 
     peoples = People.objects.all()
@@ -27,6 +33,8 @@ def index(request):
         {
             'seo': seo,
             'peoples': peoples,
+            'mediaSchool': media_school,
+            'aboutProjects': about_projects,
             'projects': projects,
             'navLinks': nav_links,
             'contactRadio': contact_radio,

@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
+from footer.models import LinksForContact, LinksForAdvertising, FooterCaption
 from general.models import Seo
 from header.models import ContactRadio, NavLink, OrderAdvertising
-from landing.models import LinksForAdvertising, LinksForContact
 from projects.models import Project
 from team.models import People
 
@@ -17,6 +17,7 @@ def index(request):
 
     peoples = People.objects.all()
 
+    footer_caption = FooterCaption.objects.first()
     links_for_contact = LinksForContact.objects.all()
     links_for_advertising = LinksForAdvertising.objects.all()
 
@@ -29,6 +30,7 @@ def index(request):
             'projects': projects,
             'navLinks': nav_links,
             'contactRadio': contact_radio,
+            'footerCaption': footer_caption,
             'linksForContact': links_for_contact,
             'linksForAdvertising': links_for_advertising,
             'orderAdvertising': order_advertising

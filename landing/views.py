@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from about_projects.models import AboutProjects
+from effectiveness.models import Effectiveness
 from footer.models import LinksForContact, LinksForAdvertising, FooterCaption
 from general.models import Seo
 from header.models import ContactRadio, NavLink, OrderAdvertising
@@ -16,6 +17,7 @@ def index(request):
     nav_links = NavLink.objects.all()
     contact_radio = ContactRadio.objects.first()
 
+    efficiency = Effectiveness.objects.first()
     media_school = MediaSchool.objects.first()
 
     about_projects = AboutProjects.objects.first()
@@ -33,6 +35,7 @@ def index(request):
         {
             'seo': seo,
             'peoples': peoples,
+            'efficiency': efficiency,
             'mediaSchool': media_school,
             'aboutProjects': about_projects,
             'projects': projects,

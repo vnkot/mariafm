@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'general',
     'projects',
     'header',
+    'effectiveness',
     'team',
     'footer',
     'media_school',

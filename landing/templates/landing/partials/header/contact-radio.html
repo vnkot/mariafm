@@ -21,9 +21,7 @@
 			{{ contactRadio.displayedPhoneNumber }}
 		</a>
 
-		<div class="contact-radio__radio radio" id="radio">
-			<audio src="{{ contactRadio.radioSrc }}"></audio>
-
+		<div class="contact-radio__radio radio" id="radio" data-src="{{ contactRadio.radioSrc }}">
 			<div class="radio__ctrl">
 				<div class="radio__play">
 					<img src="{% static 'icons/player/play.png' %}" />

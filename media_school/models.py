@@ -11,6 +11,9 @@ class MediaSchool(models.Model):
     buttonLink = models.URLField(verbose_name='Ссылка для кнопки')
     buttonCaption = models.CharField(max_length=20, verbose_name='Надпись в кнопке')
 
+    def description_as_list(self):
+        return self.description.split('\n')
+
     class Meta:
         verbose_name = 'Контент'
         verbose_name_plural = 'Контент'

@@ -124,7 +124,7 @@
 
 .badge {
 	--name-font-size: var(--font-size-02);
-	--value-font-size: var(--font-size-05);
+	--value-font-size: var(--font-size-04);
 
 	color: var(--black);
 
@@ -141,7 +141,6 @@
 
 	@include mediaScreenLaptop {
 		--name-font-size: var(--font-size-01);
-		--value-font-size: var(--font-size-04);
 	}
 
 	@include mediaScreenTablet {

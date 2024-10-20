@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from about_projects.models import AboutProjects
+from crew.models import Crew
 from effectiveness.models import Effectiveness
 from footer.models import LinksForContact, LinksForAdvertising, FooterCaption
 from general.models import Seo
@@ -8,7 +9,6 @@ from header.models import ContactRadio, NavLink, OrderAdvertising
 from media_school.models import MediaSchool
 from projects.models import Project
 from radio.models import Radio
-from team.models import People
 
 
 def index(request):
@@ -26,7 +26,7 @@ def index(request):
     about_projects = AboutProjects.objects.first()
     projects = Project.objects.all()
 
-    peoples = People.objects.all()
+    crew = Crew.objects.first()
 
     footer_caption = FooterCaption.objects.first()
     links_for_contact = LinksForContact.objects.all()
@@ -37,9 +37,9 @@ def index(request):
         'landing/index.html',
         {
             'seo': seo,
-            'peoples': peoples,
             'radio': radio,
             'efficiency': efficiency,
+            'crew': crew,
             'mediaSchool': media_school,
             'aboutProjects': about_projects,
             'projects': projects,

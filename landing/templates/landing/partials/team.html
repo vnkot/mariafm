@@ -3,13 +3,13 @@
 
 <section class="team container" id="team">
 	<h2 class="title title--red title--uppercase">
-		команда
+		{{ crew.title }}
 	</h2>
 
 	<div class="team__carousel team-carousel">
 		<div class="team-carousel__body" id="team-carousel">
 			<ul class="team-carousel__container">
-				{% for people in peoples %}
+				{% for people in crew.members.all %}
 					<li class="team-carousel__slide people">
 						<div class="people__avatar">
 							<img src="{{ people.avatar.url }}" />

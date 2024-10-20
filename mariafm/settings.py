@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'projects',
     'radio',
     'effectiveness',
-    'team',
+    'crew',
     'footer',
     'media_school',
     'about_projects',

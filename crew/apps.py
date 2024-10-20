@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class TeamConfig(AppConfig):
+class CrewConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'team'
+    name = 'crew'
     verbose_name = 'Секция: "Команда"'

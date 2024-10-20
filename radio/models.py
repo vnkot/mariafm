@@ -8,6 +8,9 @@ class Radio(models.Model):
 
     cover_desktop = WebPField(verbose_name='Изображение')
 
+    def description_as_list(self):
+        return self.description.split('\n')
+
     class Meta:
         verbose_name = 'Контент'
         verbose_name_plural = 'Контент'

@@ -6,9 +6,9 @@
 		<h2 class="school__title title title--white title--uppercase">{{ mediaSchool.title }}</h2>
 
 		<div class="school__description">
-			<p>
-				{{ mediaSchool.description }}
-			</p>
+			{% for descr in mediaSchool.description_as_list %}
+				<p>{{ descr }}</p>
+			{% endfor %}
 		</div>
 
 		<a

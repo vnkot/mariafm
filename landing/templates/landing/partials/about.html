@@ -5,9 +5,11 @@
 	<h2 class="title title--red title--uppercase about__title">{{ radio.title }}</h2>
 
 	<div class="about__description text">
-		<div class="text__row">
-			<p>{{ radio.description }}</p>
-		</div>
+		{% for descr in radio.description_as_list %}
+			<div class="text__row">
+				<p>{{ descr }}</p>
+			</div>
+		{% endfor %}
 	</div>
 
 	<div class="about__info text text--rows">

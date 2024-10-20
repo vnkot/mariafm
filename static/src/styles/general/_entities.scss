@@ -206,14 +206,12 @@ button.btn-ctrl {
 button.btn-ctrl.btn-ctrl--prev {
 	&:active {
 		box-shadow: var(--light-shadow);
-		transform: translate(-4px, 4px);
 	}
 }
 
 button.btn-ctrl.btn-ctrl--next {
 	&:active {
 		box-shadow: var(--light-shadow);
-		transform: translate(4px, 4px);
 	}
 }
 

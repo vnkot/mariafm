@@ -7,6 +7,7 @@ from general.models import Seo
 from header.models import ContactRadio, NavLink, OrderAdvertising
 from media_school.models import MediaSchool
 from projects.models import Project
+from radio.models import Radio
 from team.models import People
 
 
@@ -16,6 +17,8 @@ def index(request):
 
     nav_links = NavLink.objects.all()
     contact_radio = ContactRadio.objects.first()
+
+    radio = Radio.objects.first()
 
     efficiency = Effectiveness.objects.first()
     media_school = MediaSchool.objects.first()
@@ -35,6 +38,7 @@ def index(request):
         {
             'seo': seo,
             'peoples': peoples,
+            'radio': radio,
             'efficiency': efficiency,
             'mediaSchool': media_school,
             'aboutProjects': about_projects,

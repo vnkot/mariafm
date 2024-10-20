@@ -2,49 +2,34 @@
 {% load static %}
 
 <section class="about container" id="about">
-	<h2 class="title title--red title--uppercase about__title">О радио</h2>
+	<h2 class="title title--red title--uppercase about__title">{{ radio.title }}</h2>
 
 	<div class="about__description text">
 		<div class="text__row">
-			<p>Мария FM – радиостанция с собственным вещанием в Кирове и области.</p>
-		</div>
-		<div class="text__row">
-			<p>Только полезный и интересный контент города и области:</p>
+			<p>{{ radio.description }}</p>
 		</div>
 	</div>
 
 	<div class="about__info text text--rows">
-		<div class="text__row">
-			<p>достоверные новости каждые 15 минут</p>
-		</div>
-		<div class="text__row">
-			<p>ежедневные розыгрыши призов и подарков</p>
-		</div>
-		<div class="text__row">
-			<p>музыка, которую выбирают сами слушатели</p>
-		</div>
+		{% for plaque in radio.plaques.all %}
+			<div class="text__row">
+				<p>{{ plaque.text }}</p>
+			</div>
+		{% endfor %}
 	</div>
 
 	<ul class="about__badges">
-		<li class="about__badge badge">
-			<p class="badge__value">50+</p>
-			<p class="badge__name">рекламных форматов</p>
-		</li>
-
-		<li class="about__badge badge">
-			<p class="badge__value">>2 000 000</p>
-			<p class="badge__name">потенциальных слушателей в зоне вещания</p>
-		</li>
-
-		<li class="about__badge badge">
-			<p class="badge__value">>30 лет</p>
-			<p class="badge__name">лет разгоняем обороты продаж</p>
-		</li>
+		{% for badge in radio.badges.all %}
+			<li class="about__badge badge">
+				<p class="badge__value">{{ badge.title }}</p>
+				<p class="badge__name">{{ badge.caption }}</p>
+			</li>
+		{% endfor %}
 	</ul>
 
 	<div
 		class="about__map"
-		style="background-image: url('{% static 'images/about/map.png' %}');"
+		style="background-image: url('{{ radio.cover_desktop.url }}');"
 	>
 	</div>
 </section>

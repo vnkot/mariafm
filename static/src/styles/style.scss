@@ -6,6 +6,16 @@ html {
 	scroll-behavior: smooth;
 }
 
+body.body {
+	opacity: 0;
+	transition: .3s;
+
+	&--show {
+		opacity: 1;
+	}
+}
+
+
 .wrapper {
 	font-family: var(--main-font-family);
 

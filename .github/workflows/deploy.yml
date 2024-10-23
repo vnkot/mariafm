@@ -33,6 +33,7 @@ jobs:
             echo "SUPERUSER_EMAIL= ${{ secrets.SUPERUSER_EMAIL }}" >> .env
             echo "SUPERUSER_USERNAME= ${{ secrets.SUPERUSER_USERNAME }}" >> .env
             echo "SUPERUSER_PASSWORD= ${{ secrets.SUPERUSER_PASSWORD }}" >> .env
+            echo "URL_TO_YANDEX_MAP= ${{ secrets.URL_TO_YANDEX_MAP }}" >> .env
             
             echo "HOST= ${{ secrets.HOST }}" >> .env
 

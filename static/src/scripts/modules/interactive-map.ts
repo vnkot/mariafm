@@ -1,33 +1,39 @@
-// @ts-ignore
-import DG from '2gis-maps';
-
 export class InteractiveMap {
-    private readonly cords: [number, number];
-    private readonly mapContainerId: string;
+	private readonly mapContainerId: string;
+	private readonly urlToYMap: string;
 
-    private map: any;
+	private mapContainerElement!: HTMLElement;
 
-    /**
-     * @param {string} containerId - ID HTML-элемента, в котором будет отображаться карта.
-     * @param {[number, number]} cords - Координаты объекта карты в формате [широта, долгота].
-     */
-    constructor(containerId: string, cords: [number, number]) {
-        this.cords = cords;
-        this.mapContainerId = containerId;
+	/**
+	 * @param {string} containerId - ID HTML-элемента, в котором будет отображаться карта.
+	 * @param {string} urlToYMap - Ссылка на яндекс карту, созданную через конструктор Яндекс Карты
+	 */
+	constructor(containerId: string, urlToYMap: string) {
+		this.mapContainerId = containerId;
+		this.urlToYMap = urlToYMap;
 
-    }
+		this.getElements();
+	}
 
-    private createMap() {
-        this.map = DG.map(this.mapContainerId, {
-            center: this.cords,
-            zoom: 16,
-            zoomControl: false,
-            fullscreenControl: false
-        })
-        DG.marker(this.cords).addTo(this.map);
-    }
+	private getElements() {
+		const mapContainer = document.getElementById(this.mapContainerId);
 
-    init() {
-        this.createMap();
-    }
+		if (!mapContainer) {
+			throw new Error(`Не удалось найти элемент ${this.mapContainerId}`);
+		}
+
+		this.mapContainerElement = mapContainer;
+	}
+
+	private createMap() {
+		const iframe = document.createElement('iframe');
+
+		iframe.src = this.urlToYMap;
+
+		this.mapContainerElement.appendChild(iframe);
+	}
+
+	init() {
+		this.createMap();
+	}
 }

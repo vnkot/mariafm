@@ -30,5 +30,5 @@ new TeamCarousel({
 	btnPrevId: 'team-btn-prev',
 	carouselId: 'team-carousel',
 }).init();
-new InteractiveMap('footer-map', [58.583945, 49.659408]).init();
+new InteractiveMap('footer-map', URL_TO_YANDEX_MAP!).init();
 new SmoothAppearance('body--show').init();

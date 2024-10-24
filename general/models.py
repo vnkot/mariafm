@@ -15,3 +15,14 @@ class Seo(models.Model):
 
     def __str__(self):
         return 'SEO'
+
+
+class Metrika(models.Model):
+    script = models.TextField(verbose_name='Скрипт метрики')
+
+    class Meta:
+        verbose_name = 'Метрика'
+        verbose_name_plural = 'Метрика'
+
+    def __str__(self):
+        return 'Метрика'

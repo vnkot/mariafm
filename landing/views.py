@@ -4,7 +4,7 @@ from about_projects.models import AboutProjects
 from crew.models import Crew
 from effectiveness.models import Effectiveness
 from footer.models import LinksForContact, LinksForAdvertising, FooterCaption
-from general.models import Seo
+from general.models import Seo, Metrika
 from header.models import ContactRadio, NavLink, OrderAdvertising
 from media_school.models import MediaSchool
 from projects.models import Project
@@ -14,6 +14,8 @@ from radio.models import Radio
 def index(request):
     seo = Seo.objects.first()
     order_advertising = OrderAdvertising.objects.first()
+
+    metrika = Metrika.objects.first()
 
     nav_links = NavLink.objects.all()
     contact_radio = ContactRadio.objects.first()
@@ -37,6 +39,7 @@ def index(request):
         'landing/index.html',
         {
             'seo': seo,
+            'metrika': metrika,
             'radio': radio,
             'efficiency': efficiency,
             'crew': crew,

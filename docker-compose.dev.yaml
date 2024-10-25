@@ -34,14 +34,14 @@ services:
     volumes:
       - .:/app
     ports:
-      - "8000:8000"
+      - "4000:4000"
     restart: always
     command: >
             sh -c "wait-for-it db:5432 -- &&
             python manage.py makemigrations &&
             python manage.py migrate &&
             python manage.py makesuperuser &&
-            python manage.py runserver 0.0.0.0:8000"
+            python manage.py runserver 0.0.0.0:4000"
     depends_on:
       - db
       - static

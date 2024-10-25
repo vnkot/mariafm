@@ -22,13 +22,13 @@ services:
     environment:
       - DEBUG=false
     ports:
-      - "8000:8000"
+      - "4000:4000"
     command: >
       sh -c "wait-for-it db:5432 -- &&
       poetry run python manage.py makemigrations &&
       poetry run python manage.py migrate &&
       poetry run python manage.py makesuperuser &&
-      poetry run python manage.py runserver 0.0.0.0:8000"
+      poetry run python manage.py runserver 0.0.0.0:4000"
     restart: always
     volumes:
       - media:/app/media

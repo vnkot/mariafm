@@ -36,6 +36,7 @@ services:
       - db
     networks:
       - db-network
+      - proxy-network
 
   proxy:
     image: caddy
@@ -51,7 +52,8 @@ services:
     depends_on:
       - web
     restart: always
-
+    networks:
+      - proxy-network
 
 volumes:
   caddy_data:
@@ -61,4 +63,6 @@ volumes:
 
 networks:
   db-network:
+    driver: bridge
+  proxy-network:
     driver: bridge

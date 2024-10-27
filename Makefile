@@ -16,7 +16,7 @@ build-prod:
 	docker compose -f docker-compose.prod.yaml build
 up-prod:
 	docker compose -f docker-compose.prod.yaml up -d
-	caddy start --config ./services/proxy/Caddyfile
+	caddy start --config ./Caddyfile
 down-prod:
 	docker compose -f docker-compose.prod.yaml down
-	caddy stop --config ./services/proxy/Caddyfile
+	caddy stop --config ./Caddyfile

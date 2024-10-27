@@ -1,9 +1,9 @@
 vnkot.ru {
-    reverse_proxy 62.113.111.188:4000
+    reverse_proxy localhost:4000
 
     handle_path /media/* {
         file_server {
-            root ../../media
+            root ./media
         }
     }
 }

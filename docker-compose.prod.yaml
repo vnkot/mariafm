@@ -37,7 +37,25 @@ services:
     networks:
       - db-network
 
+  proxy:
+    image: caddy
+    volumes:
+      - ./services/proxy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+      - media:/app/media
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    depends_on:
+      - web
+    restart: always
+
+
 volumes:
+  caddy_data:
+  caddy_config:
   pgdata:
   media:
 

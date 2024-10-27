@@ -3,7 +3,7 @@ vnkot.ru {
 
     handle_path /media/* {
         file_server {
-            root /app/media
+            root ../../media
         }
     }
 }

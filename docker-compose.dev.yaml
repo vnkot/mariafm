@@ -53,6 +53,7 @@ volumes:
   caddy_config:
   pgdata:
   media:
+  files:
 
 networks:
   db-network:

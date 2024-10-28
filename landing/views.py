@@ -3,7 +3,7 @@ from django.shortcuts import render
 from about_projects.models import AboutProjects
 from crew.models import Crew
 from effectiveness.models import Effectiveness
-from footer.models import LinksForContact, LinksForAdvertising, FooterCaption
+from footer.models import LinksForContact, LinksForAdvertising, FooterCaption, Footer
 from general.models import Seo, Metrika
 from header.models import ContactRadio, NavLink, OrderAdvertising
 from media_school.models import MediaSchool
@@ -30,6 +30,7 @@ def index(request):
 
     crew = Crew.objects.first()
 
+    footer = Footer.objects.first()
     footer_caption = FooterCaption.objects.first()
     links_for_contact = LinksForContact.objects.all()
     links_for_advertising = LinksForAdvertising.objects.all()
@@ -48,6 +49,7 @@ def index(request):
             'projects': projects,
             'navLinks': nav_links,
             'contactRadio': contact_radio,
+            'footer': footer,
             'footerCaption': footer_caption,
             'linksForContact': links_for_contact,
             'linksForAdvertising': links_for_advertising,

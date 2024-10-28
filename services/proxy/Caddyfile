@@ -6,10 +6,4 @@ vnkot.ru {
             root /app/media
         }
     }
-
-    handle_path /files/* {
-        file_server {
-            root /app/files
-        }
-    }
 }

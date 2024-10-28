@@ -2,6 +2,17 @@ from django.db import models
 from django.utils.html import format_html
 
 
+class Footer(models.Model):
+    terms = models.FileField(upload_to='files/', blank=True, null=True, verbose_name='Условия пользовательского соглашения')
+    personal_data = models.FileField(upload_to='files/', blank=True, null=True, verbose_name='Согласие на обработку персональных данных')
+
+    class Meta:
+        verbose_name = 'Контент'
+        verbose_name_plural = 'Контент'
+
+    def __str__(self):
+        return 'Контент'
+
 class LinksForAdvertising(models.Model):
     caption = models.CharField(max_length=40, verbose_name='Название ссылки')
     value = models.CharField(verbose_name='Текст ссылки')

@@ -45,6 +45,7 @@ services:
       - caddy_data:/data
       - caddy_config:/config
       - media:/app/media
+      - files:/app/files
     ports:
       - "80:80"
       - "443:443"
@@ -60,6 +61,7 @@ volumes:
   caddy_config:
   pgdata:
   media:
+  files:
 
 networks:
   db-network:

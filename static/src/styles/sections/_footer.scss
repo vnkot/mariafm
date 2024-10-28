@@ -8,6 +8,7 @@
 	grid-template-areas:
 			"logo map"
 			"contacts map"
+			"files map"
 			"basement map";
 	grid-template-columns: 1fr 1.1fr;
 	gap: 32px;
@@ -21,6 +22,7 @@
 		grid-template-areas:
 				"logo ."
 				"contacts map"
+				"files map"
 				"basement basement";
 	}
 
@@ -31,6 +33,7 @@
 				"logo"
 				"map"
 				"contacts"
+				"files"
 				"basement";
 	}
 
@@ -55,6 +58,10 @@
 
 	&__contacts {
 		grid-area: contacts;
+	}
+
+	&__files {
+		grid-area: files;
 	}
 
 	&__basement {
@@ -154,5 +161,29 @@
 
 	@include mediaScreenWidePhone {
 		font-size: var(--font-size);
+	}
+}
+
+.files {
+	&__link {
+		& + & {
+			margin-top: 16px;
+		}
+	}
+
+	&__link a {
+		color: var(--black);
+		text-decoration: none;
+		font-size: var(--font-size-01);
+
+		@include mediaScreenWidePhone {
+			font-size: var(--font-size);
+		}
+
+		transition: .1s;
+
+		&:hover {
+			opacity: .7;
+		}
 	}
 }

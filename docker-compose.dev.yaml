@@ -37,19 +37,23 @@ services:
       - "4000:4000"
     restart: always
     command: >
-            sh -c "wait-for-it db:5432 -- &&
-            python manage.py makemigrations &&
-            python manage.py migrate &&
-            python manage.py makesuperuser &&
-            python manage.py runserver 0.0.0.0:4000"
+      sh -c "wait-for-it db:5432 -- &&
+      python manage.py makemigrations &&
+      python manage.py migrate &&
+      python manage.py makesuperuser &&
+      python manage.py runserver 0.0.0.0:4000"
     depends_on:
       - db
       - static
     networks:
       - db-network
 
+volumes:
+  caddy_data:
+  caddy_config:
+  pgdata:
+  media:
+
 networks:
   db-network:
     driver: bridge
-volumes:
-  pgdata:

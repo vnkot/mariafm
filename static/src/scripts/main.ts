@@ -5,6 +5,7 @@ import { TeamCarousel } from './modules/team-carousel/team-carousel.ts';
 import { InteractiveMap } from './modules/interactive-map.ts';
 import { MobileMenu } from './modules/mobile-menu.ts';
 import { SmoothAppearance } from './modules/smooth-appearance.ts';
+import { FloatingButton } from './modules/floating-button.ts';
 
 new MobileMenu({
 	menuId: 'mobile-menu',
@@ -32,3 +33,9 @@ new TeamCarousel({
 }).init();
 new InteractiveMap('footer-map', URL_TO_YANDEX_MAP!).init();
 new SmoothAppearance('body--show').init();
+new FloatingButton(
+	'floating-button',
+	'footer',
+	'floating-button--hide',
+	1296
+).init();

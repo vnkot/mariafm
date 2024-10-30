@@ -33,6 +33,11 @@
 		background-color: var(--red-01);
 	}
 
+	&--hide {
+		opacity: 0;
+		visibility: hidden;
+	}
+
 	@include mediaScreenLaptop {
 		--size: 130px;
 		font-size: var(--font-size-01);

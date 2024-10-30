@@ -20,9 +20,11 @@
 
 .team-carousel {
 	--slide-gap: 32px;
+	--slide-size: 33.333%;
 	--btn-top-pos: 115px;
 
 	position: relative;
+	padding: 0 54px;
 
 	&__body {
 		overflow: hidden;
@@ -34,7 +36,9 @@
 	}
 
 	&__slide {
-		padding: 0 var(--slide-gap);
+		padding-left: var(--slide-gap);
+		flex: 0 0 var(--slide-size);
+		min-width: 0;
 	}
 
 	&__btn-prev,
@@ -45,28 +49,38 @@
 
 	&__btn-prev {
 		left: 0;
-		transform: translateX(-50%);
 	}
 
 	&__btn-next {
 		right: 0;
-		transform: translateX(50%);
 	}
 
 	@include mediaScreenWideLaptop {
 		--slide-gap: 24px;
 	}
 
-	@include mediaScreenWidePhone {
+	@include mediaScreenLaptop {
 		--slide-gap: 16px;
+	}
+
+	@include mediaScreenWideTablet {
+		--slide-size: 50%;
+	}
+
+	@include mediaScreenTablet {
+		--slide-size: 100%;
+		--slide-gap: 0;
+	}
+
+	@include mediaScreenWidePhone {
 		--btn-top-pos: 90px;
 	}
 }
 
 .people {
 	--avatar-size: 300px;
-	--name-font-size: var(--font-size-03);
-	--describe-font-size: var(--font-size-02);
+	--name-font-size: 30px;
+	--describe-font-size: 24px;
 
 	display: flex;
 	flex-direction: column;
@@ -93,7 +107,7 @@
 
 	&__name {
 		color: var(--black);
-		white-space: nowrap;
+		text-wrap: balance;
 		font-weight: var(--font-weight-xxl);
 		font-size: var(--name-font-size);
 
@@ -124,9 +138,19 @@
 		--describe-font-size: var(--font-size-01);
 	}
 
+	@include mediaScreenLaptop {
+		--avatar-size: 230px;
+		--name-font-size: var(--font-size-02);
+		--describe-font-size: var(--font-size-01);
+	}
+
 	@include mediaScreenWidePhone {
 		--avatar-size: 222px;
 		--name-font-size: var(--font-size);
 		--describe-font-size: var(--font-size);
+	}
+
+	@include mediaScreenPhone {
+		--avatar-size: 150px;
 	}
 }

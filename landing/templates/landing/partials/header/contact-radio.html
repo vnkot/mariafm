@@ -21,7 +21,7 @@
 			{{ contactRadio.displayedPhoneNumber }}
 		</a>
 
-		<div class="contact-radio__radio radio" id="radio" data-src="{{ contactRadio.radioSrc }}">
+		<a class="contact-radio__radio radio" id="radio" target="_blank" href="{{ contactRadio.radioSrc }}">
 			<div class="radio__ctrl">
 				<div class="radio__play">
 					<img src="{% static 'icons/player/play.png' %}" />
@@ -32,6 +32,6 @@
 			</div>
 
 			<p class="radio__text">Слушать онлайн</p>
-		</div>
+	</div>
 	</div>
 </section>

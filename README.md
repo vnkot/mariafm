@@ -7,7 +7,17 @@
 Дисклеймер:
 В корне проекта должен быть `.env` файл:
 ```shell
-SECRET=<your random key>
+POSTGRES_DB=db_name
+POSTGRES_USER=db_user
+POSTGRES_PASSWORD=db_password
+
+SUPERUSER_USERNAME=db_username
+SUPERUSER_EMAIL=db_email
+SUPERUSER_PASSWORD=db_password
+
+HOST=your_domain
+
+URL_TO_YANDEX_MAP=yandex_map_widget
 ```
 
 ### Для разработки (через докер)

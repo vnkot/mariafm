@@ -1,0 +1,42 @@
+@import "../utils/mixins";
+
+.policy {
+    position: fixed;
+    
+	left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    
+    z-index: 999;
+
+	@include mediaScreenWideTablet {
+		padding: 0;
+		bottom: 0;
+	}
+
+	&__inner {
+		background: #fff;
+		border-radius: 16px;
+		box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+
+		padding: 16px 24px;
+		
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 32px;
+
+		@include mediaScreenWideTablet {
+			align-items: stretch;
+			flex-direction: column;
+			border-radius: 16px 16px 0 0;
+			gap: 16px;
+		}
+	}
+
+	p {
+		color: var(--black);
+		font-size: var(--font-size);
+		line-height: 26px;
+	}
+}

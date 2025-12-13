@@ -5,6 +5,7 @@ import { MobileMenu } from './modules/mobile-menu.ts';
 import { ShowCarousel } from './modules/show-carousel/show-carousel.ts';
 import { SmoothAppearance } from './modules/smooth-appearance.ts';
 import { TeamCarousel } from './modules/team-carousel/team-carousel.ts';
+import { Policy } from './modules/policy/policy.ts';
 
 new MobileMenu({
 	menuId: 'mobile-menu',
@@ -37,3 +38,4 @@ new FloatingButton(
 	'floating-button--hide',
 	1296
 ).init();
+new Policy('policy').init();

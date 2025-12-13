@@ -228,5 +228,7 @@ span.red {
 .container {
 	margin: 0 auto;
 	padding: 0 var(--indent-x);
+	
+	width: 100%;
 	max-width: calc(var(--content-max-width) + var(--indent-x) * 2);
 }
